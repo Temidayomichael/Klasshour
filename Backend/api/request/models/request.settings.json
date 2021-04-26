@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requests",
+  "info": {
+    "name": "Request",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "requestDesc": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "hometutoring",
+        "onlinetutoring"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "requests"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "closed",
+        "open"
+      ]
+    }
+  }
+}

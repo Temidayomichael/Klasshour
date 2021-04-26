@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "khcoins",
+  "info": {
+    "name": "khcoins"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "users_permissions_user": {
+      "via": "khcoin",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
