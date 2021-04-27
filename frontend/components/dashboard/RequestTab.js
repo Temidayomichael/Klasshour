@@ -41,23 +41,13 @@ const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Ben
     validationSchema: Yup.object({
       type: Yup.string(),
       subject: Yup.string(),
-      password: Yup.string().matches(
-      /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-      "Password must contain at least 8 characters, one uppercase, one number and one special case character"
-    ),
-      confirm_password: Yup.string() .when("password", {
-      is: password => (password && password.length > 0 ? true : false),
-      then: Yup.string().oneOf([Yup.ref("password")], "Password doesn't match")
-      }),
+      requesDesc: Yup.string(),
+      location: Yup.string(),
       userImage: Yup.string()
-      // userImage: Yup.mixed().test('fileSize', "File Size is too large", values => values.size <= FILE_SIZE)
-      //   .test('fileType', "Unsupported File Format", values => SUPPORTED_FORMATS.includes(values.type))
              
     }),
      
     onSubmit: async (values) => {
-      console.log(values)
-      console.log(userFormData)
       const res = axios.post(`${publicRuntimeConfig.API_URL}/upload`, {
       userImage: values.userImage
 },
