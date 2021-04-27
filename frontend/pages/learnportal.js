@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoChat from '../components/VideoChat'
+import VideoChat from '../components/videochat/VideoChat'
 
 export default function learnportal() {
     return (
@@ -11,15 +11,7 @@ export default function learnportal() {
                 <p>VideoChat goes here.</p>
                 <VideoChat />
       </main>
-      <footer>
-        <p>
-          Made with{' '}
-          <span role="img" aria-label="React">
-            ⚛
-          </span>{' '}
-          by <a href="https://twitter.com/philnash">philnash</a>
-        </p>
-      </footer>
+      
     </div>
         
     )
