@@ -16,10 +16,13 @@ const { publicRuntimeConfig } = getConfig()
 
 export default function request({ requests }) {
     const userData = useContext(UserContext)
-    console.log("User ID". userData)
-     console.log("requests:". requests)
     const [visible, setVisible] = useState(3)
-    const [requestStatus, setequestStatus] = useState()
+    let atLast = false;
+   
+    const newRequestArray = requests.filter(request => request.user.id === userData.id);
+    
+    console.log(newRequestArray.length)
+
     const { API_URL } = process.env
     const router = useRouter()
     const showMoreItems = () => {
@@ -48,84 +51,92 @@ export default function request({ requests }) {
                         spacingY="20px" mt="5"
                         >
                         {
+                         
                             
-                            requests ? requests.slice(0, visible).map((data) => {
-                                console.log(data)
-                                return (
-                                    <Box 
-                                      key={data.id}
-                                        maxW="sm"
-                                        p="5"
-                                        borderWidth="1px"
-                                        rounded="md"
-                                        boxShadow="xs"
-                                    >
-                                        <Flex justify="space-between" w="100" >
-                                            <Box as="time" dateTime="2021-01-15 15:30:00 +0000 UTC">
-                                                <TimeAgo date= {data.createdAt} />
+                            newRequestArray ? newRequestArray.slice(0, visible).map((data,index) => {
+                                if (newRequestArray.length -1 === index) {
+                                    atLast=true
+                                   
+                                }
+                                    return (
+                               
+                                        <Box
+                                            key={data.id}
+                                            maxW="sm"
+                                            p="5"
+                                            borderWidth="1px"
+                                            rounded="md"
+                                            boxShadow="xs"
+                                        >
+                                            <Flex justify="space-between" w="100" >
+                                                <Box as="time" dateTime="2021-01-15 15:30:00 +0000 UTC">
+                                                    <TimeAgo date={data.createdAt} />
                                               
-                                            </Box>
-                                            <Box
-                                                color="gray.500"
-                                                fontWeight="semibold"
-                                                letterSpacing="wide"
-                                                fontSize="xs"
-                                                textTransform="uppercase"
-                                                ml="2"
-                                            >
-                                                {
-                                                    data.type == "hometutoring" ?  <AiOutlineHome size="20" /> :  <RiVidiconLine size="20" />
-                                                }
+                                                </Box>
+                                                <Box
+                                                    color="gray.500"
+                                                    fontWeight="semibold"
+                                                    letterSpacing="wide"
+                                                    fontSize="xs"
+                                                    textTransform="uppercase"
+                                                    ml="2"
+                                                >
+                                                    {
+                                                        data.type == "hometutoring" ? <AiOutlineHome size="20" /> : <RiVidiconLine size="20" />
+                                                    }
                                                     
-                                        </Box>
-                                        </Flex>
+                                                </Box>
+                                            </Flex>
                                         
                     
-                                        <Box textAlign="center" my="4">
-                                            <Avatar size="md" align="center" name={data.user.fullname} src={`${API_URL + data.user.userImage.url}`} />
-                                            <Text>{ data.user.fullname }</Text>
-                                        </Box>
-                                       
-                            <Box p="6">
-                            <Box d="flex" alignItems="baseline">
-                            <Badge borderRadius="full" px="2" colorScheme={data.status == 'open' ? 'green' : 'red'}>
-                              {data.status}
-                            </Badge>
-                            <Box
-                                color="gray.900"
-                                fontWeight="semibold"
-                                letterSpacing="wide"
-                                fontSize="xs"
-                                textTransform="uppercase"
-                                ml="2"
-                                                >
-                                                     {data.subject}
-                            
-                            </Box>
+                                            <Box textAlign="center" my="4">
+                                                <Avatar size="md" align="center" name={data.user.fullname} src={`${API_URL + data.user.userImage.url}`} />
+                                                <Text>{data.user.fullname}</Text>
                                             </Box>
-                                             <Heading size="sm" my="2">
+                                       
+                                            <Box p="6">
+                                                <Box d="flex" alignItems="baseline">
+                                                    <Badge borderRadius="full" px="2" colorScheme={data.status == 'open' ? 'green' : 'red'}>
+                                                        {data.status}
+                                                    </Badge>
+                                                    <Box
+                                                        color="gray.900"
+                                                        fontWeight="semibold"
+                                                        letterSpacing="wide"
+                                                        fontSize="xs"
+                                                        textTransform="uppercase"
+                                                        ml="2"
+                                                    >
+                                                        {data.subject}
+                            
+                                                    </Box>
+                                                </Box>
+                                                <Heading size="sm" my="2">
                           
-                                {data.requestDesc}
+                                                    {data.requestDesc}
                               
-                            </Heading>
-                        <Divider my="3" />
+                                                </Heading>
+                                                <Divider my="3" />
                                            
-                             </Box>
-                            <Button ml="2" color="gray.600" fontSize="sm" w="30" isDisabled= {
-                                                data.status == 'open' ?  data.user.id == userData.id : "true" 
-                                            // data.user.id == userData.id ? "true" : ''
+                                            </Box>
+                                            <Button ml="2" color="gray.600" fontSize="sm" w="30" isDisabled={
+                                                data.status == 'open' ? data.user.id == userData.id : "true"
+                                                // data.user.id == userData.id ? "true" : ''
                                                     
                                             }
-                            >
-                                Apply
+                                            >
+                                                Apply
                                 </Button>
-                        </Box>
-                        
-                                )
+                                        </Box>
+                                    )
+                                
                             }) : null
+                           
                         }  
                     </SimpleGrid>
-                     <Button onClick={showMoreItems} mt="10">Load more</Button>
+                  
+                     <Button onClick={showMoreItems} isDisabled={atLast} mt="10">Load more</Button>
+                     
                 </Box>
                
             </Box>

@@ -178,6 +178,8 @@ export default function Dashboard({ jwt, requests, requestData }) {
               <RequestTab
                 useFormik={useFormik}
                 isLoading={userData.isLoading}
+                jwt={jwt}
+                user={userData.id}
               />
                 </TabPanel>
                 <TabPanel>
