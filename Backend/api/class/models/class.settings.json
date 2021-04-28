@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "name": "Class",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "students": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "classes"
+    },
+    "tutor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "details": {
+      "model": "request"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

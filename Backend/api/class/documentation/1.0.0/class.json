@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/requests": {
+    "/classes": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Request"
+                    "$ref": "#/components/schemas/Class"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Request"
+                  "$ref": "#/components/schemas/Class"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewRequest"
+                "$ref": "#/components/schemas/NewClass"
               }
             }
           }
         }
       }
     },
-    "/requests/count": {
+    "/classes/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "parameters": []
       }
     },
-    "/requests/{id}": {
+    "/classes/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Request"
+                  "$ref": "#/components/schemas/Class"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Request"
+                  "$ref": "#/components/schemas/Class"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewRequest"
+                "$ref": "#/components/schemas/NewClass"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Request"
+          "Class"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Request": {
+      "Class": {
         "required": [
           "id"
         ],
@@ -522,23 +522,7 @@
           "id": {
             "type": "string"
           },
-          "requestDesc": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "hometutoring",
-              "onlinetutoring"
-            ]
-          },
-          "location": {
-            "type": "string"
-          },
-          "subject": {
-            "type": "string"
-          },
-          "user": {
+          "students": {
             "required": [
               "id",
               "username",
@@ -604,12 +588,112 @@
               }
             }
           },
-          "status": {
+          "tutor": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "userImage": {
+                "type": "string"
+              },
+              "requests": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fullname": {
+                "type": "string"
+              },
+              "khcoin": {
+                "type": "string"
+              },
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "details": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "requestDesc": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "date": {
             "type": "string",
-            "enum": [
-              "closed",
-              "open"
-            ]
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",
@@ -617,33 +701,20 @@
           }
         }
       },
-      "NewRequest": {
+      "NewClass": {
         "properties": {
-          "requestDesc": {
+          "students": {
             "type": "string"
           },
-          "type": {
+          "tutor": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "date": {
             "type": "string",
-            "enum": [
-              "hometutoring",
-              "onlinetutoring"
-            ]
-          },
-          "location": {
-            "type": "string"
-          },
-          "subject": {
-            "type": "string"
-          },
-          "user": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "closed",
-              "open"
-            ]
+            "format": "date-time"
           },
           "published_at": {
             "type": "string",
@@ -661,7 +732,7 @@
   },
   "tags": [
     {
-      "name": "Request"
+      "name": "Class"
     }
   ]
 }

@@ -7,6 +7,9 @@ import { parseCookies } from 'nookies'
 import NProgress from 'nprogress';
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+
+const queryClient = new QueryClient()
 
 Router.events.on('routeChangeStart', (url) => {
   console.log(`Loading: ${url}`)
@@ -18,14 +21,16 @@ Router.events.on('routeChangeError', () => NProgress.done())
 export default function MyApp({ Component, pageProps,userData }) {
  
   return (
+     <QueryClientProvider client={queryClient}>
     <ChakraProvider>
-       <UserContext.Provider  value={userData}>
+       <UserContext.Provider value={userData}>
       <Layout>
        
           <Component {...pageProps} />
       </Layout>
        </UserContext.Provider>
-     </ChakraProvider>
+      </ChakraProvider>
+      </QueryClientProvider>
   )
 }
 const { publicRuntimeConfig } = getConfig()

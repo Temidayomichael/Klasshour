@@ -4,23 +4,10 @@ import { parseCookies } from 'nookies'
 import Head from 'next/head'
 import {
   Box, Center, Divider, Flex, Kbd, Tab, TabList, TabPanel, TabPanels,
-  Tabs, Alert, AlertIcon, Text, Stack,
-   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+  Tabs, Alert, AlertIcon, 
   Input,
   SlideFade,
-  Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Select,
+  
   Textarea,
 } from '@chakra-ui/react'
 import UserContext from '../contexts/UserContext'
@@ -31,6 +18,7 @@ import axios from 'axios'
 import DataGrid from 'react-data-grid';
 import BasicInfo from '../components/dashboard/basicInfo'
 import RequestTab from '../components/dashboard/RequestTab'
+import ClassesTab from '../components/dashboard/ClassesTab'
 
 
  
@@ -171,19 +159,19 @@ export default function Dashboard({ jwt, requests, requestData }) {
                 email={userData.email}
                 setUserFormData={setUserFormData}
                 isLoading={userData.isLoading}
+                requests={requests}
               />
                 </TabPanel>
                 <TabPanel className="mycontainer" 
               mx="auto">
               <RequestTab
-                useFormik={useFormik}
-                isLoading={userData.isLoading}
-                jwt={jwt}
-                user={userData.id}
+           jwt={jwt}
               />
                 </TabPanel>
                 <TabPanel>
-                <p>three!</p>
+              <ClassesTab
+                jwt={jwt}
+              />
                 </TabPanel>
             </TabPanels>
               

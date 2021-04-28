@@ -1385,6 +1385,40 @@
                 "type": "string"
               }
             }
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "students": {
+                  "type": "string"
+                },
+                "tutor": {
+                  "type": "string"
+                },
+                "details": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1438,6 +1472,12 @@
           },
           "khcoin": {
             "type": "string"
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

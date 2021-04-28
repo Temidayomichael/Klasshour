@@ -40,13 +40,7 @@ body {
   min-height: 100%;
 }
 
-header {
-  background: #f0293e;
-  color: #fff;
-  text-align: center;
-  flex-grow: 0;
-  margin-bottom: 2em;
-}
+
 
 h1 {
   font-weight: 300;
@@ -141,7 +135,7 @@ button:hover {
 }
 .participant:last-child {
   margin-right: 0;
-  background: #f0293e;
+  background: blue;
 }
 .participant h3 {
   text-align: center;
@@ -157,7 +151,7 @@ video {
   border-radius: 6px;
 }
 
-footer {
+myfooter {
   background: #333e5a;
   color: #fff;
   text-align: center;
@@ -165,6 +159,6 @@ footer {
   padding: 1em 0;
 }
 
-footer a {
+myfooter a {
   color: #fff;
 }
