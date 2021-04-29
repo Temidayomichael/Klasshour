@@ -1,45 +1,147 @@
-import * as Yup from "yup";
 import {
-  Box, Center, Divider, Flex, Kbd, Tab, TabList, TabPanel, TabPanels,
-  Tabs, Alert, AlertIcon, Text, Stack,
-   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Input,
-  SlideFade,
-  Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Select,
-  Textarea,
+  Text,
+  Stack,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  useToast,
+  Spinner,
+  Center,
+  Editable, EditableInput, EditablePreview, Textarea, Button, Checkbox, Box
 } from '@chakra-ui/react'
 import { parseCookies } from 'nookies'
 import { useFormik } from "formik";
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import AddRequest from "./AddRequest";
+import { GetMyRequests } from '../../Queries/queries';
 
 
-export default function RequestTab({jwt}) {
-console.log(jwt)
+export default function RequestTab({useQuery, useMutation}) {
   const userData = useContext(UserContext)
-  
+   const jwt = parseCookies().jwt
+    
+  const { isError, isLoading, isFetching, data } = useQuery(["myrequest", userData], GetMyRequests)
+
+  const toast = useToast()
+  if (isLoading) {
+    return <Center><Spinner
+  thickness="4px"
+  speed="0.65s"
+  emptyColor="gray.200"
+  color="blue.500"
+  size="md"
+    />
+      </Center>
+  }
+  console.log(isError)
+  if (isError) {
+    return   toast({
+          title: "Error getting classes ...",
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        })
+   }
+
   return (
    
       <Stack spacing={3}>
-     <AddRequest
+     {/* <AddRequest
                 useFormik={useFormik}
                 jwt={jwt}
                 user={userData.id}
-              />
-               <Text>jdbnfjbdhyfbdfhybfhd</Text>
+              /> */}
+                <>
+    {isFetching && <Center><Spinner
+  thickness="2px"
+  speed="0.65s"
+  emptyColor="gray.200"
+  color="blue.500"
+          size="md"
+      />
+      </Center>
+      }
+    <Box w="100%">
+   <Button size="sm" float="right" w={20} colorScheme="red">
+                Delete
+              </Button>
+     </Box>
+        <Table variant="striped" colorScheme="linkedin">
+          <TableCaption placement="top">
+            Imperial to metric conversion factors
+            </TableCaption>
+          
+  <Thead>
+            <Tr>
+                <Th></Th>
+      <Th>Type</Th>
+      <Th>Status</Th>
+      <Th>Location</Th>
+      <Th>Subject</Th>
+      <Th>Request Description</Th>
+    
+    </Tr>
+  </Thead>
+  <Tbody>
+   
+     {
+        data.map((data, index) => {
+
+          return <Tr key={index} >
+            <Td>
+               <Checkbox size="md" isInvalid colorScheme="red" />
+            </Td>
+            <Td><Editable defaultValue={data.type}>
+  <EditablePreview />
+  <EditableInput />
+</Editable></Td>
+            <Td>
+              <Editable color={data.status=="closed"? "red":"green"} defaultValue={data.status}>
+  <EditablePreview />
+  <EditableInput />
+</Editable></Td>
+            <Td><Editable defaultValue={data.location}>
+  <EditablePreview />
+  <EditableInput />
+</Editable></Td>
+            <Td><Editable defaultValue={data.subject}>
+  <EditablePreview />
+  <EditableInput />
+</Editable></Td>
+            <Td><Editable defaultValue={data.requestDesc}>
+  <EditablePreview />
+  <EditableInput />
+</Editable></Td>
+         
+          </Tr>
+          
+        }
+        )
+            }
+          </Tbody>
+        
+  <Tfoot>
+    <Tr>
+       <Th>Type</Th>
+      <Th>Status</Th>
+      <Th>Location</Th>
+      <Th>Subject</Th>
+      <Th>Request Description</Th>
+    </Tr>
+  </Tfoot>
+        </Table>
+        <Box w="100%">
+   <Button size="sm" float="right" w={20} colorScheme="red">
+                Delete
+              </Button>
+     </Box>
+    </>
       </Stack>
       
   );

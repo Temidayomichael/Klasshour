@@ -1,5 +1,4 @@
 
-import { useQuery } from 'react-query';
 import axios from 'axios';
 import getConfig from 'next/config'
 import { parseCookies } from 'nookies';
@@ -9,22 +8,15 @@ import {
   useToast,
   Text
 } from '@chakra-ui/react';
-const { publicRuntimeConfig } = getConfig()
+import { GetClasses } from '../../Queries/queries';
 
 
-export default function ClassesTab({ jwt }) {
+export default function ClassesTab({ jwt, useQuery }) {
 
-  const getClasses = async () => {
-    const {data}= await axios.get(`${publicRuntimeConfig.API_URL}/classes`, {
-  headers: {
-    'Authorization':  `Bearer ${jwt}` 
-  }
-    })
-    return data
-  }
-  const { isLoading, data, isError,isFetching} = useQuery(["classes"], getClasses)
+
+  const { data: dataR, isError: errorR, isLoading: landingR, isFetching: fetchingR } = useQuery(["classes"], GetClasses)
   const toast = useToast()
-  if (isLoading) {
+  if (landingR) {
     return <Center><Spinner
   thickness="4px"
   speed="0.65s"
@@ -34,8 +26,8 @@ export default function ClassesTab({ jwt }) {
     />
       </Center>
   }
-  console.log(isError)
-  if (isError) {
+  console.log(errorR)
+  if (errorR) {
     return   toast({
           title: "Error getting classes ...",
           status: "error",
@@ -45,23 +37,21 @@ export default function ClassesTab({ jwt }) {
   }
 
   return (
-    <>
-    <>
-    {isFetching && <Center><Spinner
-  thickness="4px"
+  <>
+    {fetchingR && <Center><Spinner
+  thickness="2px"
   speed="0.65s"
   emptyColor="gray.200"
   color="blue.500"
   size="md"
       />
-        Updating ...
       </Center>
       }
-    </>
+    
       {
-        data.map((data, index) => {
+        dataR.map((data, index) => {
 
-         return <Text>{data.details.requestDesc}</Text>
+          return <Text key={index} >{data.details.requestDesc}</Text>
         }
         )
       }

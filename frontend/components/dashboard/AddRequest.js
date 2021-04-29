@@ -22,6 +22,7 @@ import {
 } from '@chakra-ui/react'
 import axios from "axios";
 import getConfig from 'next/config'
+import { useMutation } from "react-query";
 
 export default function AddRequest({
     useFormik,
@@ -32,7 +33,9 @@ export default function AddRequest({
 
   const { publicRuntimeConfig } = getConfig()
 const { isOpen, onOpen, onClose } = useDisclosure()
- 
+ const [mutate, info] = useMutation(AddRequest)
+  
+  
 const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]
 
   const requestForm = useFormik({
@@ -51,6 +54,8 @@ const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Ben
     }),
      
     onSubmit: async (values) => {
+
+      
        const postRequest = {
         method: 'POST', // Method itself
         headers: {
@@ -70,6 +75,8 @@ const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Ben
         .then(response => response.json())
         .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
         .catch(err => console.log(err))
+      
+      
     }
   })
 

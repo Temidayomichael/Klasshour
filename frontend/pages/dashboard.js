@@ -19,7 +19,7 @@ import DataGrid from 'react-data-grid';
 import BasicInfo from '../components/dashboard/basicInfo'
 import RequestTab from '../components/dashboard/RequestTab'
 import ClassesTab from '../components/dashboard/ClassesTab'
-
+import { useQuery,useMutation } from "react-query";
 
  
 const { publicRuntimeConfig } = getConfig()
@@ -165,12 +165,16 @@ export default function Dashboard({ jwt, requests, requestData }) {
                 <TabPanel className="mycontainer" 
               mx="auto">
               <RequestTab
-           jwt={jwt}
+                jwt={jwt}
+                useQuery={useQuery}
+                useMutation={useMutation}
               />
                 </TabPanel>
                 <TabPanel>
               <ClassesTab
                 jwt={jwt}
+                useQuery={useQuery}
+                useMutation={useMutation}
               />
                 </TabPanel>
             </TabPanels>
@@ -196,29 +200,29 @@ export default function Dashboard({ jwt, requests, requestData }) {
 export async function getServerSideProps(ctx) {
   
   const jwt = parseCookies(ctx).jwt
-  const res = await fetch(`${publicRuntimeConfig.API_URL}/requests?_sort=createdAt:desc`);
-  const requests = await res.json()
-  let requestData =[];
-  requests.forEach(function (request) {
-    let reqObj = {
-      id: request.id,
-      desc: request.requestDesc,
-      status: request.status,
-      location: request.location,
-      subject: request.subject,
-      type: request.type,
-      userImage: request.user.userImage.url
-    }
-    requestData.push( reqObj)
+//   const res = await fetch(`${publicRuntimeConfig.API_URL}/requests?_sort=createdAt:desc`);
+//   const requests = await res.json()
+//   let requestData =[];
+//   requests.forEach(function (request) {
+//     let reqObj = {
+//       id: request.id,
+//       desc: request.requestDesc,
+//       status: request.status,
+//       location: request.location,
+//       subject: request.subject,
+//       type: request.type,
+//       userImage: request.user.userImage.url
+//     }
+//     requestData.push( reqObj)
     
-});
+// });
   
 
     return {
         props: {
-        requests,
+        // requests,
         jwt,
-          requestData
+          // requestData
       }
 
   }
