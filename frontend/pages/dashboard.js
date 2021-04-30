@@ -95,7 +95,7 @@ export default function Dashboard({ jwt, requests, requestData }) {
                         <Flex m="auto" >
                     <Tab  _selected={{ fontWeight: "bold"}} >Profile</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Subjects</Tab>
-                            <Tab  _selected={{ fontWeight: "bold" }}>Sessions</Tab>
+                            <Tab  _selected={{ fontWeight: "bold" }}>Classes</Tab>
                             <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
                             <Tab  _selected={{ fontWeight: "bold" }}>Messages</Tab>
                         </Flex>

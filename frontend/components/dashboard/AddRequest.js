@@ -22,18 +22,23 @@ import {
 } from '@chakra-ui/react'
 import axios from "axios";
 import getConfig from 'next/config'
-import { useMutation } from "react-query";
+import { AddToRequest } from "../../Queries/queries";
 
 export default function AddRequest({
     useFormik,
   isLoading,
-  jwt,
-    user
+  user,
+    useMutation
 }) {
 
   const { publicRuntimeConfig } = getConfig()
-const { isOpen, onOpen, onClose } = useDisclosure()
- const [mutate, info] = useMutation(AddRequest)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  
+   const {mutate,data,status}=useMutation(AddToRequest,{
+        onSuccess:()=>{
+            alert("Successfully Posted")
+        }
+    });
   
   
 const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]
@@ -55,28 +60,14 @@ const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Ben
      
     onSubmit: async (values) => {
 
-      
-       const postRequest = {
-        method: 'POST', // Method itself
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-          'Authorization':  `Bearer ${jwt}`     // Indicates the content
-        },
-         body: JSON.stringify({
-           type: values.type,
-           subject: values.subject,
-           requestDesc: values.requestDesc,
-           location: values.location,
-           status: 'open',
-           user: user
-         }),   //send data in JSON format
-      }
-      fetch(`${publicRuntimeConfig.API_URL}/requests`, postRequest)
-        .then(response => response.json())
-        .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
-        .catch(err => console.log(err))
-      
-      
+      try {
+        await mutate({
+            values: values,
+            user: user
+          
+       })
+      } catch(e) { }
+      console.log(status)
     }
   })
 

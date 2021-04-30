@@ -16,17 +16,21 @@ import {
 } from '@chakra-ui/react'
 import { parseCookies } from 'nookies'
 import { useFormik } from "formik";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UserContext from "../../contexts/UserContext";
 import AddRequest from "./AddRequest";
 import { GetMyRequests } from '../../Queries/queries';
+import { useMutation } from 'react-query';
 
 
 export default function RequestTab({useQuery, useMutation}) {
   const userData = useContext(UserContext)
    const jwt = parseCookies().jwt
-    
-  const { isError, isLoading, isFetching, data } = useQuery(["myrequest", userData], GetMyRequests)
+  const [show, setShow] = useState("none")  
+  const [delRequests, setDelRequests] = useState([])  
+  
+  console.log(delRequests)
+  const { isError, isLoading, isFetching, data } = useQuery(["myrequests", userData], GetMyRequests)
 
   const toast = useToast()
   if (isLoading) {
@@ -52,11 +56,12 @@ export default function RequestTab({useQuery, useMutation}) {
   return (
    
       <Stack spacing={3}>
-     {/* <AddRequest
+     <AddRequest
                 useFormik={useFormik}
                 jwt={jwt}
-                user={userData.id}
-              /> */}
+        user={userData.id}
+        useMutation={useMutation}
+              />
                 <>
     {isFetching && <Center><Spinner
   thickness="2px"
@@ -68,7 +73,7 @@ export default function RequestTab({useQuery, useMutation}) {
       </Center>
       }
     <Box w="100%">
-   <Button size="sm" float="right" w={20} colorScheme="red">
+   <Button size="sm" float="right" display={show} w={20} colorScheme="red">
                 Delete
               </Button>
      </Box>
@@ -79,7 +84,8 @@ export default function RequestTab({useQuery, useMutation}) {
           
   <Thead>
             <Tr>
-                <Th></Th>
+              <Th>
+                </Th>
       <Th>Type</Th>
       <Th>Status</Th>
       <Th>Location</Th>
@@ -95,7 +101,12 @@ export default function RequestTab({useQuery, useMutation}) {
 
           return <Tr key={index} >
             <Td>
-               <Checkbox size="md" isInvalid colorScheme="red" />
+              <Checkbox size="md" onChange={() => {
+                setDelRequests([...delRequests,data])
+              }}
+                
+                isInvalid
+                colorScheme="red" />
             </Td>
             <Td><Editable defaultValue={data.type}>
   <EditablePreview />
