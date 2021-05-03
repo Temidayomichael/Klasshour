@@ -1386,37 +1386,71 @@
               }
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "students": {
-                  "type": "string"
-                },
-                "tutor": {
-                  "type": "string"
-                },
-                "details": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "details": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "tutor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "teachingClass": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "details": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "tutor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
@@ -1473,11 +1507,11 @@
           "khcoin": {
             "type": "string"
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "class": {
+            "type": "string"
+          },
+          "teachingClass": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

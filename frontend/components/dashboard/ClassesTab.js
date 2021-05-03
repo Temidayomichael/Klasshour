@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 import { parseCookies } from 'nookies';
 import {
   Center,
@@ -11,12 +12,13 @@ import {
 import { GetClasses } from '../../Queries/queries';
 
 
-export default function ClassesTab({ jwt, useQuery }) {
+export default function ClassesTab({ useQuery }) {
 
-
-  const { data: dataR, isError: errorR, isLoading: landingR, isFetching: fetchingR } = useQuery(["classes"], GetClasses)
+ 
+  const { data, isError, isLoading, isFetching,success } = useQuery(["classes"],GetClasses)
+  console.log( data) 
   const toast = useToast()
-  if (landingR) {
+  if (isLoading) {
     return <Center><Spinner
   thickness="4px"
   speed="0.65s"
@@ -26,8 +28,8 @@ export default function ClassesTab({ jwt, useQuery }) {
     />
       </Center>
   }
-  console.log(errorR)
-  if (errorR) {
+  console.log(isError)
+  if (isError) {
     return   toast({
           title: "Error getting classes ...",
           status: "error",
@@ -35,22 +37,21 @@ export default function ClassesTab({ jwt, useQuery }) {
           isClosable: true,
         })
   }
-
   return (
-  <>
-    {fetchingR && <Center><Spinner
-  thickness="2px"
-  speed="0.65s"
-  emptyColor="gray.200"
-  color="blue.500"
-  size="md"
+    <>
+      {isFetching && <Center><Spinner
+        thickness="2px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="md"
       />
       </Center>
       }
     
       {
-        dataR.map((data, index) => {
-
+        data.map((data, index) => {
+          console.log(data.students)
           return <Text key={index} >{data.details.requestDesc}</Text>
         }
         )

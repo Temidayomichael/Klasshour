@@ -590,11 +590,11 @@
               "khcoin": {
                 "type": "string"
               },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "class": {
+                "type": "string"
+              },
+              "teachingClass": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"

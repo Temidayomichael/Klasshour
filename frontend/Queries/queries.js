@@ -49,10 +49,16 @@ export const AddToRequest = async ({ values, user }) => {
 
 export const GetClasses = async () => {
  
-    const {data}= await axios.get(`${publicRuntimeConfig.API_URL}/classes`, {
+  const { data } = await axios.get(`${publicRuntimeConfig.API_URL}/classes`, {
+      //     params: {
+      // student: {
+      //         key:[1],
+      //         id:  [userData.id]
+      // }
+      // },
   headers: {
     'Authorization':  `Bearer ${jwt}` 
   }
-    })
+  })
     return data
 }

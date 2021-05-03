@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/28/2021 12:44:06 PM"
+    "x-generation-date": "05/02/2021 7:51:57 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3688,134 +3688,71 @@
             "type": "string"
           },
           "students": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "userImage": {
-                "type": "string"
-              },
-              "requests": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "userImage": {
+                  "type": "string"
+                },
+                "requests": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fullname": {
+                  "type": "string"
+                },
+                "khcoin": {
+                  "type": "string"
+                },
+                "class": {
+                  "type": "string"
+                },
+                "teachingClass": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "tutor": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "userImage": {
-                "type": "string"
-              },
-              "requests": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -3860,6 +3797,72 @@
             "type": "string",
             "format": "date-time"
           },
+          "tutor": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "userImage": {
+                "type": "string"
+              },
+              "requests": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fullname": {
+                "type": "string"
+              },
+              "khcoin": {
+                "type": "string"
+              },
+              "class": {
+                "type": "string"
+              },
+              "teachingClass": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -3869,10 +3872,10 @@
       "NewClass": {
         "properties": {
           "students": {
-            "type": "string"
-          },
-          "tutor": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "details": {
             "type": "string"
@@ -3880,6 +3883,9 @@
           "date": {
             "type": "string",
             "format": "date-time"
+          },
+          "tutor": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -3956,11 +3962,11 @@
               "khcoin": {
                 "type": "string"
               },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "class": {
+                "type": "string"
+              },
+              "teachingClass": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -4072,11 +4078,11 @@
               "khcoin": {
                 "type": "string"
               },
-              "classes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "class": {
+                "type": "string"
+              },
+              "teachingClass": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -4253,11 +4259,11 @@
                 "khcoin": {
                   "type": "string"
                 },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "class": {
+                  "type": "string"
+                },
+                "teachingClass": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -4507,37 +4513,71 @@
               }
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "students": {
-                  "type": "string"
-                },
-                "tutor": {
-                  "type": "string"
-                },
-                "details": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "class": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "details": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "tutor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "teachingClass": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "students": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "details": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "tutor": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
@@ -4594,11 +4634,11 @@
           "khcoin": {
             "type": "string"
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "class": {
+            "type": "string"
+          },
+          "teachingClass": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

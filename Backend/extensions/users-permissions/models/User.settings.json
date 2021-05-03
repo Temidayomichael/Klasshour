@@ -80,9 +80,13 @@
       "model": "khcoins",
       "via": "users_permissions_user"
     },
-    "classes": {
+    "class": {
       "via": "students",
-      "collection": "class"
+      "model": "class"
+    },
+    "teachingClass": {
+      "via": "tutor",
+      "model": "class"
     }
   }
 }

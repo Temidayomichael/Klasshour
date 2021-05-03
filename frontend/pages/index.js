@@ -9,6 +9,8 @@ import cashmoney  from "public/lotties/cashmoney.json"
 import time  from "public/lotties/time.json"
 import elearning  from "public/lotties/elearning.json"
 import Head from "next/head";
+import { notifyManager } from 'react-query';
+
 
 export default function Home() {
     const handleClick =()=>{
@@ -18,7 +20,7 @@ export default function Home() {
     
     function Feature({ title, icon, desc, ...rest }) {
         return (
-          <Flex p={3} bg="gray.100"  shadow="md" borderWidth="1px" flex="1" rounded="md" {...rest}>
+          <Flex p={3} shadow="md" borderWidth="1px" flex="1" rounded="md" {...rest}>
               <Box>
                     <Icon m="5" color="#161B45" as={icon} textAlign="center" />
                   {
@@ -38,9 +40,9 @@ export default function Home() {
 
     function WhatWeDo({ title, step, desc }) {
         return (
-               <Flex p={3} bg="gray.100" flex="1" rounded="md">
+               <Flex p={3}  flex="1" rounded="md">
               <Box>
-                    <Text m="5" fontSize="xl" fontWeight="bold" color="#161B45" textAlign="center">{step}</Text>
+                    <Text m="5" fontSize="xl" fontWeight="bold" color="white" textAlign="center">{step}</Text>
                   {
                       
                   }
@@ -61,42 +63,43 @@ export default function Home() {
         <>
             <Head>
                 <title>Find tutors | Klasshour</title>
-                 <link rel="icon" href="../img/home_logo.png" />
+                <link rel="icon" href="../img/home_logo.png" />
             </Head>
          
             <Box>
-                <Center  className="mycontainer"
-                mx="auto" h="70vh" textAlign="center" justifyContent="space-between">
-                <Box  maxW="32rem">
+                <Center className="mycontainer"
+                    mx="auto" h="70vh" textAlign="center" justifyContent="space-between">
+                    <Box maxW="32rem">
                         <Heading fontSize="53px" mb={4} color="#161B45" my={3} > GET INSTANT HELP</Heading>
                         <Text fontSize="lg">Online & Home Tutoring. Homework Help. Test Prep.</Text>
-                <InputGroup mt="24px" display={{ xl: "flex" }} >
-                    <Input variant="filled"    focusBorderColor="#161B45" mb="5"  placeholder="Subject: Math,English"  size="lg" />
+                        <InputGroup mt="24px" display={{ xl: "flex" }} >
+                            <Input variant="filled" focusBorderColor="#161B45" mb="5" placeholder="Subject: Math,English" size="lg" />
                     
-                    <Button   width="35%"
-                         bg="#161B45" _hover={{ opacity: "0.9" }} 
-                         _active={{
-                             bg: "#161B45",
-                             transform: "scale(0.88)",
-                           }}
-                         color="white" size="md" onClick={handleClick}
-                    >Go </Button>
+                            <Button width="35%"
+                                bg="#161B45" _hover={{ opacity: "0.9" }}
+                                _active={{
+                                    bg: "#161B45",
+                                    transform: "scale(0.88)",
+                                }}
+                                color="white" size="md" onClick={handleClick}
+                            >Go </Button>
                    
-                </InputGroup>
+                        </InputGroup>
                             
-</Box>
+                    </Box>
+                    
                     <Box w="500px">
-                   <Lottie
+                        <Lottie
                             loop
-                            animationData={elearning }
+                            animationData={elearning}
                             play
-                            />
+                        />
                                 
                        
                     </Box>
                     
-                    </Center>
-                    {/* <Stack  maxW="80rem"  m="auto">
+                </Center>
+                {/* <Stack  maxW="80rem"  m="auto">
             <SimpleGrid my="70px" columns={[
                     "1", // base
                     "1", // 480px upwards
@@ -125,122 +128,152 @@ export default function Home() {
                     </SimpleGrid>
                     
                     </Stack> */}
-                <Box bg="gray.100" py="20"  >
-                    <Box h="90%" m="auto" className="mycontainer" >   
+                <Box py="20" h="100vh" >
+                    <Divider borderColor="gray.400" />
+                    <Center h="90%" m="auto" className="mycontainer" >
                         <SimpleGrid columns={[
-                    "1", // base
-                    "2", // 480px upwards
-                    "2", // 768px upwards
-                    "3", // 992px upwards
+                            "1", // base
+                            "2", // 480px upwards
+                            "2", // 768px upwards
+                            "3", // 992px upwards
                         ]} gap={12}>
-                             <Feature
+                            <Feature
                                 title="Online Tutoring"
                                 desc="Find a tutor to take you through specific topics or explaincertain points"
                                 icon={SiGoogleclassroom}
-                />
+                            />
               
-                    <Feature
+                            <Feature
                                 title="Home Work Help"
                                 desc="Take short sessions to help you solve particular questions"
                                 icon={AiOutlineHome}
-                />
-                    <Feature
+                            />
+                            <Feature
                                 title="Test / Exam Prep"
                                 desc="Get a tutor to prepare you for your, upcoming tests and exams"
                                 icon={SiMinetest}
-                />
-                    <Feature
+                            />
+                            <Feature
                                 title="Skills"
                                 desc="Learn a new skill online like baking, graphics design e.t.c"
                                 icon={GiGuitar}
-                />
-                    <Feature
+                            />
+                            <Feature
                                 title="Coding"
                                 desc="Get a programmer to solve your coding problems and help you learn how to code"
                                 icon={AiOutlineLaptop}
-                />
-                    <Feature
+                            />
+                            <Feature
                                 title="Project Help"
                                 desc="Find a scholar to help you prepare, and analyse youR thesis"
                                 icon={AiOutlineProject}
-                />
+                            />
                 
                            
              
-                </SimpleGrid>
-            </Box>
-            </Box>
-            <Box>
-                    <Stack maxW="70rem" m="auto" spacing={20} >
-         <Flex justifyContent="space-between" align="center" >
-                <Box w="22rem">
-                    <Text fontSize="3xl" color="#161B45" fontWeight="bold">Get Complicated Questions Answered</Text>
-                    <Text fontSize="lg">You will only pay after you have concluded your session/minutes with your tutor </Text>
-                </Box>
-                    <Box align="center" >
-                        <Lottie
-                            loop
-                            animationData={question }
-                            play
-                            />
-                </Box>
-                        </Flex>
-                        <Divider borderColor="gray.400" />
-         <Flex justifyContent="space-between" align="center" >
-               
-                    <Box align="center" >
-                        <Lottie
-                            loop
-                            animationData={time }
-                            play
-                            />
-                            </Box>
-                             <Box w="22rem">
-                    <Text fontSize="3xl" color="#161B45" fontWeight="bold">Charge Per Minute</Text>
-                    <Text fontSize="lg">No minimum or limits to class you can take, you will only be charged for the minute of tutoring</Text>
-                            </Box>
-        </Flex>
-                        <Divider borderColor="gray.400" />
-                          <Flex justifyContent="space-between" align="center" >
-                <Box w="22rem">
-                    <Text fontSize="3xl" color="#161B45" fontWeight="bold">Pay After a session</Text>
-                    <Text fontSize="lg">You will only pay after you have concluded your session/minutes with your tutor</Text>
-                </Box>
-                    <Box align="center" >
-                        <Lottie
-                            loop
-                            animationData={cashmoney }
-                            play
-                            />
-                </Box>
-                        </Flex>
-                </Stack>
-            </Box>
-                <Box bg="gray.100" py="20"  >
-                    <SimpleGrid columns={3} spacing={10} maxW="70rem" m="auto" >
-                            <WhatWeDo  title="Post a Request" step="step1" desc="Post a specific topic, or a specific question. Tutors will apply to your request and offer their help." />
-                            <WhatWeDo  title="Choose Your Perfect Tutor" desc="Choose your tutor among many of those who apply. You can select depending on reviews, experience, price, and other factors." step="step2" />
-                            <WhatWeDo title="Start a Session Online Or Anywhere" desc="Choose Contact me to get a call from the tutor if you want home tutoring, or choose a tutor with Online Now tag, and click Take a Session to take your session online." step="step3" />
                         </SimpleGrid>
+                    </Center>
+                </Box>
+                <Box bg="#161B45" color="white">
+                    <Stack maxW="70rem" m="auto" spacing={20} >
+                        <Flex justifyContent="space-between" align="center" >
+                            <Box w="22rem">
+                                <Text fontSize="3xl" color="#161B45" fontWeight="bold">Get Complicated Questions Answered</Text>
+                                <Text fontSize="lg">You will only pay after you have concluded your session/minutes with your tutor </Text>
+                            </Box>
+                            <Box align="center" >
+                                <Lottie
+                                    loop
+                                    animationData={question}
+                                    play
+                                />
+                            </Box>
+                        </Flex>
+                        <Divider borderColor="gray.400" />
+                        <Flex justifyContent="space-between" align="center" >
+               
+                            <Box align="center" >
+                                <Lottie
+                                    loop
+                                    animationData={time}
+                                    play
+                                />
+                            </Box>
+                            <Box w="22rem">
+                                <Text fontSize="3xl" color="#161B45" fontWeight="bold">Charge Per Minute</Text>
+                                <Text fontSize="lg">No minimum or limits to class you can take, you will only be charged for the minute of tutoring</Text>
+                            </Box>
+                        </Flex>
+                        <Divider borderColor="gray.400" />
+                        <Flex justifyContent="space-between" align="center" >
+                            <Box w="22rem">
+                                <Text fontSize="3xl" color="#161B45" fontWeight="bold">Pay After a session</Text>
+                                <Text fontSize="lg">You will only pay after you have concluded your session/minutes with your tutor</Text>
+                            </Box>
+                            <Box align="center" >
+                                <Lottie
+                                    loop
+                                    animationData={cashmoney}
+                                    play
+                                />
+                            </Box>
+                        </Flex>
+                    </Stack>
+                </Box>
+                <Center h="80vh" py="20"  >
+                    <SimpleGrid columns={3} spacing={10} maxW="70rem" m="auto" >
+                        <WhatWeDo title="Post a Request" step="step1" desc="Post a specific topic, or a specific question. Tutors will apply to your request and offer their help." />
+                        <WhatWeDo title="Choose Your Perfect Tutor" desc="Choose your tutor among many of those who apply. You can select depending on reviews, experience, price, and other factors." step="step2" />
+                        <WhatWeDo title="Start a Session Online Or Anywhere" desc="Choose Contact me to get a call from the tutor if you want home tutoring, or choose a tutor with Online Now tag, and click Take a Session to take your session online." step="step3" />
+                    </SimpleGrid>
                  
-                </Box>   
-                <Center py="20" maxW="70rem" m="auto" justifyContent="space-between" >
-                    <Box >
-                       <Heading fontSize="3xl" color="#161B45" fontWeight="bold">Are you intrested in becoming a tutor with Klasshour?</Heading>
-                            <Text fontSize="lg" >Find students all over the world,<br />
+                </Center>
+                <Box bg="gray.800" >
+                    <Center py="20" maxW="70rem" m="auto" justifyContent="center" align="center" h="100vh" >
+                        <Box>
+                            <Heading fontSize="6xl" color="gray.200" w="70" fontWeight="bold"> Become a tutor with <br /> Klasshour</Heading>
+                            <Text color="gray.400" my={5} fontSize="lg" >Find students all over the world,
                         Use Modaris modern VirtualClassroom,<br />
                         Teach on your own time and
                         Get paid securely.</Text>
-                    </Box>  
-                              <Button 
-                       colorScheme="red"
+                   
+                            <Button
+                                colorScheme="whiteAlpha"
+                                rightIcon={<AiOutlineArrowRight />}
+                                size="lg"
+                                _active={{
+                                    transform: "scale(0.98)",
+                                }}
+                                _focus={{
+                                    textDecoration: "none"
+                                }}
+                            >Learn more</Button>
+                               {/* <Image
+                                w="100%"
+                                mt={10}
+                            h="400px"
+                            objectFit="cover"
+                            src="../img/class.jpg" /> */}
+                        </Box>
+                    </Center>
+                   
+                </Box>
+                <Center py="20" maxW="70rem" m="auto" justifyContent="space-between"  >
+                    <Box >
+                        <Heading fontSize="3xl" color="#161B45" fontWeight="bold">Are you intrested in becoming a tutor with Klasshour?</Heading>
+                        <Text fontSize="lg" >Find students all over the world,<br />
+                        Use Modaris modern VirtualClassroom,<br />
+                        Teach on your own time and
+                        Get paid securely.</Text>
+                    </Box>
+                    <Button
+                        colorScheme="red"
                         rightIcon={<AiOutlineArrowRight />}
-                         size="lg" 
+                        size="lg"
                     >Get Started</Button>
-                    <a className='btn btn-primary' target='new' href='https://app.learncube.com/api/virtual-classroom/class/start/?pub_key=8d8653d7a394ebd47449fa54&room_token=example-token-CtO2Z2&userid=example-user-14uJfB'>Enter class</a>
-                </Center>   
+                </Center>
             </Box>
-            </>
+        </>
     )
 }
 

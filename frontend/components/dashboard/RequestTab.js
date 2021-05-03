@@ -55,106 +55,109 @@ export default function RequestTab({useQuery, useMutation}) {
 
   return (
    
-      <Stack spacing={3}>
-     <AddRequest
-                useFormik={useFormik}
-                jwt={jwt}
+    <Stack spacing={3}
+    zIndex={0}
+    >
+      <AddRequest
+        useFormik={useFormik}
+        jwt={jwt}
         user={userData.id}
         useMutation={useMutation}
-              />
-                <>
-    {isFetching && <Center><Spinner
-  thickness="2px"
-  speed="0.65s"
-  emptyColor="gray.200"
-  color="blue.500"
-          size="md"
       />
-      </Center>
-      }
-    <Box w="100%">
-   <Button size="sm" float="right" display={show} w={20} colorScheme="red">
-                Delete
+      <>
+        {isFetching && <Center><Spinner
+          thickness="2px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="md"
+        />
+        </Center>
+        }
+        <Box w="100%">
+          <Button size="sm" float="right" display={show} w={20} colorScheme="red">
+            Delete
               </Button>
-     </Box>
+        </Box>
         <Table variant="striped" colorScheme="linkedin">
           <TableCaption placement="top">
             Imperial to metric conversion factors
             </TableCaption>
           
-  <Thead>
+          <Thead>
             <Tr>
               <Th>
-                </Th>
-      <Th>Type</Th>
-      <Th>Status</Th>
-      <Th>Location</Th>
-      <Th>Subject</Th>
-      <Th>Request Description</Th>
+              </Th>
+              <Th>Type</Th>
+              <Th>Status</Th>
+              <Th>Location</Th>
+              <Th>Subject</Th>
+              <Th>Request Description</Th>
     
-    </Tr>
-  </Thead>
-  <Tbody>
+            </Tr>
+          </Thead>
+          <Tbody>
    
-     {
-        data.map((data, index) => {
+            {
+              data.map((data, index) => {
 
-          return <Tr key={index} >
-            <Td>
-              <Checkbox size="md" onChange={() => {
-                setDelRequests([...delRequests,data])
-              }}
+                return <Tr key={index} >
+                  <Td>
+                    <Checkbox size="md" onChange={() => {
+                      setDelRequests([...delRequests, data])
+                    }}
                 
-                isInvalid
-                colorScheme="red" />
-            </Td>
-            <Td><Editable defaultValue={data.type}>
-  <EditablePreview />
-  <EditableInput />
-</Editable></Td>
-            <Td>
-              <Editable color={data.status=="closed"? "red":"green"} defaultValue={data.status}>
-  <EditablePreview />
-  <EditableInput />
-</Editable></Td>
-            <Td><Editable defaultValue={data.location}>
-  <EditablePreview />
-  <EditableInput />
-</Editable></Td>
-            <Td><Editable defaultValue={data.subject}>
-  <EditablePreview />
-  <EditableInput />
-</Editable></Td>
-            <Td><Editable defaultValue={data.requestDesc}>
-  <EditablePreview />
-  <EditableInput />
-</Editable></Td>
+                      isInvalid
+                      colorScheme="red" />
+                  </Td>
+                  <Td><Editable defaultValue={data.type}>
+                    <EditablePreview />
+                    <EditableInput />
+                  </Editable></Td>
+                  <Td>
+                    <Editable color={data.status == "closed" ? "red" : "green"} defaultValue={data.status}>
+                      <EditablePreview />
+                      <EditableInput />
+                    </Editable></Td>
+                  <Td><Editable defaultValue={data.location}>
+                    <EditablePreview />
+                    <EditableInput />
+                  </Editable></Td>
+                  <Td><Editable defaultValue={data.subject}>
+                    <EditablePreview />
+                    <EditableInput />
+                  </Editable></Td>
+                  <Td><Editable defaultValue={data.requestDesc}>
+                    <EditablePreview />
+                    <EditableInput />
+                  </Editable></Td>
          
-          </Tr>
+                </Tr>
           
-        }
-        )
+              }
+              )
             }
           </Tbody>
         
-  <Tfoot>
-    <Tr>
-       <Th>Type</Th>
-      <Th>Status</Th>
-      <Th>Location</Th>
-      <Th>Subject</Th>
-      <Th>Request Description</Th>
-    </Tr>
-  </Tfoot>
+          <Tfoot>
+            <Tr>
+              <Th></Th>
+              <Th>Type</Th>
+              <Th>Status</Th>
+              <Th>Location</Th>
+              <Th>Subject</Th>
+              <Th>Request Description</Th>
+            </Tr>
+          </Tfoot>
         </Table>
         <Box w="100%">
-   <Button size="sm" float="right" w={20} colorScheme="red">
-                Delete
+          <Button size="sm" float="right" w={20} colorScheme="red">
+            Delete
               </Button>
-     </Box>
-    </>
-      </Stack>
+        </Box>
+      </>
+    </Stack>
       
-  );
+  )
 }
 

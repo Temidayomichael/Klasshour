@@ -129,29 +129,33 @@ export default function Dashboard({ jwt, requests, requestData }) {
         </Box>
   ) : (
       <Box>
-            <Tabs isLazy>
-             <TabList justifyContent="space-between"  color="white" bg="#161B45" >
-                        <Flex m="auto" >
+        
+        <Tabs
+          d="flex"
+                
+          isLazy>
+          <Box></Box>
+             <TabList width="200px" left="0"
+         height="100%" color="white" bg="#161B45" >
+                        <Box mt="10" >
                     <Tab  _selected={{ fontWeight: "bold"}} ><AiOutlineProfile ml="2" /> Profile</Tab>
                     <Tab  _selected={{ fontWeight: "bold"}} >My Request</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Sessions</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
-                    <Tab  _selected={{ fontWeight: "bold" }}>Messages</Tab>
-                        </Flex>
-                        <Flex>
-                <Center fontSize="lg">
+              <Tab _selected={{ fontWeight: "bold" }}>Messages</Tab>
+                <Box fontSize="lg">
                     <Kbd  color="white" bg="red" mr="2">23</Kbd> <Kbd>Khcoins</Kbd>
-                    </Center>
+                    </Box>
                             <Tab>*********</Tab>
-                            </Flex>
+                          
+                        </Box>
+                        
+              
             </TabList>
-          <Alert status="info" my="4">
-              <AlertIcon />
-                  Click the text to edit
-                     
-                  </Alert>
-            <TabPanels>
-              <TabPanel w="30pv"   maxW="50vw" 
+         
+          <TabPanels className="tabs">
+            
+              <TabPanel w="30pv"  
               mx="auto">
               <BasicInfo
                 useFormik={useFormik}
@@ -162,15 +166,15 @@ export default function Dashboard({ jwt, requests, requestData }) {
                 requests={requests}
               />
                 </TabPanel>
-                <TabPanel className="mycontainer" 
-              mx="auto">
+                <TabPanel className="mycontainer"
+              m="auto">
               <RequestTab
                 jwt={jwt}
                 useQuery={useQuery}
                 useMutation={useMutation}
               />
                 </TabPanel>
-                <TabPanel>
+                <TabPanel  mx="auto">
               <ClassesTab
                 jwt={jwt}
                 useQuery={useQuery}

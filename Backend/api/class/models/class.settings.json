@@ -13,18 +13,19 @@
   "attributes": {
     "students": {
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "classes"
-    },
-    "tutor": {
-      "plugin": "users-permissions",
-      "model": "user"
+      "collection": "user",
+      "via": "class"
     },
     "details": {
       "model": "request"
     },
     "date": {
       "type": "datetime"
+    },
+    "tutor": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "teachingClass"
     }
   }
 }
