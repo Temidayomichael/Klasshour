@@ -9,9 +9,11 @@ import {
   SlideFade,
   
   Textarea,
+  Text,
 } from '@chakra-ui/react'
 import UserContext from '../contexts/UserContext'
-import { AiOutlineProfile } from 'react-icons/ai'
+import { AiOutlineMenuUnfold } from 'react-icons/ai'
+import { FaRegUser } from 'react-icons/fa'
 import { useFormik } from "formik";
 import Dropzone from 'react-dropzone'
 import axios from 'axios'
@@ -20,7 +22,7 @@ import BasicInfo from '../components/dashboard/basicInfo'
 import RequestTab from '../components/dashboard/RequestTab'
 import ClassesTab from '../components/dashboard/ClassesTab'
 import { useQuery,useMutation } from "react-query";
-
+import { push as Menu } from 'react-burger-menu'
  
 const { publicRuntimeConfig } = getConfig()
 
@@ -28,7 +30,7 @@ export default function Dashboard({ jwt, requests, requestData }) {
   console.log(requests)
   console.log(requestData)
 
-  
+
   const userData = useContext(UserContext)
   const [userFormData, setUserFormData] = useState({
     id: userData.id,
@@ -132,13 +134,14 @@ export default function Dashboard({ jwt, requests, requestData }) {
         
         <Tabs
           d="flex"
-                
           isLazy>
           <Box></Box>
-             <TabList width="200px" left="0"
-         height="100%" color="white" bg="#161B45" >
-                        <Box mt="10" >
-                    <Tab  _selected={{ fontWeight: "bold"}} ><AiOutlineProfile ml="2" /> Profile</Tab>
+             <TabList >
+            
+            <Menu pageWrapId={'page-wrap'}  customBurgerIcon={<AiOutlineMenuUnfold ml="2" />} >
+              <Text as="h1" ml="4" fontSize="3xl">Klasshour</Text>
+                      
+                   <Flex> <Tab  _selected={{ fontWeight: "bold"}} d="flex" ><FaRegUser  /> Profile</Tab></Flex>
                     <Tab  _selected={{ fontWeight: "bold"}} >My Request</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Sessions</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
@@ -148,15 +151,17 @@ export default function Dashboard({ jwt, requests, requestData }) {
                     </Box>
                             <Tab>*********</Tab>
                           
-                        </Box>
+                </Menu>
+              
+                   
                         
               
             </TabList>
          
-          <TabPanels className="tabs">
+          <TabPanels id="page-wrap" mt="36px" className="tabs" >
             
               <TabPanel w="30pv"  
-              mx="auto">
+              m="auto">
               <BasicInfo
                 useFormik={useFormik}
                 fullname={userData.fullname}
@@ -166,8 +171,10 @@ export default function Dashboard({ jwt, requests, requestData }) {
                 requests={requests}
               />
                 </TabPanel>
-                <TabPanel className="mycontainer"
-              m="auto">
+            <TabPanel
+              className="mycontainer"
+              m="auto"
+            id="page-wrap">
               <RequestTab
                 jwt={jwt}
                 useQuery={useQuery}
@@ -194,9 +201,11 @@ export default function Dashboard({ jwt, requests, requestData }) {
                 <title>Account Dashboard | Klasshour</title>
                 <link rel="icon" href="../img/home_logo.png" />
         </Head>
-        <Box className="content">
+        
+        <Box className="content" >
           {dashboardMenu} 
           </Box>
+          
         </SlideFade>
     )
 }

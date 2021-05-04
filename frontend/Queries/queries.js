@@ -62,3 +62,15 @@ export const GetClasses = async () => {
   })
     return data
 }
+
+export const DeleteRequest = async ({id}) => {
+ 
+  console.log(id)
+  const {data} = await axios.delete(`${publicRuntimeConfig.API_URL}/requests/${id}`, {
+    headers: {
+    'Authorization':  `Bearer ${jwt}` 
+  }
+  })
+
+    return data
+}

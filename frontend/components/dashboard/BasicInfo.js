@@ -7,7 +7,7 @@ import {
   FormHelperText,
   Input,
   Button,
- 
+ Text
 } from '@chakra-ui/react'
 import axios from 'axios'
 
@@ -76,7 +76,8 @@ export default function BasicInfo({
     })
 
     return (
-    
+      <>
+        <Text as="h1" fontSize="4xl" >Profile</Text>
     <form onSubmit={profileForm.handleSubmit}>
       <Stack spacing={3}>
     
@@ -131,5 +132,7 @@ export default function BasicInfo({
       </Stack>
          
         </form>
+
+        </>
     )
 }

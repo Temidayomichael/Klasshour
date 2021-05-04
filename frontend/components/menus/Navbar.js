@@ -6,7 +6,6 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import AuthOptions from '../auth/authOptions'
 import { parseCookies } from 'nookies'
 import UserContext from '../../contexts/UserContext'
-// import Sticky from 'react-sticky-el';
 
 export default function Navbar(ctx) {
         const { API_URL } = process.env
@@ -48,7 +47,7 @@ export default function Navbar(ctx) {
                                     </Text>
                                    
                            
-                                    <Text fontSize="sm">UI Engineer</Text>
+                                    <Link href="/dashboard" color="blue">My Dashboard</Link>
                                 </Box>
                
                             </> : ""
@@ -57,12 +56,12 @@ export default function Navbar(ctx) {
                       
                 </Flex>
             </Stack>
-            <Sticky>
+            <>
             <Flex align="center"
                 p={4}
                 bg="gray.800"
                 justifyContent="center"
-                fontSize="sm" 
+                    fontSize="sm"
                 color="gray.400"
                 display={["none", "none", "none", "flex"]}>
                 <Box>  <Link href="/"><a className={isActive('/')} >HOME</a></Link>   </Box>
@@ -71,11 +70,11 @@ export default function Navbar(ctx) {
                 <Box ml={5}>  <Link href="/faq" ><a className={isActive('/faq')} >FAQ</a></Link>    </Box>
                 <Box ml={5}>  <Link href="/search" ><a className={isActive('/search')} >SEARCH</a></Link>    </Box>
                 <Box ml={5}> <Link href="/support"><a className={isActive('/support')} >SUPPORT</a></Link></Box>
-                <Box ml={5}> <Link href="/news"><a className={isActive('/news')} >NEWS</a></Link></Box>
-                <Box ml={5}> <Link href="/dashboard"><a className={isActive('/dashboard')} >MY DASHBOARD</a></Link></Box>
+                    <Box ml={5}> <Link href="/news" ><a className={isActive('/news')} >NEWS</a></Link></Box>
+                    
                         
                 </Flex>
-                </Sticky>
+                </>
             <Box>
 
             </Box>
