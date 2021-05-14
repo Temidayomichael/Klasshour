@@ -145,7 +145,7 @@ export default function RequestTab({useQuery}) {
         }
         <Table variant="striped" colorScheme="linkedin">
           <TableCaption placement="top">
-            Imperial to metric conversion factors
+           
             </TableCaption>
           
           <Thead>

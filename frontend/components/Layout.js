@@ -30,7 +30,7 @@ export default function Layout({ children }) {
     }
     return (
         <Box bg="gray.50" >
-            <Box display={router.pathname !== '/dashboard' ? "block": 'none'}>
+            <Box >
                  <Navbar />
            </Box>
            

@@ -130,18 +130,15 @@ export default function Dashboard({ jwt, requests, requestData }) {
                
         </Box>
   ) : (
-      <Box>
-        
+      <Box className="mycontainer" m="auto"  my="10" >
+        <Text bg="#151a46" color="gray.50" p="3" m="0" >
+Klasshour Dashboard
+        </Text>
         <Tabs
-          d="flex"
+           variant="enclosed" 
           isLazy>
-          <Box></Box>
-             <TabList >
-            
-            <Menu pageWrapId={'page-wrap'}  customBurgerIcon={<AiOutlineMenuUnfold ml="2" />} >
-              <Text as="h1" ml="4" fontSize="3xl">Klasshour</Text>
-                      
-                   <Flex> <Tab  _selected={{ fontWeight: "bold"}} d="flex" ><FaRegUser  /> Profile</Tab></Flex>
+             <TabList>
+              <Tab _selected={{ fontWeight: "bold" }} d="flex" ><FaRegUser /> Profile</Tab>
                     <Tab  _selected={{ fontWeight: "bold"}} >My Request</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Sessions</Tab>
                     <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
@@ -150,15 +147,12 @@ export default function Dashboard({ jwt, requests, requestData }) {
                     <Kbd  color="white" bg="red" mr="2">23</Kbd> <Kbd>Khcoins</Kbd>
                     </Box>
                             <Tab>*********</Tab>
-                          
-                </Menu>
-              
                    
                         
               
             </TabList>
          
-          <TabPanels id="page-wrap" mt="36px" className="tabs" >
+          <TabPanels id="page-wrap"  className="tabs" >
             
               <TabPanel w="30pv"  
               m="auto">
