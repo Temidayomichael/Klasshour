@@ -15,23 +15,23 @@ import {
 import  { useContext } from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
-import { AiOutlineArrowRight, AiOutlineDashboard } from 'react-icons/ai'
+import { AiOutlineArrowRight, AiOutlineDashboard, AiOutlineQuestion } from 'react-icons/ai'
 import AuthOptions from '../auth/authOptions'
 import UserContext from '../../contexts/UserContext'
 import { FaRegUser } from 'react-icons/fa'
-import { RiDeleteBin5Line } from 'react-icons/ri'
+import { MdAttachMoney } from 'react-icons/md'
 import { GrNotification } from 'react-icons/gr'
 import { IoLogOutOutline, IoSettingsOutline } from 'react-icons/io5'
 import { destroyCookie, parseCookies } from 'nookies'
-
 export default function Navbar(ctx) {
+     const userData = useContext(UserContext)
         const { API_URL } = process.env
     const router = useRouter()
     function isActive(route) {
         if (route == router.pathname) {
             return "active"
         }
-        else ""
+        
     }
     const register = () => router.push("/register");
     const login = () => router.push("/login");
@@ -41,12 +41,12 @@ export default function Navbar(ctx) {
         destroyCookie(null, 'jwt')
         router.push("/login")
    }
-    const userData = useContext(UserContext)
+   
     return (
         <Box >
             <Stack isInline justify="space-between"
                 w="100%"
-                maxW="1280px"
+               className="mycontainer"
                 mx="auto"
                 py={5}
               
@@ -107,11 +107,21 @@ export default function Navbar(ctx) {
                                             boxSize="35px" src={`${API_URL + userData.userImage.url}`} />}
                                     />
                                     <MenuList>
-                                        <MenuItem icon={<FaRegUser />}  >
-                                           Profile
+                                        {/* <MenuOptionGroup title="Signed in as ">
+
+                                        </MenuOptionGroup> */}
+                                        <Text pl="3" >
+                                           Signed in as <Text fontWeight="bold" >{userData.fullname}</Text>
+                                        </Text>
+                                        <MenuDivider />
+                                        <MenuItem onClick={()=>{ router.push("/profile",`${userData.username}`)}} icon={<FaRegUser />}  >
+                                             Profile
+   </MenuItem>
+                                        <MenuItem icon={<MdAttachMoney />} >
+                                      Pricing
     </MenuItem>
-                                        <MenuItem icon={<RiDeleteBin5Line />} >
-                                        Delete Account
+                                        <MenuItem icon={<AiOutlineQuestion />} >
+                                       About Klasshour
     </MenuItem>
                                         <MenuItem icon={<IoSettingsOutline />}>
                                             Account

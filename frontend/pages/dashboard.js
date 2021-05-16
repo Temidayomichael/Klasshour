@@ -10,6 +10,7 @@ import {
   
   Textarea,
   Text,
+  Button,
 } from '@chakra-ui/react'
 import UserContext from '../contexts/UserContext'
 import { AiOutlineMenuUnfold } from 'react-icons/ai'
@@ -23,6 +24,7 @@ import RequestTab from '../components/dashboard/RequestTab'
 import ClassesTab from '../components/dashboard/ClassesTab'
 import { useQuery,useMutation } from "react-query";
 import { push as Menu } from 'react-burger-menu'
+import { PaystackButton } from 'react-paystack'
  
 const { publicRuntimeConfig } = getConfig()
 
@@ -30,25 +32,23 @@ export default function Dashboard({ jwt, requests, requestData }) {
   console.log(requests)
   console.log(requestData)
 
-
   const userData = useContext(UserContext)
-  const [userFormData, setUserFormData] = useState({
-    id: userData.id,
-    fullname: userData.fullname,
+  const { PAYSTACK_PUBLICKEY } = process.env
+console.log(PAYSTACK_PUBLICKEY)
+  const componentProps = {
     email: userData.email,
-    isLoading: false,
-    isDisabled: false,
-    password: '',
-    confirm_password: '',
-    userImage: userData.userImage
-  })
+    amount: "200",
+    metadata: {
+      name: userData.fullname,
+      phone: "08102334561",
+    },
+    publicKey: PAYSTACK_PUBLICKEY,
+    text: "Pay Now",
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
+    onClose: () => alert("Wait! You need this oil, don't go!!!!"),
+  }
 
-
-  
-
-
-
-  
 
 //   const columns = [
   
@@ -96,7 +96,7 @@ export default function Dashboard({ jwt, requests, requestData }) {
              <TabList justifyContent="space-between"  color="white" bg="#161B45" >
                         <Flex m="auto" >
                     <Tab  _selected={{ fontWeight: "bold"}} >Profile</Tab>
-                    <Tab  _selected={{ fontWeight: "bold" }}>Subjects</Tab>
+                    <Tab  _selected={{ fontWeight: "bold" }}>Upcoming classes</Tab>
                             <Tab  _selected={{ fontWeight: "bold" }}>Classes</Tab>
                             <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
                             <Tab  _selected={{ fontWeight: "bold" }}>Messages</Tab>
@@ -130,43 +130,33 @@ export default function Dashboard({ jwt, requests, requestData }) {
                
         </Box>
   ) : (
-      <Box className="mycontainer" m="auto"  my="10" >
+      <Box className="content" m="auto"  my="10" >
         <Text bg="#151a46" color="gray.50" p="3" m="0" >
-Klasshour Dashboard
+          Klasshour Dashboard
         </Text>
+        
         <Tabs
-           variant="enclosed" 
+          variant="enclosed"
+          isFitted 
           isLazy>
              <TabList>
-              <Tab _selected={{ fontWeight: "bold" }} d="flex" ><FaRegUser /> Profile</Tab>
-                    <Tab  _selected={{ fontWeight: "bold"}} >My Request</Tab>
-                    <Tab  _selected={{ fontWeight: "bold" }}>Sessions</Tab>
-                    <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
-              <Tab _selected={{ fontWeight: "bold" }}>Messages</Tab>
+                    <Tab >My Requests</Tab>
+                    <Tab >Upcoming classes</Tab>
+                    <Tab>Past class</Tab>
+                    <Tab>Teachers</Tab>
+              <Tab >Messages</Tab>
                 <Box fontSize="lg">
-                    <Kbd  color="white" bg="red" mr="2">23</Kbd> <Kbd>Khcoins</Kbd>
+                    <Kbd  color="white" bg="red" mr="2">23 minutes left</Kbd> <Kbd as={PaystackButton}  {...componentProps} >Add minutes</Kbd>
                     </Box>
-                            <Tab>*********</Tab>
-                   
                         
               
             </TabList>
          
           <TabPanels id="page-wrap"  className="tabs" >
             
-              <TabPanel w="30pv"  
-              m="auto">
-              <BasicInfo
-                useFormik={useFormik}
-                fullname={userData.fullname}
-                email={userData.email}
-                setUserFormData={setUserFormData}
-                isLoading={userData.isLoading}
-                requests={requests}
-              />
-                </TabPanel>
+             
             <TabPanel
-              className="mycontainer"
+              className="content"
               m="auto"
             id="page-wrap">
               <RequestTab

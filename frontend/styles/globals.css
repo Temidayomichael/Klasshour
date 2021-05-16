@@ -21,10 +21,13 @@ a {
 }
 
 .mycontainer {
-	max-width: 1024px;
+	max-width: 1280px;
+	margin: auto
 }
 .content {
+	max-width: 1024px;
 	min-height: 50vh;
+	margin: auto
 }
 
 * {

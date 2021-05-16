@@ -77,9 +77,8 @@ export default function BasicInfo({
 
     return (
       <>
-        <Text as="h1" fontSize="4xl" >Profile</Text>
     <form onSubmit={profileForm.handleSubmit}>
-      <Stack spacing={3}>
+      <Stack  spacing={3}>
     
                 <FormControl id="userImage" textAlign="center">
           <FormLabel>Change Profile Picture</FormLabel>

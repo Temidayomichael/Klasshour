@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { Box, Heading, Text } from "@chakra-ui/react"
-export default function request() {
+export default function Become_a_tutor() {
     return (
         <>
           <Head>

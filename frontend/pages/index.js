@@ -67,7 +67,7 @@ export default function Home() {
             </Head>
          
             <Box>
-                <Center className="mycontainer"
+                <Center className="content"
                     mx="auto" h="70vh" textAlign="center" justifyContent="space-between">
                     <Box maxW="32rem">
                         <Heading fontSize="53px" mb={4} color="#161B45" my={3} > GET INSTANT HELP</Heading>
@@ -130,7 +130,7 @@ export default function Home() {
                     </Stack> */}
                 <Box py="20" h="100vh" >
                     <Divider borderColor="gray.400" />
-                    <Center h="90%" m="auto" className="mycontainer" >
+                    <Center h="90%" m="auto" className="content" >
                         <SimpleGrid columns={[
                             "1", // base
                             "2", // 480px upwards

@@ -96,7 +96,7 @@ export default function request() {
                     <title>Requests | Klasshour</title>
                     <link rel="icon" href="../img/home_logo.png" />
                 </Head>
-            <Box className="mycontainer" m="auto" my="90">
+            <Box className="content" m="auto" my="90">
                   {isFetching && <Center><Spinner
   thickness="2px"
   speed="0.65s"
