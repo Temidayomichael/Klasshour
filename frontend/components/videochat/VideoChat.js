@@ -1,4 +1,6 @@
-import { useState, useCallback } from 'react';
+import { Flex,Box,Tabs, TabList, TabPanels, Tab, TabPanel  } from '@chakra-ui/react';
+import { useState, useCallback } from 'react'
+import Board from '../board';
 import Lobby from './Lobby';
 import Room from './Room';
 
@@ -40,7 +42,28 @@ const VideoChat = () => {
   let render;
   if (token) {
     render = (
-      <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+      <Flex>
+        <Box w="30vw" >
+          <Tabs variant="enclosed">
+  <TabList>
+    <Tab>Video</Tab>
+    <Tab>Chat</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+         <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+    </TabPanel>
+    <TabPanel>
+      <p>two!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+       
+        </Box>
+        <Box w="70vw" bg="gray.400">
+          <Board />
+        </Box>
+    </Flex>
     );
   } else {
     render = (

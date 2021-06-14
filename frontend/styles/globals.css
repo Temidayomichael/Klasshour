@@ -112,20 +112,17 @@ form > div > input {
 }
 .remote-participants {
 	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	padding: 0 2em 2em;
+
+	
 }
 .participant {
 	background: #333e5a;
-	padding: 10px;
+	width: 60%;
 	border-radius: 6px;
-	display: inline-block;
 	margin-right: 10px;
 }
 .participant:last-child {
 	margin-right: 0;
-	background: blue;
 }
 .participant h3 {
 	text-align: center;
@@ -134,8 +131,7 @@ form > div > input {
 }
 
 video {
-	width: 50%;
-	max-width: 600px;
+
 	display: block;
 	margin: 0 auto;
 	border-radius: 6px;

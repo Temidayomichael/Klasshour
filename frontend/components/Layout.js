@@ -27,10 +27,7 @@ Router.onRouteChangeError = () => {
 export default function Layout({ children }) {
     const userData = useContext(UserContext)
     const router = useRouter()
-    if (router.pathname !=="/dashboard") {
-        console.log("correct")
-    }
-       
+    
     return (
         <Box bg="gray.50" >
             <Box >

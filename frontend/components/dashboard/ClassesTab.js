@@ -7,7 +7,16 @@ import {
   Center,
   Spinner,
   useToast,
-  Text
+  Text,
+  Box,
+  Stack,
+  TableCaption,
+  Table,
+  Tr,
+  Th,
+  Td,
+  Thead,
+  Tbody
 } from '@chakra-ui/react';
 import { GetClasses } from '../../Queries/queries';
 
@@ -16,29 +25,29 @@ export default function ClassesTab({ useQuery }) {
 
  
   const { data, isError, isLoading, isFetching,success } = useQuery(["classes"],GetClasses)
-  console.log( data) 
   const toast = useToast()
   if (isLoading) {
-    return <Center><Spinner
-  thickness="4px"
-  speed="0.65s"
-  emptyColor="gray.200"
-  color="blue.500"
-  size="md"
+    return (<Center><Spinner
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color="blue.500"
+      size="md"
     />
-      </Center>
+    </Center>
+    )
   }
   console.log(isError)
   if (isError) {
-    return   toast({
-          title: "Error getting classes ...",
-          status: "error",
-          duration: 2000,
-          isClosable: true,
-        })
+    return toast({
+      title: "Error getting classes ...",
+      status: "error",
+      duration: 2000,
+      isClosable: true,
+    })
   }
   return (
-    <>
+    <Stack>
       {isFetching && <Center><Spinner
         thickness="2px"
         speed="0.65s"
@@ -48,15 +57,24 @@ export default function ClassesTab({ useQuery }) {
       />
       </Center>
       }
-    
-      {
-        data.map((data, index) => {
-          console.log(data.students)
-          return <Text key={index} >{data.details.requestDesc}</Text>
+      <Box>
+        {
+        <>
+            {console.log(data.details)}
+            
+               { data.map((data, index) => {
+
+                  return <Text key={index} >
+
+                    {data.id}
+                  
+                  </Text>
+                })}
+         
+          </>
         }
-        )
-      }
-    </>
+    </Box>
+    </Stack>
   )
 }
 

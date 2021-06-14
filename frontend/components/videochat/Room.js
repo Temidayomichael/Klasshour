@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/button';
 import { useState, useEffect } from 'react';
 import Video from 'twilio-video';
 import Participant from './Participant';
@@ -48,7 +49,7 @@ const Room = ({ roomName, token, handleLogout }) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <button onClick={handleLogout}>Log out</button>
+      <Button onClick={handleLogout}>Leave class</Button>
       <div className="local-participant">
         {room ? (
           <Participant
@@ -59,7 +60,7 @@ const Room = ({ roomName, token, handleLogout }) => {
           ''
         )}
       </div>
-      <h3>Remote Participants</h3>
+      <h3>Others</h3>
       <div className="remote-participants">{remoteParticipants}</div>
     </div>
   );

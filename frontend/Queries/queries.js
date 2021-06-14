@@ -60,7 +60,8 @@ export const GetClasses = async () => {
     'Authorization':  `Bearer ${jwt}` 
   }
   })
-    return data
+ 
+  return data
 }
 
 export const DeleteRequest = async ({id}) => {

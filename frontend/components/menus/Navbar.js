@@ -170,7 +170,7 @@ export default function Navbar(ctx) {
                     justifyContent="center"
                     fontSize="sm"
                     color="gray.400"
-                    display={router.pathname !== '/dashboard' ? ["none", "none", "none", "flex"] : 'none'}>
+                    display={router.pathname !== '/dashboard' && router.pathname !== '/learnportal'  ? ["none", "none", "none", "flex"] : 'none'}>
                     <Box>  <Link href="/"><a className={isActive('/')} >HOME</a></Link>   </Box>
                     <Box ml={5}>  <Link href="/request"><a className={isActive('/request')} >REQUESTS</a></Link></Box>
                     <Box ml={5}> <Link href="/become_a_tutor"><a className={isActive('/become_a_tutor')} >BECOME A TUTUOR</a></Link></Box>

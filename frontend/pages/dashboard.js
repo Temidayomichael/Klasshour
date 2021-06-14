@@ -165,12 +165,20 @@ console.log(PAYSTACK_PUBLICKEY)
                 useMutation={useMutation}
               />
                 </TabPanel>
-                <TabPanel  mx="auto">
+                <TabPanel mx="auto">
               <ClassesTab
                 jwt={jwt}
                 useQuery={useQuery}
                 useMutation={useMutation}
               />
+              ddyfgdygfygfydf
+                </TabPanel>
+                <TabPanel mx="auto">
+             
+              ddyfgdygfygfydf
+                </TabPanel>
+                <TabPanel mx="auto">
+              ddyfgdygfygfydf
                 </TabPanel>
             </TabPanels>
               
