@@ -12,18 +12,22 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
 const nextHandler = nextApp.getRequestHandler()
+var bodyParser = require('body-parser');
 
 io.on('connection', socket => {
     console.log('User online:' + socket.id)
     
-     socket.on('canvas-data', (data)=> {
-            socket.broadcast.emit('canvas-data', data);
+     socket.on('drawing', (data)=> {
+            socket.broadcast.emit('drawing', data);
             
       })
 })
 
 nextApp.prepare().then(() => {
-    app.get('*', (req, res) => {
+    const showRoutes = require("./routes/index.js");
+   app.use(bodyParser.json());
+    app.use("/api", showRoutes(server));
+    app.all('*', (req, res) => {
         return nextHandler(req, res)
     })
     server.listen(port, (err) => {

@@ -193,7 +193,7 @@ export default function request() {
                                             <Divider my="3" />
                                            
                                         </Box>
-                                        { userData.role.name == "tutor" ? (
+                                        { userData && userData.role.name == "tutor" ? (
                                             <> </>
                                                             
                                             //         <Popover

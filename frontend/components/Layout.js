@@ -38,8 +38,9 @@ export default function Layout({ children }) {
            </Box>
            
             {children}
-            
-            <Footer />
+            <Box>
+                  <Footer />
+            </Box>
         </Box>
     )
 }
