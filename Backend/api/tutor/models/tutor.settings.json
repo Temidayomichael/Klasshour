@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutors",
+  "info": {
+    "name": "Application",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "IntroVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "tutor"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "Note": {
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

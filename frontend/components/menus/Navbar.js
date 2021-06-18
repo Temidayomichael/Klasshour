@@ -104,7 +104,7 @@ export default function Navbar(ctx) {
                                         }}
                                         _hover={{ bg: "0" }}
                                         icon={<Image borderRadius="full"
-                                            boxSize="35px" src={`${API_URL + userData.userImage.url}`} />}
+                                            boxSize="35px" src={userData.userImage.url} />}
                                     />
                                     <MenuList>
                                         {/* <MenuOptionGroup title="Signed in as ">

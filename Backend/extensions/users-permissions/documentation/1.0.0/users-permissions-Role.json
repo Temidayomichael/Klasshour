@@ -582,6 +582,9 @@
                 "teachingClass": {
                   "type": "string"
                 },
+                "tutor": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

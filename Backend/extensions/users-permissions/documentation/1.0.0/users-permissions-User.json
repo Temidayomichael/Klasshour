@@ -1347,7 +1347,7 @@
                   "type": "string"
                 },
                 "published_at": {
-                  "type": "string"
+                  "type": "datetime"
                 },
                 "created_by": {
                   "type": "string"
@@ -1376,7 +1376,7 @@
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1404,13 +1404,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "string"
+                "type": "datetime"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1438,13 +1438,50 @@
                 "type": "string"
               },
               "date": {
-                "type": "string"
+                "type": "datetime"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
                 "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tutor": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "IntroVideo": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "price": {
+                "type": "integer"
+              },
+              "Note": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1475,7 +1512,6 @@
           },
           "password": {
             "type": "string",
-            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
@@ -1511,6 +1547,9 @@
             "type": "string"
           },
           "teachingClass": {
+            "type": "string"
+          },
+          "tutor": {
             "type": "string"
           },
           "created_by": {

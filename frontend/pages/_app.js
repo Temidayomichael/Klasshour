@@ -9,6 +9,7 @@ import NProgress from 'nprogress';
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { IoCompassOutline } from 'react-icons/io5'
 
 const queryClient = new QueryClient()
 
@@ -20,7 +21,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 export default function MyApp({ Component, pageProps,userData }) {
- 
+ console.log("Userdata:",userData)
   return (
      <QueryClientProvider client={queryClient}>
     <ChakraProvider>

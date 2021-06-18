@@ -81,9 +81,9 @@ export default function Login({ history }) {
                     <title>Login | Klasshour</title>
                 <link rel="icon" href="../img/home_logo.png" />
             </Head>
-        <Center maxWidth="20vw" my="20">
+        <Center my="20">
             <form onSubmit={formik.handleSubmit}>
-                 <Stack spacing={3}>
+                    <Stack w="30vw" spacing={7}>
                     <Text
                         fontWeight="bold" 
                         fontSize="xl"
