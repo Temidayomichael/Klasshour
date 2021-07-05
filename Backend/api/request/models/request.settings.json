@@ -38,6 +38,10 @@
         "closed",
         "open"
       ]
+    },
+    "class_applications": {
+      "via": "request",
+      "collection": "class-application"
     }
   }
 }

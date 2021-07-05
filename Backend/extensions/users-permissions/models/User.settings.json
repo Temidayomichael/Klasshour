@@ -88,9 +88,9 @@
       "via": "tutor",
       "model": "class"
     },
-    "tutor": {
-      "via": "user",
-      "model": "tutor"
+    "class_applications": {
+      "via": "tutor",
+      "collection": "class-application"
     }
   }
 }

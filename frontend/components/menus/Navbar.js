@@ -93,18 +93,13 @@ export default function Navbar(ctx) {
                                     </Menu>
                                     </Box>
                                 <Menu>
-                                    <MenuButton
-                                        as={IconButton}
-                                        
-                                        _active={{
-                                            bg: "0",
-                                        }}
-                                        _focus={{
-                                            bg: "0",
-                                        }}
-                                        _hover={{ bg: "0" }}
-                                        icon={<Image borderRadius="full"
-                                            boxSize="35px" src={userData.userImage.url} />}
+                                    <Avatar
+                                        as={MenuButton}
+                                  bg="red.500"
+                                        name={userData.fullname}
+                                      
+
+                                        size="sm"
                                     />
                                     <MenuList>
                                         {/* <MenuOptionGroup title="Signed in as ">
@@ -172,7 +167,7 @@ export default function Navbar(ctx) {
                     color="gray.400"
                     display={router.pathname !== '/dashboard' && router.pathname !== '/learnportal'  ? ["none", "none", "none", "flex"] : 'none'}>
                     <Box>  <Link href="/"><a className={isActive('/')} >HOME</a></Link>   </Box>
-                    <Box ml={5}>  <Link href="/request"><a className={isActive('/request')} >REQUESTS</a></Link></Box>
+                    <Box ml={5}>  <Link href="/requests"><a className={isActive('/requests')} >REQUESTS</a></Link></Box>
                     <Box ml={5}> <Link href="/become_a_tutor"><a className={isActive('/become_a_tutor')} >BECOME A TUTUOR</a></Link></Box>
                     <Box ml={5}>  <Link href="/faq" ><a className={isActive('/faq')} >FAQ</a></Link>    </Box>
                     <Box ml={5}>  <Link href="/search" ><a className={isActive('/search')} >SEARCH</a></Link>    </Box>

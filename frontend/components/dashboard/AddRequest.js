@@ -19,10 +19,12 @@ import {
   ModalFooter,
   Select,
   Textarea,
+  useToast,
 } from '@chakra-ui/react'
 import axios from "axios";
 import getConfig from 'next/config'
 import { AddToRequest } from "../../Queries/queries";
+import { useState } from "react";
 
 export default function AddRequest({
     useFormik,
@@ -33,23 +35,32 @@ export default function AddRequest({
 
   const { publicRuntimeConfig } = getConfig()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  
+  const toast = useToast()
    const {mutate,data,status}=useMutation(AddToRequest,{
         onSuccess:()=>{
             alert("Successfully Posted")
-        }
+     },
+        onError: () => {
+     toast({
+            title: "Error getting Uploading request ...",
+            status: "error",
+            duration: 2000,
+            isClosable: true,
+        })
+   },
+     
     });
   
     const nigStates =["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]
 
 
   const requestForm = useFormik({
-       initialValues: {
+    initialValues: {
       type: '',
       subject: '',
       requestDesc: '',
       location: ''
-      },
+    },
     validationSchema: Yup.object({
       type: Yup.string(),
       subject: Yup.string(),
@@ -62,15 +73,16 @@ export default function AddRequest({
 
       try {
         await mutate({
-            values: values,
-            user: user
+          values: values,
+          user: user
           
-       })
-      } catch(e) { }
-      console.log(status)
+        })
+      } catch (e) {
+    
+      }
+
     }
   })
-
   return (
    
       <Stack spacing={3}>
@@ -90,6 +102,7 @@ export default function AddRequest({
              id="subject"
                     values={requestForm.values.subject}
                     onChange={requestForm.handleChange}
+                     
             />
           <FormErrorMessage>{requestForm.errors.subject}</FormErrorMessage>
          </FormControl>

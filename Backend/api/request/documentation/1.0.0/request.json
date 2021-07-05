@@ -596,8 +596,11 @@
               "teachingClass": {
                 "type": "string"
               },
-              "tutor": {
-                "type": "string"
+              "class_applications": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -613,6 +616,43 @@
               "closed",
               "open"
             ]
+          },
+          "class_applications": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "tutor": {
+                  "type": "string"
+                },
+                "request": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "datetime"
@@ -646,6 +686,12 @@
               "closed",
               "open"
             ]
+          },
+          "class_applications": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "datetime"

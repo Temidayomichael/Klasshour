@@ -582,8 +582,11 @@
                 "teachingClass": {
                   "type": "string"
                 },
-                "tutor": {
-                  "type": "string"
+                "class_applications": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

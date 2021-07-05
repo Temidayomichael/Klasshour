@@ -56,6 +56,9 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
       redirectUser(ctx, '/login');
     }
   } else {
+    if (ctx.pathname === '/login' || ctx.pathname=='/register') {
+      redirectUser(ctx, '/');
+    }
       const res = await axios.get('http://localhost:1337/users/me', {
   headers: {
     Authorization: `Bearer ${jwt}`,

@@ -25,25 +25,40 @@ export const GetRequests = async () => {
 
 export const AddToRequest = async ({ values, user }) => {
   
-    const postRequest = {
-        method: 'POST', // Method itself
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': `Bearer ${jwt}`     // Indicates the content
-        },
-        body: JSON.stringify({
-            type: values.type,
+    const res = await axios.post(`${publicRuntimeConfig.API_URL}/requests`, {
+        params: {
+        type: values.type,
             subject: values.subject,
             requestDesc: values.requestDesc,
             location: values.location,
             status: 'open',
             user: user
-        }),   //send data in JSON format
+      },
+  headers: {
+    'Authorization':  `Bearer ${jwt}` 
+  }
+    })
+  return res
+      
+}
+export const AddApplication = async ({ values, user,request }) => {
+
+  const res = await axios({
+    method: 'post',
+    url: `${publicRuntimeConfig.API_URL}/class-applications`,
+    data: {
+      price: values.price,
+      note: values.note,
+      tutor: user,
+      request: request.id
+    },
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${jwt}`
     }
-    fetch(`${publicRuntimeConfig.API_URL}/requests`, postRequest)
-        .then(response => response.json())
-        .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
-        .catch(err => console.log(err))
+  })
+  
+  return res
       
 }
 

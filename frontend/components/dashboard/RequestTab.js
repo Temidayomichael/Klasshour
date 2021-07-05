@@ -188,10 +188,10 @@ export default function RequestTab({useQuery}) {
                                 <Stack spaceing={4}>
                                   <FormControl id="subject" textAlign="center">
                                     <FormLabel>Subject</FormLabel>
-                                    <Input type="text"
+                                    <Input
+                                      type="text"
                                       id="subject"
-                                      value={data.subject}
-                                      values={editRequest.values.subject}
+                                      value="yes"
                                       onChange={editRequest.handleChange}
                                     />
                                     <FormErrorMessage>{editRequest.errors.subject}</FormErrorMessage>
@@ -221,7 +221,7 @@ export default function RequestTab({useQuery}) {
                                     <Textarea
                                       id="requestDesc"
                                       onChange={editRequest.handleChange}
-                                      values={editRequest.values.requestDesc}
+                                    
                                       size="sm"
                                       value={data.requestDesc}
                                     />
@@ -232,7 +232,7 @@ export default function RequestTab({useQuery}) {
                               </PopoverBody>
                               <PopoverFooter>
                                 <ButtonGroup d="flex" justifyContent="flex-end">
-                                  <Button colorScheme="green">
+                                  <Button type="submit" colorScheme="green">
                                     Save
         </Button>
                                 </ButtonGroup>

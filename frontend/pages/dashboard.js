@@ -19,7 +19,7 @@ import { useFormik } from "formik";
 import Dropzone from 'react-dropzone'
 import axios from 'axios'
 import DataGrid from 'react-data-grid';
-import BasicInfo from '../components/dashboard/basicInfo'
+import BasicInfo from '../components/dashboard/tutor/BasicInfo'
 import RequestTab from '../components/dashboard/RequestTab'
 import ClassesTab from '../components/dashboard/ClassesTab'
 import { useQuery,useMutation } from "react-query";
@@ -91,44 +91,62 @@ console.log(PAYSTACK_PUBLICKEY)
 
 
   const dashboardMenu = userData.role.name == "Tutor" ? (
-         <Box>
-            <Tabs>
-             <TabList justifyContent="space-between"  color="white" bg="#161B45" >
-                        <Flex m="auto" >
-                    <Tab  _selected={{ fontWeight: "bold"}} >Profile</Tab>
-                    <Tab  _selected={{ fontWeight: "bold" }}>Upcoming classes</Tab>
-                            <Tab  _selected={{ fontWeight: "bold" }}>Classes</Tab>
-                            <Tab  _selected={{ fontWeight: "bold" }}>Bank Info</Tab>
-                            <Tab  _selected={{ fontWeight: "bold" }}>Messages</Tab>
-                        </Flex>
-                        <Flex>
-                <Center fontSize="lg">
-                    <Kbd  color="white" bg="red" mr="2">23</Kbd> <Kbd>Khcoins</Kbd>
-                    </Center>
-                            <Tab>*********</Tab>
-                            </Flex>
+  <Box className="content" m="auto"  my="10" >
+        <Text bg="#151a46" color="gray.50" p="3" m="0" >
+          Klasshour Dashboard
+        </Text>
+        
+        <Tabs
+          variant="enclosed"
+          isFitted 
+          isLazy>
+             <TabList>
+                    <Tab >My Requests</Tab>
+                    <Tab >Upcoming classes</Tab>
+                    <Tab>Past class</Tab>
+                    <Tab>Teachers</Tab>
+              <Tab >Messages</Tab>
+                <Box fontSize="lg">
+                    <Kbd  color="white" bg="red" mr="2">23 minutes left</Kbd> <Kbd as={PaystackButton}  {...componentProps} >Add minutes</Kbd>
+                    </Box>
+                        
+              
             </TabList>
-          <Alert status="info" my="4">
-              <AlertIcon />
-                  Click the text to edit
-                     
-                  </Alert>
-            <TabPanels w="30pv"
-              mx="auto">
-              <TabPanel >
-            <Basi />
+         
+          <TabPanels id="page-wrap"  className="tabs" >
+            
+             
+            <TabPanel
+              className="content"
+              m="auto"
+            id="page-wrap">
+              <RequestTab
+                jwt={jwt}
+                useQuery={useQuery}
+                useMutation={useMutation}
+              />
                 </TabPanel>
-                <TabPanel>
-                <p>two!</p>
+                <TabPanel mx="auto">
+              <ClassesTab
+                jwt={jwt}
+                useQuery={useQuery}
+                useMutation={useMutation}
+              />
+              ddyfgdygfygfydf
                 </TabPanel>
-                <TabPanel>
-                <p>three!</p>
+                <TabPanel mx="auto">
+             
+              ddyfgdygfygfydf
+                </TabPanel>
+                <TabPanel mx="auto">
+              ddyfgdygfygfydf
                 </TabPanel>
             </TabPanels>
               
                 </Tabs>
                
         </Box>
+    
   ) : (
       <Box className="content" m="auto"  my="10" >
         <Text bg="#151a46" color="gray.50" p="3" m="0" >

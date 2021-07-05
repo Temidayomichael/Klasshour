@@ -29,81 +29,80 @@ export default function Register({ history }) {
      const [disableBtn, setDisableBtn] = useState(false)
    
 
-    const formik  = useFormik({
+    const formik = useFormik({
         initialValues: {
-        email: "",
+            email: "",
             password: "",
             confirm_password: "",
             name: "",
-        role:""
+            role: ""
         },
         validationSchema: Yup.object({
             name: Yup.string()
-            .required("Please input name"),
+                .required("Please input name"),
             email: Yup.string()
                 .email("Invalid email format")
                 .required("Required!"),
             role: Yup.string()
                 .required("Required! Please select a role"),
             password: Yup.string()
-                .required('No password provided.') 
+                .required('No password provided.')
                 .min(8, 'Password is too short - should be 8 chars minimum.')
-            .matches(
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*.,])(?=.{8,})/,
-            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-          ),
+                .matches(
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*.,])(?=.{8,})/,
+                    "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+                ),
             confirm_password: Yup.string()
-                .required('Please confirm password.') 
+                .required('Please confirm password.')
                 .oneOf([Yup.ref('password'), null], 'Passwords must match')
         }),
         onSubmit: async (values) => {
-            console.log("values: ",values)
+            console.log("values: ", values)
             setLoading(true)
-            if (values.role == "") {
-                
-            }
+          
             const user = {
                 email: values.email,
                 password: values.password,
                 fullname: values.name,
-                role: values.role
+                role: values.role,
+                username: values.name.split(" ").join("")
             }
             
             await Axios.post(`${publicRuntimeConfig.API_URL}/auth/local/register`, user)
                 .then(res => {
-                    const loginResponse = res.data
+                    const registerResponse = res.data
                   
-                        console.log(res)
-                        toast({
-                                        title: "Account Created!",
-                                        description: err.response.data.message[0].messages[0].message + "Confirmation email sent succesfuly.",
-                                        status: "success",
-                                        duration: 9000,
-                         isClosable: true,
-                                  
-                     })
-                    // setCookie(null, 'jwt', loginResponse.jwt, {
-                    //     maxAge: 30 * 24 * 60 * 60,
-                    //     path: '/'
-                    // })
-                    //    Router.push('/dashboard')
+                    console.log(res)
+                    toast({
+                        title: "Account Created!",
+                        description: "Confirmation email sent succesfuly.",
+                        status: "success",
+                        duration: 10000,
+                        isClosable: true,
+                        position: "bottom-left"
+                                       
+                    })
+                
+                    // Router.push('/dashboard')
+                    setLoading(false)
                 }).catch(err => {
                     console.log(err.response.data.message[0].messages[0].message)
            
-                     toast({
-                                        title: "Error!",
-                         description: `${err.response.data.message[0].messages[0].message} ${<br />} Please try again`,
-                                        status: "error",
-                                        duration: 9000,
-                         isClosable: true,
+                    toast({
+                        title: "Error!",
+                        description: `${err.response.data.message[0].messages[0].message} Please try again`,
+                        status: "error",
+                        duration: 5000,
+                        isClosable: true,
+                        position: "bottom-left"
                                   
-                     })
-            setLoading(false)         
+                    })
+                    setLoading(false)
                 })
     
             setLoading(false)
         }
-    });
+    })
 
 
     return (
@@ -130,7 +129,7 @@ export default function Register({ history }) {
                                     <RadioGroup >
                                         <Stack direction="row">
                                                 <Field as={Radio} type="radio" id="tutor" name="role" value="tutor">Tutor</Field>
-                                                <Field as={Radio} type="radio" id="student" name="role" value="student">Student</Field>
+                                                <Field as={Radio} type="radio" id="authenticated" name="role" value="authenticated">Student</Field>
                                         </Stack>
                                     </RadioGroup>
                                     <FormErrorMessage>{formik.errors.role}</FormErrorMessage>
