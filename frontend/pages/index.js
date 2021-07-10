@@ -258,7 +258,7 @@ export default function Home() {
                     </Center>
                    
                 </Box>
-                <Center py="20" maxW="70rem" m="auto" justifyContent="space-between"  >
+                {/* <Center py="20" maxW="70rem" m="auto" justifyContent="space-between"  >
                     <Box >
                         <Heading fontSize="3xl" color="#161B45" fontWeight="bold">Are you intrested in becoming a tutor with Klasshour?</Heading>
                         <Text fontSize="lg" >Find students all over the world,<br />
@@ -271,7 +271,7 @@ export default function Home() {
                         rightIcon={<AiOutlineArrowRight />}
                         size="lg"
                     >Get Started</Button>
-                </Center>
+                </Center> */}
             </Box>
         </>
     )
