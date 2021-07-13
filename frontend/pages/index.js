@@ -22,7 +22,7 @@ export default function Home() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = useRef()
 
-    const [subject, setSubject] = useState('math')
+    const [subject, setSubject] = useState()
     const [block, setBlock] = useState('none')
 
     function EditableControls() {
@@ -107,6 +107,7 @@ export default function Home() {
                         <Text fontSize="lg">Online & Home Tutoring. Homework Help. Test Prep.</Text>
                         <InputGroup mt="24px" display={{ xl: "flex" }} >
                             <Input value={subject} onChange={e => setSubject(e.target.value)} variant="filled" focusBorderColor="#161B45" mb="5" placeholder="Subject: Math,English" size="lg" />
+                            
 
 
                             <Button width="35%"
@@ -115,6 +116,10 @@ export default function Home() {
                                     bg: "#161B45",
                                     transform: "scale(0.88)",
                                 }}
+                                isDisabled={subject}
+                                isDisabled={subject ? false:
+                                true
+                                }
                                 color="white" size="md" colorScheme="teal" onClick={onOpen}>
                                 Go
                             </Button>
@@ -160,7 +165,7 @@ export default function Home() {
                                                                             transform: "scale(0.88)",
                                                                         }} onClick={() => setBlock('block')}>Procced to Add Request </Button>
                                                                         
-                                                                    <Button mt='3' w='full' colorScheme="teal" onClick={ ()=> Router.push({ pathname: '/request', state: { subject: subject } })} variant="outline" >Find similar requests</Button>
+                                                                    <Button mt='3' w='full' colorScheme="teal" onClick={ ()=> Router.push({ pathname: '/requests', state: { subject: subject } })} variant="outline" >Find similar requests</Button>
                                                                     <Button mt='3' w='full' colorScheme="pink" variant="outline">Search Tutor</Button>
                                                                 </Box>
                                                                 
