@@ -14,7 +14,7 @@ export default function Become_a_tutor() {
                             <Heading as="h1" size="lg" isTruncated>
                                 Become A Tutor
                                 </Heading>
-                            <Text fontSize="lg"> Apply to the requests that you can help with.</Text>
+                            <Text fontSize="lg"> Apply to the requests that you can help withtrtrftrftft.</Text>
                         </Box>
                     
                     </Box>
