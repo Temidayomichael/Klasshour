@@ -1332,7 +1332,11 @@
                   "type": "string"
                 },
                 "type": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "hometutoring",
+                    "onlinetutoring"
+                  ]
                 },
                 "location": {
                   "type": "string"
@@ -1344,7 +1348,11 @@
                   "type": "string"
                 },
                 "status": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "closed",
+                    "open"
+                  ]
                 },
                 "class_applications": {
                   "type": "array",
@@ -1353,7 +1361,7 @@
                   }
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -1382,7 +1390,7 @@
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -1410,13 +1418,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "datetime"
+                "type": "string"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -1444,13 +1452,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "datetime"
+                "type": "string"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -1486,7 +1494,7 @@
                   "type": "string"
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -1518,6 +1526,7 @@
           },
           "password": {
             "type": "string",
+            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
