@@ -51,8 +51,7 @@ export default function Student() {
  
     const isLoggedin = useLoginStatus();
     const isStudent = useUserType();
-
-    console.log("whatssssss:", isStudent)
+    
     let newRequestArray = [];
     const jwt = parseCookies().jwt
     const userData = useContext(UserContext)

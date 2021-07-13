@@ -9,7 +9,6 @@ import NProgress from 'nprogress';
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-import { IoCompassOutline } from 'react-icons/io5'
 
 const queryClient = new QueryClient()
 

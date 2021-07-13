@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/13/2021 11:58:44 AM"
+    "x-generation-date": "07/13/2021 2:18:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -37,7 +37,7 @@
   ],
   "externalDocs": {
     "description": "Find out more",
-    "url": "https://strapi.io/documentation/v3.x/"
+    "url": "https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html"
   },
   "security": [
     {
@@ -4433,7 +4433,11 @@
                 "type": "string"
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "hometutoring",
+                  "onlinetutoring"
+                ]
               },
               "location": {
                 "type": "string"
@@ -4445,7 +4449,11 @@
                 "type": "string"
               },
               "status": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "closed",
+                  "open"
+                ]
               },
               "class_applications": {
                 "type": "array",
@@ -4454,7 +4462,7 @@
                 }
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -4465,7 +4473,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -4488,7 +4497,8 @@
             "type": "string"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -4593,7 +4603,11 @@
                 "type": "string"
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "hometutoring",
+                  "onlinetutoring"
+                ]
               },
               "location": {
                 "type": "string"
@@ -4605,7 +4619,11 @@
                 "type": "string"
               },
               "status": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "closed",
+                  "open"
+                ]
               },
               "class_applications": {
                 "type": "array",
@@ -4614,7 +4632,7 @@
                 }
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -4625,7 +4643,8 @@
             }
           },
           "date": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "tutor": {
             "required": [
@@ -4700,7 +4719,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -4716,13 +4736,15 @@
             "type": "string"
           },
           "date": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "tutor": {
             "type": "string"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -4816,7 +4838,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -4829,7 +4852,8 @@
             "type": "string"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -4968,7 +4992,7 @@
                   "type": "string"
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -4980,7 +5004,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -5019,7 +5044,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -5349,7 +5375,11 @@
                   "type": "string"
                 },
                 "type": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "hometutoring",
+                    "onlinetutoring"
+                  ]
                 },
                 "location": {
                   "type": "string"
@@ -5361,7 +5391,11 @@
                   "type": "string"
                 },
                 "status": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "closed",
+                    "open"
+                  ]
                 },
                 "class_applications": {
                   "type": "array",
@@ -5370,7 +5404,7 @@
                   }
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -5399,7 +5433,7 @@
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -5427,13 +5461,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "datetime"
+                "type": "string"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -5461,13 +5495,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "datetime"
+                "type": "string"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -5503,7 +5537,7 @@
                   "type": "string"
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -5535,6 +5569,7 @@
           },
           "password": {
             "type": "string",
+            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
