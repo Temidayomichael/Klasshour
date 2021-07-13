@@ -17,8 +17,8 @@ var bodyParser = require('body-parser');
 io.on('connection', socket => {
     console.log('User online:' + socket.id)
     
-     socket.on('drawing', (data)=> {
-            socket.broadcast.emit('drawing', data);
+     socket.on('canvas-data', (data)=> {
+            socket.broadcast.emit('canvas-data', data);
             
       })
 })

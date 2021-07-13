@@ -3,7 +3,14 @@ import { useState, useCallback } from 'react'
 import Board from '../board';
 import Lobby from './Lobby';
 import Room from './Room';
+import Whiteboard from './whitebord';
+import dynamic from 'next/dynamic'
 
+//   const DynamicComponentWithNoSSR = dynamic(
+//   () => import('./whitebord'),
+//     { ssr: false }
+// )
+  
 const VideoChat = () => {
   const [username, setUsername] = useState('');
   const [roomName, setRoomName] = useState('');
@@ -60,8 +67,9 @@ const VideoChat = () => {
 </Tabs>
        
         </Box>
-        <Box w="70vw" bg="gray.400">
-          <Board />
+        <Box w="70vw" overflowX="hidden" bg="gray.400">
+          {/* <DynamicComponentWithNoSSR /> */}
+          <Whiteboard />
         </Box>
     </Flex>
     );

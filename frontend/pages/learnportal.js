@@ -1,15 +1,18 @@
+import { Box } from '@chakra-ui/layout'
+import dynamic from 'next/dynamic'
 import React from 'react'
-import VideoChat from '../components/videochat/VideoChat'
 
 export default function learnportal() {
-    return (
-        <div>
-      <main>
-  
-                <VideoChat />
-      </main>
+  const DynamicComponentWithNoSSR = dynamic(
+  () => import('../components/videochat/VideoChat'),
+    { ssr: false }
+  )
+  return (
+       
+    <>
+      <DynamicComponentWithNoSSR />
       
-    </div>
-        
-    )
+    </>
+    
+  )
 }
