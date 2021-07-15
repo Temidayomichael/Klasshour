@@ -67,7 +67,7 @@ import {
 	EditableControls,
 } from '@chakra-ui/react'
 import Router, { withRouter } from 'next/router'
-import  Autocomplete  from 'react-autocomplete'
+import Autocomplete from 'react-autocomplete'
 
 export default function Home() {
 	const { isOpen, onOpen, onClose } = useDisclosure()
