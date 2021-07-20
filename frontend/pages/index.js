@@ -74,7 +74,6 @@ export default function Home() {
 
 	const [subject, setSubject] = useState()
 	const [block, setBlock] = useState('none')
-
 	function EditableControls() {
 		const {
 			isEditing,
@@ -94,7 +93,7 @@ export default function Home() {
 		)
 	}
 
-	const handleClick = () => {}
+	const handleClick = () => { }
 
 	// console.log(process.env.API_URL)
 
@@ -103,7 +102,7 @@ export default function Home() {
 			<Flex p={3} shadow="md" borderWidth="1px" flex="1" rounded="md" {...rest}>
 				<Box>
 					<Icon m="5" color="#161B45" as={icon} textAlign="center" />
-					{}
+					{ }
 					{/* <Icon name={} /> */}
 				</Box>
 				<Box>
@@ -129,7 +128,7 @@ export default function Home() {
 						textAlign="center">
 						{step}
 					</Text>
-					{}
+					{ }
 					{/* <Icon name={} /> */}
 				</Box>
 				<Box>
@@ -178,9 +177,44 @@ export default function Home() {
 							<Autocomplete
 								getItemValue={(item) => item.label}
 								items={[
-									{ label: 'apple' },
-									{ label: 'banana' },
-									{ label: 'pear' },
+								
+									{ label: 'Adult Education and Extra-Mural Studies' },
+									{ label: 'Arts Education' },
+									{ label: 'Education & Accountancy' },
+									{ label: 'Education & Computer Science' },
+									{ label: 'Education & Economics' },
+									{ label: 'Education & Mathematics' },
+									{ label: 'Education & Physics' },
+									{ label: 'Education & Religious Studies' },
+									{ label: 'Education & Social Science' },
+									{ label: 'Education And Biology' },
+									{ label: 'Education And Chemistry' },
+									{ label: 'Education And English Language' },
+									{ label: 'Education And French' },
+									{ label: 'Education And Geography/Physics' },
+									{ label: 'Education And Political Science' },
+									{ label: 'Educational Foundations' },
+									{ label: 'Educational / Psychology Guidance And Counselling' },
+									{ label: 'Health and Physical Education' },
+									{ label: 'Library and Information Science' },
+									{ label: 'Science Education' },
+									{ label: 'Social Sciences Education' },
+									{ label: 'Vocational Teacher Education (Technical Education)', },
+									{ label: 'Religion' },
+									{ label: 'Igbo Linguistics' },
+									{ label: 'Agricultural and Bioresources Engineering' },
+									{ label: 'Civil Engineering' },
+									{ label: 'Chemical Engineering' },
+									{ label: 'Computer Engineering' },
+									{ label: 'Electrical Engineering' },
+									{ label: 'Electronic Engineering' },
+									{ label: 'Marine Engineering' },
+									{ label: 'Mechanical Engineering' },
+									{ label: 'Metallurgical and Materials Engineering' },
+									{ label: 'Petroleum and Gas Engineering' },
+									{ label: 'Systems Engineering' },
+									{ label: 'Structural Engineering'},
+									{ label: 'Production and Industrial Engineering' },
 								]}
 								renderItem={(item, isHighlighted) => (
 									<div
