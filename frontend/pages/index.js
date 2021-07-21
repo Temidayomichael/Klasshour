@@ -22,7 +22,6 @@ import {
 	DrawerCloseButton,
 	FormLabel,
 	InputLeftAddon,
-	Select,
 	Textarea,
 	DrawerFooter,
 	InputRightAddon,
@@ -58,7 +57,6 @@ import {
 	CloseIcon,
 	EditIcon,
 } from '@chakra-ui/icons'
-import { initial } from 'lodash'
 import {
 	Editable,
 	EditableInput,
@@ -67,13 +65,53 @@ import {
 	EditableControls,
 } from '@chakra-ui/react'
 import Router, { withRouter } from 'next/router'
-import Autocomplete from 'react-autocomplete'
+import CreatableSelect from 'react-select/creatable';
 
 export default function Home() {
 	const { isOpen, onOpen, onClose } = useDisclosure()
 
 	const [subject, setSubject] = useState()
 	const [block, setBlock] = useState('none')
+	const items = [
+
+		{ value: 'Adult Education and Extra-Mural Studies', label: 'Adult Education and Extra-Mural Studies' },
+		{ value: 'Arts Education', label: 'Arts Education' },
+		// { label: 'Education & Accountancy' },
+		// { label: 'Education & Computer Science' },
+		// { label: 'Education & Economics' },
+		// { label: 'Education & Mathematics' },
+		// { label: 'Education & Physics' },
+		// { label: 'Education & Religious Studies' },
+		// { label: 'Education & Social Science' },
+		// { label: 'Education And Biology' },
+		// { label: 'Education And Chemistry' },
+		// { label: 'Education And English Language' },
+		// { label: 'Education And French' },
+		// { label: 'Education And Geography/Physics' },
+		// { label: 'Education And Political Science' },
+		// { label: 'Educational Foundations' },
+		// { label: 'Educational / Psychology Guidance And Counselling' },
+		// { label: 'Health and Physical Education' },
+		// { label: 'Library and Information Science' },
+		// { label: 'Science Education' },
+		// { label: 'Social Sciences Education' },
+		// { label: 'Vocational Teacher Education (Technical Education)', },
+		// { label: 'Religion' },
+		// { label: 'Igbo Linguistics' },
+		// { label: 'Agricultural and Bioresources Engineering' },
+		// { label: 'Civil Engineering' },
+		// { label: 'Chemical Engineering' },
+		// { label: 'Computer Engineering' },
+		// { label: 'Electrical Engineering' },
+		// { label: 'Electronic Engineering' },
+		// { label: 'Marine Engineering' },
+		// { label: 'Mechanical Engineering' },
+		// { label: 'Metallurgical and Materials Engineering' },
+		// { label: 'Petroleum and Gas Engineering' },
+		// { label: 'Systems Engineering' },
+		// { label: 'Structural Engineering' },
+		// { label: 'Production and Industrial Engineering' },
+	]
 	function EditableControls() {
 		const {
 			isEditing,
@@ -156,7 +194,7 @@ export default function Home() {
 					h="70vh"
 					textAlign="center"
 					justifyContent="space-between">
-					<Box maxW="32rem">
+					<Box>
 						<Heading fontSize="53px" mb={4} color="#161B45" my={3}>
 							{' '}
 							GET INSTANT HELP
@@ -174,75 +212,31 @@ export default function Home() {
 								placeholder="Subject: Math,English"
 								size="lg"
 							/> */}
-							<Autocomplete
-								getItemValue={(item) => item.label}
-								items={[
-								
-									{ label: 'Adult Education and Extra-Mural Studies' },
-									{ label: 'Arts Education' },
-									{ label: 'Education & Accountancy' },
-									{ label: 'Education & Computer Science' },
-									{ label: 'Education & Economics' },
-									{ label: 'Education & Mathematics' },
-									{ label: 'Education & Physics' },
-									{ label: 'Education & Religious Studies' },
-									{ label: 'Education & Social Science' },
-									{ label: 'Education And Biology' },
-									{ label: 'Education And Chemistry' },
-									{ label: 'Education And English Language' },
-									{ label: 'Education And French' },
-									{ label: 'Education And Geography/Physics' },
-									{ label: 'Education And Political Science' },
-									{ label: 'Educational Foundations' },
-									{ label: 'Educational / Psychology Guidance And Counselling' },
-									{ label: 'Health and Physical Education' },
-									{ label: 'Library and Information Science' },
-									{ label: 'Science Education' },
-									{ label: 'Social Sciences Education' },
-									{ label: 'Vocational Teacher Education (Technical Education)', },
-									{ label: 'Religion' },
-									{ label: 'Igbo Linguistics' },
-									{ label: 'Agricultural and Bioresources Engineering' },
-									{ label: 'Civil Engineering' },
-									{ label: 'Chemical Engineering' },
-									{ label: 'Computer Engineering' },
-									{ label: 'Electrical Engineering' },
-									{ label: 'Electronic Engineering' },
-									{ label: 'Marine Engineering' },
-									{ label: 'Mechanical Engineering' },
-									{ label: 'Metallurgical and Materials Engineering' },
-									{ label: 'Petroleum and Gas Engineering' },
-									{ label: 'Systems Engineering' },
-									{ label: 'Structural Engineering'},
-									{ label: 'Production and Industrial Engineering' },
-								]}
-								renderItem={(item, isHighlighted) => (
-									<div
-										style={{
-											background: isHighlighted ? 'lightgray' : 'white',
-										}}>
-										{item.label}
-									</div>
-								)}
-								as={Input}
-								value={subject}
-								onChange={(e) => setSubject(e.target.value)}
-								onSelect={(val) => setSubject(val)}
-							/>
-							<Button
-								width="35%"
-								bg="#161B45"
-								_hover={{ opacity: '0.9' }}
-								_active={{
-									bg: '#161B45',
-									transform: 'scale(0.88)',
-								}}
-								color="white"
-								size="md"
-								colorScheme="teal"
-								onClick={onOpen}>
-								Go
-							</Button>
+							<Flex w='100%'>
+								<Box w='400px'>
+									<CreatableSelect
+										isClearable
+										options={items}
+										placeholder='Subject: Math,English'
+										onChange={(value) => setSubject(value ? value.label : value)}
+						
+
+									/>
+								</Box>
+								<Button
+									bg="#161B45"
+									_hover={{ opacity: '0.9' }}
+									_active={{
+										bg: '#161B45',
+										transform: 'scale(0.88)',
+									}}
+									color="white"
+									w="20"
+									size="md"
+									onClick={onOpen}>
+									Go
+								</Button>
+							</Flex>
 							<Flex justifyContent="center" alignItems="center">
 								<Modal
 									blockScrollOnMount={false}
@@ -271,7 +265,7 @@ export default function Home() {
 													d="flex"
 													defaultValue={subject}
 													isPreviewFocusable={false}>
-													<EditablePreview />
+													<EditablePreview maxW="350px" />
 													<EditableInput />
 													<EditableControls />
 												</Editable>
