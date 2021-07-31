@@ -9,6 +9,7 @@ import NProgress from 'nprogress';
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import Carousel from 'nuka-carousel'
 
 const queryClient = new QueryClient()
 
@@ -29,6 +30,7 @@ export default function MyApp({ Component, pageProps,userData }) {
        
           <Component {...pageProps} />
       </Layout>
+      
        </UserContext.Provider>
       </ChakraProvider>
       </QueryClientProvider>
