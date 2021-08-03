@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { Grid, GridItem, HStack, VStack } from "@chakra-ui/react"
 import { Box, Container, Flex, Heading, Text, Stack, Button } from "@chakra-ui/react"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Carousel from 'nuka-carousel';
