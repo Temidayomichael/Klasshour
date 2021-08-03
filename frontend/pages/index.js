@@ -76,41 +76,41 @@ export default function Home() {
 
 		{ value: 'Adult Education and Extra-Mural Studies', label: 'Adult Education and Extra-Mural Studies' },
 		{ value: 'Arts Education', label: 'Arts Education' },
-		// { label: 'Education & Accountancy' },
-		// { label: 'Education & Computer Science' },
-		// { label: 'Education & Economics' },
-		// { label: 'Education & Mathematics' },
-		// { label: 'Education & Physics' },
-		// { label: 'Education & Religious Studies' },
-		// { label: 'Education & Social Science' },
-		// { label: 'Education And Biology' },
-		// { label: 'Education And Chemistry' },
-		// { label: 'Education And English Language' },
-		// { label: 'Education And French' },
-		// { label: 'Education And Geography/Physics' },
-		// { label: 'Education And Political Science' },
-		// { label: 'Educational Foundations' },
-		// { label: 'Educational / Psychology Guidance And Counselling' },
-		// { label: 'Health and Physical Education' },
-		// { label: 'Library and Information Science' },
-		// { label: 'Science Education' },
-		// { label: 'Social Sciences Education' },
-		// { label: 'Vocational Teacher Education (Technical Education)', },
-		// { label: 'Religion' },
-		// { label: 'Igbo Linguistics' },
-		// { label: 'Agricultural and Bioresources Engineering' },
-		// { label: 'Civil Engineering' },
-		// { label: 'Chemical Engineering' },
-		// { label: 'Computer Engineering' },
-		// { label: 'Electrical Engineering' },
-		// { label: 'Electronic Engineering' },
-		// { label: 'Marine Engineering' },
-		// { label: 'Mechanical Engineering' },
-		// { label: 'Metallurgical and Materials Engineering' },
-		// { label: 'Petroleum and Gas Engineering' },
-		// { label: 'Systems Engineering' },
-		// { label: 'Structural Engineering' },
-		// { label: 'Production and Industrial Engineering' },
+		{ value: 'Education & Accountancy', label: 'Education & Accountancy' },
+		{ value: 'Education & Computer Science', label: 'Education & Computer Science' },
+		{ value: 'Education & Economics', label: 'Education & Economics' },
+		{ value: 'Education & Mathematics', label: 'Education & Mathematics' },
+		{ value: 'Education & Physics', label: 'Education & Physics' },
+		{ value: 'Education & Religious Studies', label: 'Education & Religious Studies' },
+		{ value: 'Education & Social Science', label: 'Education & Social Science' },
+		{ value: 'Education And Biology', label: 'Education And Biology' },
+		{ value: 'Education And Chemistry', label: 'Education And Chemistry' },
+		{ value: 'Education And English Language', label: 'Education And English Language' },
+		{ value: 'Education And French', label: 'Education And French' },
+		{ value: 'Education And Geography/Physics', label: 'Education And Geography/Physics' },
+		{ value: 'Education And Political Science', label: 'Education And Political Science' },
+		{ value: 'Educational Foundations', label: 'Educational Foundations' },
+		{ value: 'Educational / Psychology Guidance And Counselling', label: 'Educational / Psychology Guidance And Counselling' },
+		{ value: 'Health and Physical Education', label: 'Health and Physical Education' },
+		{ value: 'Library and Information Science', label: 'Library and Information Science' },
+		{ value: 'Science Education', label: 'Science Education' },
+		{ value: 'Social Sciences Education', label: 'Social Sciences Education' },
+		{ value: 'Vocational Teacher Education (Technical Education)', label: 'Vocational Teacher Education (Technical Education)' },
+		{ value: 'Religion', label: 'Religion' },
+		{ value: 'Igbo Linguistics', label: 'Igbo Linguistics' },
+		{ value: 'Agricultural and Bioresources Engineering', label: 'Agricultural and Bioresources Engineering' },
+		{ value: 'Civil Engineering', label: 'Civil Engineering' },
+		{ value: 'Chemical Engineering', label: 'Chemical Engineering' },
+		{ value: 'Computer Engineering', label: 'Computer Engineering' },
+		{ value: 'Electrical Engineering', label: 'Electrical Engineering' },
+		{ value: 'Electronic Engineering', label: 'Electronic Engineering' },
+		{ value: 'Marine Engineering', label: 'Marine Engineering' },
+		{ value: 'Mechanical Engineering', label: 'Mechanical Engineering' },
+		{ value: 'Metallurgical and Materials Engineering', label: 'Metallurgical and Materials Engineering' },
+		{ value: 'Petroleum and Gas Engineering', label: 'Petroleum and Gas Engineering' },
+		{ value: 'Systems Engineering', label: 'Systems Engineering' },
+		{ value: 'Structural Engineering', label: 'Structural Engineering' },
+		{ value: 'Production and Industrial Engineering', label: 'Production and Industrial Engineering' },
 	]
 	function EditableControls() {
 		const {
@@ -215,6 +215,7 @@ export default function Home() {
 							<Flex w='100%'>
 								<Box w='400px'>
 									<CreatableSelect
+									ModalOverlay={false}
 										isClearable
 										options={items}
 										placeholder='Subject: Math,English'
@@ -271,8 +272,10 @@ export default function Home() {
 												</Editable>
 
 												<Stack spacing="3" mt="3" display={block}>
+												
+													<FormLabel htmlFor="text">Name</FormLabel>
 													<Input />
-													<Input />
+													<FormLabel htmlFor="desc">Prefered topic</FormLabel>
 													<Input mb="3" />
 													<Box>
 														<FormLabel htmlFor="desc">Description</FormLabel>
