@@ -9,8 +9,12 @@ import NProgress from 'nprogress'
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+<<<<<<< HEAD
 import io from 'socket.io-client'
 import { useEffect, useRef, useState } from 'react'
+=======
+import Carousel from 'nuka-carousel'
+>>>>>>> 12e3d0a94e7bc951f524d6b4d80c0b9ae5c10fe8
 
 const queryClient = new QueryClient()
 const { publicRuntimeConfig } = getConfig()
@@ -21,6 +25,7 @@ Router.events.on('routeChangeStart', (url) => {
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
+<<<<<<< HEAD
 export default function MyApp({ Component, pageProps, userData }) {
 		
 	return (
@@ -34,6 +39,24 @@ export default function MyApp({ Component, pageProps, userData }) {
 			</ChakraProvider>
 		</QueryClientProvider>
 	)
+=======
+
+export default function MyApp({ Component, pageProps,userData }) {
+ console.log("Userdata:",userData)
+  return (
+     <QueryClientProvider client={queryClient}>
+    <ChakraProvider>
+       <UserContext.Provider value={userData}>
+      <Layout>
+       
+          <Component {...pageProps} />
+      </Layout>
+      
+       </UserContext.Provider>
+      </ChakraProvider>
+      </QueryClientProvider>
+  )
+>>>>>>> 12e3d0a94e7bc951f524d6b4d80c0b9ae5c10fe8
 }
 
 function redirectUser(ctx, location) {
