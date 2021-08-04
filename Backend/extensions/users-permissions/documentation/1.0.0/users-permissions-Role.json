@@ -561,9 +561,6 @@
                 "role": {
                   "type": "string"
                 },
-                "userImage": {
-                  "type": "string"
-                },
                 "requests": {
                   "type": "array",
                   "items": {
@@ -581,12 +578,6 @@
                 },
                 "teachingClass": {
                   "type": "string"
-                },
-                "class_applications": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "created_by": {
                   "type": "string"

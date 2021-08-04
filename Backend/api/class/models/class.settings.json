@@ -12,9 +12,9 @@
   },
   "attributes": {
     "students": {
+      "via": "class",
       "plugin": "users-permissions",
-      "collection": "user",
-      "via": "class"
+      "collection": "user"
     },
     "details": {
       "model": "request"
@@ -23,9 +23,9 @@
       "type": "datetime"
     },
     "tutor": {
+      "via": "teachingClass",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "teachingClass"
+      "model": "user"
     }
   }
 }

@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/khcoins": {
+    "/languages": {
       "get": {
         "deprecated": false,
-        "description": "Find all the khcoins's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Khcoins"
+                    "$ref": "#/components/schemas/Language"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new khcoins record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Language"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewLanguage"
               }
             }
           }
         }
       }
     },
-    "/khcoins/count": {
+    "/languages/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of khcoins documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "parameters": []
       }
     },
-    "/khcoins/{id}": {
+    "/languages/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one khcoins record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Language"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single khcoins record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Language"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewLanguage"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single khcoins record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single khcoins based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Language"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Khcoins": {
+      "Language": {
         "required": [
           "id"
         ],
@@ -522,83 +522,17 @@
           "id": {
             "type": "string"
           },
-          "amount": {
-            "type": "integer"
-          },
-          "users_permissions_user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "requests": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "datetime"
           }
         }
       },
-      "NewKhcoins": {
+      "NewLanguage": {
         "properties": {
-          "amount": {
-            "type": "integer"
-          },
-          "users_permissions_user": {
+          "name": {
             "type": "string"
           },
           "published_at": {
@@ -616,7 +550,7 @@
   },
   "tags": [
     {
-      "name": "Khcoins"
+      "name": "Language"
     }
   ]
 }

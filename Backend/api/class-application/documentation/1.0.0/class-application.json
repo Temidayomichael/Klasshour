@@ -535,72 +535,24 @@
           "id": {
             "type": "string"
           },
-          "price": {
-            "type": "number"
-          },
-          "note": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "default": "pending"
-          },
           "tutor": {
             "required": [
-              "id",
-              "username",
-              "email"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "user": {
                 "type": "string"
               },
-              "email": {
+              "price": {
+                "type": "integer"
+              },
+              "profileImage": {
                 "type": "string"
               },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "userImage": {
-                "type": "string"
-              },
-              "requests": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
+              "IntoVideo": {
                 "type": "string"
               },
               "class_applications": {
@@ -608,6 +560,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -629,11 +584,7 @@
                 "type": "string"
               },
               "type": {
-                "type": "string",
-                "enum": [
-                  "hometutoring",
-                  "onlinetutoring"
-                ]
+                "type": "string"
               },
               "location": {
                 "type": "string"
@@ -645,20 +596,10 @@
                 "type": "string"
               },
               "status": {
-                "type": "string",
-                "enum": [
-                  "closed",
-                  "open"
-                ]
-              },
-              "class_applications": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -668,33 +609,43 @@
               }
             }
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewClass-application": {
-        "properties": {
-          "price": {
-            "type": "number"
-          },
           "note": {
             "type": "string"
           },
           "status": {
             "type": "string",
-            "default": "pending"
+            "default": "pending",
+            "enum": [
+              "pending",
+              "approved"
+            ]
           },
+          "published_at": {
+            "type": "datetime"
+          }
+        }
+      },
+      "NewClass-application": {
+        "properties": {
           "tutor": {
             "type": "string"
           },
           "request": {
             "type": "string"
           },
-          "published_at": {
+          "note": {
+            "type": "string"
+          },
+          "status": {
             "type": "string",
-            "format": "date-time"
+            "default": "pending",
+            "enum": [
+              "pending",
+              "approved"
+            ]
+          },
+          "published_at": {
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"

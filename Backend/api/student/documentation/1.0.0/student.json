@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/khcoins": {
+    "/students": {
       "get": {
         "deprecated": false,
-        "description": "Find all the khcoins's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Khcoins"
+                    "$ref": "#/components/schemas/Student"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new khcoins record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Student"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewStudent"
               }
             }
           }
         }
       }
     },
-    "/khcoins/count": {
+    "/students/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of khcoins documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "parameters": []
       }
     },
-    "/khcoins/{id}": {
+    "/students/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one khcoins record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Student"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single khcoins record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Student"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewStudent"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single khcoins record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single khcoins based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Student"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Khcoins": {
+      "Student": {
         "required": [
           "id"
         ],
@@ -522,10 +522,7 @@
           "id": {
             "type": "string"
           },
-          "amount": {
-            "type": "integer"
-          },
-          "users_permissions_user": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -588,17 +585,81 @@
               }
             }
           },
+          "profileImage": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
         }
       },
-      "NewKhcoins": {
+      "NewStudent": {
         "properties": {
-          "amount": {
-            "type": "integer"
-          },
-          "users_permissions_user": {
+          "user": {
             "type": "string"
           },
           "published_at": {
@@ -616,7 +677,7 @@
   },
   "tags": [
     {
-      "name": "Khcoins"
+      "name": "Student"
     }
   ]
 }

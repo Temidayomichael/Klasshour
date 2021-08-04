@@ -28,9 +28,9 @@
       "type": "string"
     },
     "user": {
+      "via": "requests",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "requests"
+      "model": "user"
     },
     "status": {
       "type": "enumeration",
@@ -38,10 +38,6 @@
         "closed",
         "open"
       ]
-    },
-    "class_applications": {
-      "via": "request",
-      "collection": "class-application"
     }
   }
 }

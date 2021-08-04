@@ -1251,73 +1251,6 @@
               }
             }
           },
-          "userImage": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "requests": {
             "type": "array",
             "items": {
@@ -1332,11 +1265,7 @@
                   "type": "string"
                 },
                 "type": {
-                  "type": "string",
-                  "enum": [
-                    "hometutoring",
-                    "onlinetutoring"
-                  ]
+                  "type": "string"
                 },
                 "location": {
                   "type": "string"
@@ -1348,20 +1277,10 @@
                   "type": "string"
                 },
                 "status": {
-                  "type": "string",
-                  "enum": [
-                    "closed",
-                    "open"
-                  ]
-                },
-                "class_applications": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 },
                 "published_at": {
-                  "type": "string"
+                  "type": "datetime"
                 },
                 "created_by": {
                   "type": "string"
@@ -1390,7 +1309,7 @@
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1418,13 +1337,13 @@
                 "type": "string"
               },
               "date": {
-                "type": "string"
+                "type": "datetime"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1452,56 +1371,19 @@
                 "type": "string"
               },
               "date": {
-                "type": "string"
+                "type": "datetime"
               },
               "tutor": {
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "class_applications": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "note": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "tutor": {
-                  "type": "string"
-                },
-                "request": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
               }
             }
           }
@@ -1526,7 +1408,6 @@
           },
           "password": {
             "type": "string",
-            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
@@ -1563,12 +1444,6 @@
           },
           "teachingClass": {
             "type": "string"
-          },
-          "class_applications": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
