@@ -5,6 +5,7 @@ import Lobby from './Lobby';
 import Room from './Room';
 import Whiteboard from './whitebord';
 import dynamic from 'next/dynamic'
+import Chat from './chat';
 
 //   const DynamicComponentWithNoSSR = dynamic(
 //   () => import('./whitebord'),
@@ -61,7 +62,7 @@ const VideoChat = () => {
          <Room roomName={roomName} token={token} handleLogout={handleLogout} />
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+      <Chat />
     </TabPanel>
   </TabPanels>
 </Tabs>

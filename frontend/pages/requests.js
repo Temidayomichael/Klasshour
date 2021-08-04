@@ -28,16 +28,21 @@ import AddRequest from '../components/dashboard/AddRequest'
 import { useFormik } from 'formik'
 import { useQuery } from 'react-query'
 import { useMutation } from 'react-query'
-import { GetRequests } from '../Queries/queries'
+import { GetApplications, GetRequests } from '../Queries/queries'
 import JoinClass from '../components/requestsPage/joinClass'
 import ApplyClass from '../components/requestsPage/applyClass'
 import Select from 'react-select'
 import axios from 'axios'
+import { motion } from 'framer-motion'
+import useApplied from '../hooks/useApplied'
+
 
 export default function Student({ requests }) {
+	const MotionBox = motion(Box)
+
 	const isLoggedin = useLoginStatus()
 	const isStudent = useUserType()
-	console.log('whatssssss:', isStudent)
+	
 	let newRequestArray = []
 	const jwt = parseCookies().jwt
 	const userData = useContext(UserContext)
@@ -45,19 +50,20 @@ export default function Student({ requests }) {
 	const { data, isLoading, isError, isFetching, isSuccess } = useQuery(
 		['requests', { subjectId }],
 		GetRequests,
-        {
-            initialData: requests,
-        },
-        
+		{
+			initialData: requests,
+		},
 	)
+	
 	if (isSuccess) {
-         newRequestArray = data.data
-        // console.log('myreq',myreq)
+		newRequestArray = data.data
+		// console.log('myreq',myreq)
 		// newRequestArray = myreq.reduce(
 		// 	(request) => request.user.id !== userData.id,
 		// )
 	}
-
+		console.log(useApplied(newRequestArray))
+	console.log()
 	const toast = useToast()
 	if (isLoading) {
 		return (
@@ -105,7 +111,7 @@ export default function Student({ requests }) {
 							useFormik={useFormik}
 							isLoading={userData.isLoading}
 							jwt={jwt}
-							user={userData.id}
+							user={userData.user.id}
 							useMutation={useMutation}
 						/>
 					</Box>
@@ -130,12 +136,19 @@ export default function Student({ requests }) {
 							setSubjectId(values.map((subject) => subject.id))
 						}
 					/>
-					<SimpleGrid columns={3} spacingX='40px' spacingY='20px' mt='5'>
+					<SimpleGrid columns={3} spacing='30px'  mt='5'>
 						{newRequestArray
 							? newRequestArray.map((data, index) => {
 									return (
 										<>
-											<Box
+                                            <Box
+                                                animate={{ sacle:1 }}
+												whileHover={{
+													scale: 1.1,
+													transition: {
+														duration: 0.2,
+													},
+												}}
 												key={data.id}
 												maxW='sm'
 												p='5'
@@ -193,12 +206,14 @@ export default function Student({ requests }) {
 												<Divider my='3' />
 												<Box p='6'>
 													<Center justifyContent='space-between'>
-														<Text fontSize='sm'>By {data.user.fullname}</Text>
+														<Text fontSize='sm'>By {data.user?data.user.fullname:''}</Text>
 														{isLoggedin ? (
+															
 															!isStudent ? (
-																<ApplyClass user={userData.id} request={data} />
+																
+																<ApplyClass user={userData} request={data} />
 															) : (
-																<JoinClass data={data} />
+																	<JoinClass data={data} />
 															)
 														) : (
 															<Button isDisabled={!isLoggedin} mt='10'>

@@ -24,8 +24,8 @@ import {
 import { AddApplication } from '../../Queries/queries';
 import { useMutation } from 'react-query';
 
-export default function ApplyClass({user,request}) {
 
+export default function ApplyClass({user,request}) {
     const {mutate,data,status}=useMutation(AddApplication,{
         onSuccess:()=>{
             alert("Successfully Posted")
@@ -44,9 +44,7 @@ export default function ApplyClass({user,request}) {
   const format = (val) => `$` + val
   const formik = useFormik({
      initialValues: {
-      price: '',
       note: '',
-      
      },
     onSubmit: async (values) => {
       
@@ -60,53 +58,43 @@ export default function ApplyClass({user,request}) {
     console.log(e)
       }
      },
-   });
+  });
+  	console.log('data.request', user)
+		console.log('request', request)
+	
   return (
-    <>
-      <Popover placement="right">
-        <PopoverTrigger>
-          <Button size='sm'>Apply</Button>
-        </PopoverTrigger>
-        <PopoverContent>
-          <PopoverArrow />
-          <PopoverCloseButton />
-          <PopoverHeader>Class application</PopoverHeader>
-          <PopoverBody>
-            <form onSubmit={formik.handleSubmit}>
-              <FormControl id="price">
-                <FormLabel>Amount</FormLabel>
-                <NumberInput
-                  allowMouseWheel
-                  d="flex"
-                >
-                 <InputLeftAddon px="5"  children="₦" />
-                  
-                  <NumberInputField
-                   id="price"
-                    name="price"
-                     value={format(formik.values.price)}
-                   
-                    
-                  onChange={formik.handleChange}
-                  thousandSeparator={true}
-                  />
-                </NumberInput>
-              </FormControl>
-               <FormControl id="note">
-                <FormLabel>Note</FormLabel>
-                <Textarea type="note"
-                  id="note"
-                  name="note"
-                  type="note"
-                 onChange={formik.handleChange}
-                  value={formik.values.note} />
-                <FormHelperText>have something to add to this request?.</FormHelperText>
-              </FormControl>
-              <Button type="submit">Submit</Button>
-            </form>
-          </PopoverBody>
-        </PopoverContent>
-      </Popover>
-    </>
-  )
+		<>
+			<Popover placement='right'>
+				<PopoverTrigger>
+          <Button
+            isDisabled={user.class_applications.some((data) => data.request == request.id)}
+						size='sm'>
+						Apply
+					</Button>
+				</PopoverTrigger>
+				<PopoverContent>
+					<PopoverArrow />
+					<PopoverCloseButton />
+					<PopoverHeader>Class application</PopoverHeader>
+					<PopoverBody>
+						<form onSubmit={formik.handleSubmit}>
+							<FormControl id='note'>
+								<FormLabel>Note</FormLabel>
+								<Textarea
+									type='note'
+									name='note'
+									onChange={formik.handleChange}
+									value={formik.values.note}
+								/>
+								<FormHelperText>
+									have something to add to this request?.
+								</FormHelperText>
+							</FormControl>
+							<Button type='submit'>Submit</Button>
+						</form>
+					</PopoverBody>
+				</PopoverContent>
+			</Popover>
+		</>
+	)
 }

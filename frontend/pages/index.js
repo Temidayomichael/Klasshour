@@ -219,8 +219,6 @@ export default function Home() {
 										options={items}
 										placeholder='Subject: Math,English'
 										onChange={(value) => setSubject(value ? value.label : value)}
-						
-
 									/>
 								</Box>
 								<Button

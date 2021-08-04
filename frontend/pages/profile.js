@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import BasicInfo from '../components/dashboard/basicInfo';
+import BasicInfo from '../components/dashboard/tutor/BasicInfo';
 import UserContext from '../contexts/UserContext';
 import { useFormik } from "formik";
 import {

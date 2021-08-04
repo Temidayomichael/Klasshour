@@ -11,7 +11,7 @@ export default function useUserType() {
   useEffect(() => {
     if (jwt) {
       
-      if (userData.role.name == "Student") {
+      if (userData.role == "Student") {
         setIsStudent(true);
       }
     }
