@@ -21,13 +21,8 @@
     "note": {
       "type": "text"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "pending",
-        "approved"
-      ],
-      "default": "pending"
+    "recommended_time": {
+      "type": "integer"
     }
   }
 }

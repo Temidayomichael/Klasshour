@@ -592,7 +592,7 @@
               "subject": {
                 "type": "string"
               },
-              "user": {
+              "student": {
                 "type": "string"
               },
               "status": {
@@ -612,13 +612,8 @@
           "note": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "default": "pending",
-            "enum": [
-              "pending",
-              "approved"
-            ]
+          "recommended_time": {
+            "type": "integer"
           },
           "published_at": {
             "type": "datetime"
@@ -636,13 +631,8 @@
           "note": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "default": "pending",
-            "enum": [
-              "pending",
-              "approved"
-            ]
+          "recommended_time": {
+            "type": "integer"
           },
           "published_at": {
             "type": "datetime"

@@ -559,23 +559,17 @@
               "role": {
                 "type": "string"
               },
-              "requests": {
+              "fullname": {
+                "type": "string"
+              },
+              "wallet": {
+                "type": "string"
+              },
+              "wallet_topups": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
-                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -741,8 +735,8 @@
                 "note": {
                   "type": "string"
                 },
-                "status": {
-                  "type": "string"
+                "recommended_time": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "datetime"

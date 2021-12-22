@@ -59,24 +59,16 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "requests": {
-      "via": "user",
-      "collection": "request"
-    },
     "fullname": {
       "type": "string"
     },
-    "khcoin": {
-      "model": "khcoins",
-      "via": "users_permissions_user"
+    "wallet": {
+      "via": "user",
+      "model": "wallet"
     },
-    "class": {
-      "via": "students",
-      "model": "class"
-    },
-    "teachingClass": {
-      "via": "tutor",
-      "model": "class"
+    "wallet_topups": {
+      "via": "user",
+      "collection": "wallet-topup"
     }
   }
 }

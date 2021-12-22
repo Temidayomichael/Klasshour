@@ -9,12 +9,15 @@ import NProgress from 'nprogress'
 import UserContext from '../contexts/UserContext'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-<<<<<<< HEAD
-import io from 'socket.io-client'
-import { useEffect, useRef, useState } from 'react'
-=======
-import Carousel from 'nuka-carousel'
->>>>>>> 12e3d0a94e7bc951f524d6b4d80c0b9ae5c10fe8
+import {
+	ApolloClient,
+	createHttpLink,
+	InMemoryCache,
+	ApolloProvider,
+} from '@apollo/client'
+import { GetTutor } from '../Queries/tutor'
+import { setContext } from '@apollo/client/link/context'
+import { GetStudent } from '../Queries/student'
 
 const queryClient = new QueryClient()
 const { publicRuntimeConfig } = getConfig()
@@ -25,10 +28,29 @@ Router.events.on('routeChangeStart', (url) => {
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
-<<<<<<< HEAD
 export default function MyApp({ Component, pageProps, userData }) {
-		
+		const httpLink = createHttpLink({
+			uri: publicRuntimeConfig.GRAPHQL_ENDPOINT,
+		})
+
+		const authLink = setContext((_, { headers }) => {
+			// return the headers to the context so httpLink can read them
+			return {
+				headers: {
+					...headers,
+					Authorization: `Bearer ${jwt}`,
+				},
+			}
+		})
+
+		const client = new ApolloClient({
+			link: authLink.concat(httpLink),
+			cache: new InMemoryCache(),
+		})
+	
+	console.log('userData:', userData)
 	return (
+		<ApolloProvider client={client}>
 		<QueryClientProvider client={queryClient}>
 			<ChakraProvider>
 				<UserContext.Provider value={userData}>
@@ -37,26 +59,9 @@ export default function MyApp({ Component, pageProps, userData }) {
 					</Layout>
 				</UserContext.Provider>
 			</ChakraProvider>
-		</QueryClientProvider>
+			</QueryClientProvider>
+		</ApolloProvider>
 	)
-=======
-
-export default function MyApp({ Component, pageProps,userData }) {
- console.log("Userdata:",userData)
-  return (
-     <QueryClientProvider client={queryClient}>
-    <ChakraProvider>
-       <UserContext.Provider value={userData}>
-      <Layout>
-       
-          <Component {...pageProps} />
-      </Layout>
-      
-       </UserContext.Provider>
-      </ChakraProvider>
-      </QueryClientProvider>
-  )
->>>>>>> 12e3d0a94e7bc951f524d6b4d80c0b9ae5c10fe8
 }
 
 function redirectUser(ctx, location) {
@@ -74,6 +79,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 	let uData = ''
 	let role = ''
 	const jwt = parseCookies(ctx).jwt
+
 	if (!jwt) {
 		if (ctx.pathname === '/dashboard') {
 			redirectUser(ctx, '/login')
@@ -90,22 +96,79 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 			})
 			.then(async (res) => {
 				data = res.data
+				console.log('data:', data)
 				if (data.role.type == 'tutor') {
-					await axios
-						.get(`http://localhost:1337/tutors?user=${data.id}`, {
+
+					const httpLink = createHttpLink({
+						uri: publicRuntimeConfig.GRAPHQL_ENDPOINT,
+					})
+
+					const authLink = setContext((_, { headers }) => {
+						// return the headers to the context so httpLink can read them
+						return {
 							headers: {
+								...headers,
 								Authorization: `Bearer ${jwt}`,
 							},
-						})
-						.then((res) => (uData = res.data[0]))
+						}
+					})
+
+					const client = new ApolloClient({
+						link: authLink.concat(httpLink),
+						cache: new InMemoryCache(),
+					})
+					const resp = await client.query({
+						query: GetTutor,
+						variables: {
+							id: data._id,
+						}
+					})
+
+					// console.log('New tutor data:' + JSON.stringify(resp.data))
+					uData = resp.data
+					// console.log('uData:', uData)
+					// await axios
+					// 	.get(`http://localhost:1337/tutors?user=${data.id}`, {
+					// 		headers: {
+					// 			Authorization: `Bearer ${jwt}`,
+					// 		},
+					// 	})
+					// 	.then((res) => (uData = res.data[0]))
 				} else {
-					await axios
-						.get(`http://localhost:1337/students?user=${data.id}`, {
-							headers: {
-								Authorization: `Bearer ${jwt}`,
+						const httpLink = createHttpLink({
+							uri: publicRuntimeConfig.GRAPHQL_ENDPOINT,
+						})
+
+						const authLink = setContext((_, { headers }) => {
+							// return the headers to the context so httpLink can read them
+							return {
+								headers: {
+									...headers,
+									Authorization: `Bearer ${jwt}`,
+								},
+							}
+						})
+
+						const client = new ApolloClient({
+							link: authLink.concat(httpLink),
+							cache: new InMemoryCache(),
+						})
+						const resp = await client.query({
+							query: GetStudent,
+							variables: {
+								id: data._id,
 							},
 						})
-						.then((res) => (uData = res.data[0]))
+
+						// console.log('New tutor data:' + JSON.stringify(resp.data))
+						uData = resp.data
+					// await axios
+					// 	.get(`http://localhost:1337/students?user=${data.id}`, {
+					// 		headers: {
+					// 			Authorization: `Bearer ${jwt}`,
+					// 		},
+					// 	})
+					// 	.then((res) => (uData = res.data[0]))
 				}
 			})
 	}

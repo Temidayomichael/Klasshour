@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/khcoins": {
+    "/wallets": {
       "get": {
         "deprecated": false,
-        "description": "Find all the khcoins's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Khcoins"
+                    "$ref": "#/components/schemas/Wallet"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new khcoins record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Wallet"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewWallet"
               }
             }
           }
         }
       }
     },
-    "/khcoins/count": {
+    "/wallets/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of khcoins documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "parameters": []
       }
     },
-    "/khcoins/{id}": {
+    "/wallets/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one khcoins record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Wallet"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single khcoins record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve khcoins document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Khcoins"
+                  "$ref": "#/components/schemas/Wallet"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewKhcoins"
+                "$ref": "#/components/schemas/NewWallet"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single khcoins record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single khcoins based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Khcoins"
+          "Wallet"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Khcoins": {
+      "Wallet": {
         "required": [
           "id"
         ],
@@ -522,10 +522,13 @@
           "id": {
             "type": "string"
           },
-          "amount": {
+          "Balance": {
             "type": "integer"
           },
-          "users_permissions_user": {
+          "Overall_balance": {
+            "type": "integer"
+          },
+          "user": {
             "required": [
               "id",
               "username",
@@ -562,23 +565,17 @@
               "role": {
                 "type": "string"
               },
-              "requests": {
+              "fullname": {
+                "type": "string"
+              },
+              "wallet": {
+                "type": "string"
+              },
+              "wallet_topups": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
-                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -593,12 +590,15 @@
           }
         }
       },
-      "NewKhcoins": {
+      "NewWallet": {
         "properties": {
-          "amount": {
+          "Balance": {
             "type": "integer"
           },
-          "users_permissions_user": {
+          "Overall_balance": {
+            "type": "integer"
+          },
+          "user": {
             "type": "string"
           },
           "published_at": {
@@ -616,7 +616,7 @@
   },
   "tags": [
     {
-      "name": "Khcoins"
+      "name": "Wallet"
     }
   ]
 }

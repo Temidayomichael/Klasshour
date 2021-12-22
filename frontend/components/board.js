@@ -5,11 +5,18 @@ const Board = () => {
 	const canvasRef = useRef(null)
 	const colorsRef = useRef(null)
 	const socketRef = useRef()
+	const boardContainerRef = useRef(null)
 
 	useEffect(() => {
 		// --------------- getContext() method returns a drawing context on the canvas-----
-
 		const canvas = canvasRef.current
+
+		canvas.width = parseInt(
+			getComputedStyle(boardContainerRef.current).getPropertyValue('width'),
+		)
+		canvas.height = parseInt(
+			getComputedStyle(boardContainerRef.current).getPropertyValue('height'),
+		)
 		const test = colorsRef.current
 		const context = canvas.getContext('2d')
 
@@ -48,8 +55,12 @@ const Board = () => {
 			if (!emit) {
 				return
 			}
-			const w = canvas.width
-			const h = canvas.height
+			const w = parseInt(
+				getComputedStyle(boardContainerRef.current).getPropertyValue('width'),
+			)
+			const h = parseInt(
+				getComputedStyle(boardContainerRef.current).getPropertyValue('height'),
+			)
 
 			socketRef.current.emit('drawing', {
 				x0: x0 / w,
@@ -158,12 +169,17 @@ const Board = () => {
 				<div className='color blue' />
 				<div className='color yellow' />
 			</div>
-			<canvas
-				width={window.innerWidth}
-				height={window.innerHeight}
-				ref={canvasRef}
-				className='whiteboard'
-			/>
+			<div
+				className='boardContainer'
+				id='boardContainer'
+				ref={boardContainerRef}>
+				<canvas
+					width={window.innerWidth}
+					height={window.innerHeight}
+					ref={canvasRef}
+					className='whiteboard'
+				/>
+			</div>
 		</div>
 	)
 }

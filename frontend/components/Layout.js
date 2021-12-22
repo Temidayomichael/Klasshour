@@ -36,14 +36,10 @@ console.log('allUsers:', users)
 
 	return (
 		<Box bg='gray.50'>
-			<Box>
-				<Navbar />
-			</Box>
+			{router.pathname=='/class/[classroom]' ?'': <Navbar />}
 
 			{children}
-			<Box>
-				<Footer />
-			</Box>
+			{router.pathname == '/class/[classroom]' ? '' : <Footer />}
 		</Box>
 	)
 }

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallet_topups",
+  "info": {
+    "name": "wallet_topup"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "payment_reference": {
+      "type": "biginteger"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "wallet_topups"
+    }
+  }
+}

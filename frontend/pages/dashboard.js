@@ -15,7 +15,7 @@ import {
 	Tabs,
 	Alert,
 	AlertIcon,
-	Input,
+	Container,
 	SlideFade,
 	Textarea,
 	Text,
@@ -32,17 +32,28 @@ import BasicInfo from '../components/dashboard/tutor/BasicInfo'
 import RequestTab from '../components/dashboard/RequestTab'
 import ClassesTab from '../components/dashboard/ClassesTab'
 import { useQuery, useMutation } from 'react-query'
-import { push as Menu } from 'react-burger-menu'
-import { PaystackButton } from 'react-paystack'
+import {
+	GenerateTimeStamp,
+	GenerateSignature,
+	hmacsha1,
+} from '../config/apiConfig'
+import TutorAppications from '../components/dashboard/tutor/Applications'
 
 const { publicRuntimeConfig } = getConfig()
 
 export default function Dashboard({ jwt, requests, requestData }) {
+
+const [tabIndex, setTabIndex] = useState(0)
+
+const handleTabsChange = (index) => {
+	setTabIndex(index)
+}
+
 	console.log(requests)
 	console.log(requestData)
 
-  const userData = useContext(UserContext)
-  console.log(userData)
+	const userData = useContext(UserContext)
+	console.log(userData)
 	//   const { PAYSTACK_PUBLICKEY } = process.env
 	// console.log(PAYSTACK_PUBLICKEY)
 	//   const componentProps = {
@@ -99,42 +110,47 @@ export default function Dashboard({ jwt, requests, requestData }) {
 
 	const dashboardMenu =
 		userData.role == 'Tutor' ? (
-			<Box className='content' m='auto' my='10'>
-				<Text bg='#151a46' color='gray.50' p='3' m='0'>
-					Klasshour Dashboard
-				</Text>
+			<>
+				<Box className='content' m='auto' my='10'>
+					<Text bg='#151a46' color='gray.50' p='3' m='0'>
+						Klasshour Dashboard
+					</Text>
 
-				<Tabs variant='enclosed' isFitted isLazy>
-					<TabList>
-						<Tab>My Applicaions</Tab>
-						<Tab>Upcoming classes</Tab>
-						<Tab>Past class</Tab>
-						<Tab>Teachers</Tab>
-						<Tab>Messages</Tab>
-						<Box fontSize='lg'>
-							{/* <Kbd  color="white" bg="red" mr="2">23 minutes left</Kbd> <Kbd as={PaystackButton}  {...componentProps} >Add minutes</Kbd> */}
-						</Box>
-					</TabList>
+					<Tabs
+						index={tabIndex}
+						onChange={handleTabsChange}
+						variant='enclosed'
+						isFitted
+						isLazy>
+						<TabList>
+							<Tab>My Applicaions</Tab>
+							<Tab>Upcoming classes</Tab>
+							<Tab>Past class</Tab>
+							<Tab>Messages</Tab>
+							<Box fontSize='lg'>
+								{/* <Kbd  color="white" bg="red" mr="2">23 minutes left</Kbd> <Kbd as={PaystackButton}  {...componentProps} >Add minutes</Kbd> */}
+							</Box>
+						</TabList>
 
-					<TabPanels id='page-wrap' className='tabs'>
-						<TabPanel className='content' m='auto' id='page-wrap'>
-							No applicaions ...
-						</TabPanel>
-						<TabPanel mx='auto'>
-							<ClassesTab
-								jwt={jwt}
-								useQuery={useQuery}
-								useMutation={useMutation}
-							/>
-							ddyfgdygfygfydf
-						</TabPanel>
-						<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
-						<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
-					</TabPanels>
-				</Tabs>
-			</Box>
+						<TabPanels id='page-wrap' className='tabs'>
+							<TabPanel className='content' m='auto' id='page-wrap'>
+								<TutorAppications setTabIndex={setTabIndex} useQuery={useQuery} />
+							</TabPanel>
+							<TabPanel mx='auto'>
+								<ClassesTab
+									jwt={jwt}
+									useQuery={useQuery}
+									useMutation={useMutation}
+								/>
+							</TabPanel>
+							<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
+							<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
+						</TabPanels>
+					</Tabs>
+				</Box>
+			</>
 		) : (
-			<Box className='content' m='auto' my='10'>
+			<Container maxW='5xl' mt='16'>
 				<Text bg='#151a46' color='gray.50' p='3' m='0'>
 					Klasshour Dashboard
 				</Text>
@@ -144,7 +160,6 @@ export default function Dashboard({ jwt, requests, requestData }) {
 						<Tab>My Requests</Tab>
 						<Tab>Upcoming classes</Tab>
 						<Tab>Past class</Tab>
-						<Tab>Teachers</Tab>
 						<Tab>Messages</Tab>
 						<Box fontSize='lg'>
 							{/* <Kbd  color="white" bg="red" mr="2">23 minutes left</Kbd> <Kbd as={PaystackButton}  {...componentProps} >Add minutes</Kbd> */}
@@ -165,13 +180,11 @@ export default function Dashboard({ jwt, requests, requestData }) {
 								useQuery={useQuery}
 								useMutation={useMutation}
 							/>
-							ddyfgdygfygfydf
 						</TabPanel>
-						<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
 						<TabPanel mx='auto'>ddyfgdygfygfydf</TabPanel>
 					</TabPanels>
 				</Tabs>
-			</Box>
+			</Container>
 		)
 	return (
 		<SlideFade in={true} offsetY='20px'>
@@ -180,7 +193,7 @@ export default function Dashboard({ jwt, requests, requestData }) {
 				<link rel='icon' href='../img/home_logo.png' />
 			</Head>
 
-			<Box className='content'>{dashboardMenu}</Box>
+			<Container maxW='7xl'>{dashboardMenu}</Container>
 		</SlideFade>
 	)
 }

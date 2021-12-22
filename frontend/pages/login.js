@@ -62,7 +62,7 @@ export default function Login({ history }) {
                     
                      toast({
                                         title: "Error!",
-                                        description: err.response.data.message[0].messages[0].message + "Please fill in correct details",
+                                        description: err.response.data.message[0].messages[0].message,
                                         status: "error",
                                         duration: 9000,
                          isClosable: true,

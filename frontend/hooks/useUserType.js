@@ -1,24 +1,25 @@
-import { useState, useEffect, useContext } from 'react';
-import UserContext from '../contexts/UserContext';
+import { useState, useEffect, useContext } from 'react'
+import UserContext from '../contexts/UserContext'
 import { parseCookies } from 'nookies'
 
 export default function useUserType() {
-      const userData = useContext(UserContext)
-    const jwt = parseCookies().jwt
-   
-  const [isStudent, setIsStudent] = useState(false);
+	const userData = useContext(UserContext)
+	const jwt = parseCookies().jwt
 
-  useEffect(() => {
-    if (jwt) {
-      
-      if (userData.role == "Student") {
-        setIsStudent(true);
-      }
-    }
-    return () => {
-      setIsStudent(false);
-    };
-  });
+	const [isStudent, setIsStudent] = useState()
 
-  return isStudent;
+	useEffect(() => {
+		if (jwt) {
+			if (userData.role == 'Student') {
+				return () => {
+					setIsStudent(true)
+				}
+			}
+		} else
+			return () => {
+				setIsStudent(false)
+			}
+	})
+
+	return isStudent
 }

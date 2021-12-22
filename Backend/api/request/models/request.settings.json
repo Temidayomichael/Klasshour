@@ -27,10 +27,9 @@
     "subject": {
       "type": "string"
     },
-    "user": {
-      "via": "requests",
-      "plugin": "users-permissions",
-      "model": "user"
+    "student": {
+      "model": "student",
+      "via": "requests"
     },
     "status": {
       "type": "enumeration",

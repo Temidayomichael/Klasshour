@@ -21,16 +21,17 @@ import {
 } from "@chakra-ui/react"
  import {  useFormik } from 'formik';
  import NumberFormat from 'react-number-format';
-import { AddApplication } from '../../Queries/queries';
+import { AddApplication } from '../../Queries/application';
 import { useMutation } from 'react-query';
 
 
 export default function ApplyClass({user,request}) {
     const {mutate,data,status}=useMutation(AddApplication,{
-        onSuccess:()=>{
+        onSuccess:(err)=>{
             alert("Successfully Posted")
      },
-        onError: () => {
+      onError: (err) => {
+          console.log(err)
      toast({
             title: "Error getting Uploading request ...",
             status: "error",
@@ -60,15 +61,11 @@ export default function ApplyClass({user,request}) {
      },
   });
   	console.log('data.request', user)
-		console.log('request', request)
-	
   return (
 		<>
 			<Popover placement='right'>
 				<PopoverTrigger>
-          <Button
-            isDisabled={user.class_applications.some((data) => data.request == request.id)}
-						size='sm'>
+					<Button size='sm'>
 						Apply
 					</Button>
 				</PopoverTrigger>

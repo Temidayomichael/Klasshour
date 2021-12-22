@@ -538,41 +538,18 @@
           "subject": {
             "type": "string"
           },
-          "user": {
+          "student": {
             "required": [
-              "id",
-              "username",
-              "email"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "user": {
                 "type": "string"
               },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
+              "profileImage": {
                 "type": "string"
               },
               "requests": {
@@ -581,17 +558,8 @@
                   "type": "string"
                 }
               },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
-                "type": "string"
+              "published_at": {
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -631,7 +599,7 @@
           "subject": {
             "type": "string"
           },
-          "user": {
+          "student": {
             "type": "string"
           },
           "status": {

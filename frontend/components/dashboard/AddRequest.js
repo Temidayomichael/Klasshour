@@ -1,25 +1,11 @@
 import * as Yup from 'yup'
 import {
 	Box,
-	Center,
-	Divider,
-	Flex,
-	Kbd,
-	Tab,
-	TabList,
-	TabPanel,
-	TabPanels,
-	Tabs,
-	Alert,
-	AlertIcon,
-	Text,
 	Stack,
 	FormControl,
 	FormLabel,
 	FormErrorMessage,
-	FormHelperText,
 	Input,
-	SlideFade,
 	Button,
 	useDisclosure,
 	Modal,
@@ -32,19 +18,19 @@ import {
 	Select,
 	Textarea,
 } from '@chakra-ui/react'
-import axios from 'axios'
 import getConfig from 'next/config'
-import { AddToRequest } from '../../Queries/queries'
+import { AddToRequest } from '../../Queries/request'
 
 export default function AddRequest({
 	useFormik,
 	isLoading,
 	user,
 	useMutation,
+	searchSubject,
 }) {
 	const { publicRuntimeConfig } = getConfig()
 	const { isOpen, onOpen, onClose } = useDisclosure()
-
+ console.log("add req user:", user)
 	const { mutate, data, status } = useMutation(AddToRequest, {
 		onSuccess: () => {
 			alert('Successfully Posted')
@@ -108,7 +94,7 @@ export default function AddRequest({
 			try {
 				await mutate({
 					values: values,
-					user: user,
+					user: user.students[0],
 				})
 			} catch (e) {}
 			console.log(status)
@@ -135,6 +121,8 @@ export default function AddRequest({
 										id='subject'
 										values={requestForm.values.subject}
 										onChange={requestForm.handleChange}
+										defaultValue={searchSubject && searchSubject}
+										disabled={searchSubject ? true : false}
 									/>
 									<FormErrorMessage>
 										{requestForm.errors.subject}

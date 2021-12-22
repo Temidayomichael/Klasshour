@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "khcoins",
+  "collectionName": "wallets",
   "info": {
-    "name": "khcoins"
+    "name": "wallet"
   },
   "options": {
     "increments": true,
@@ -10,13 +10,16 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "amount": {
+    "Balance": {
       "type": "biginteger"
     },
-    "users_permissions_user": {
-      "via": "khcoin",
+    "Overall_balance": {
+      "type": "biginteger"
+    },
+    "user": {
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "wallet"
     }
   }
 }

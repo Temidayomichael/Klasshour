@@ -1251,7 +1251,38 @@
               }
             }
           },
-          "requests": {
+          "fullname": {
+            "type": "string"
+          },
+          "wallet": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Balance": {
+                "type": "integer"
+              },
+              "Overall_balance": {
+                "type": "integer"
+              },
+              "user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "wallet_topups": {
             "type": "array",
             "items": {
               "required": [
@@ -1261,22 +1292,13 @@
                 "id": {
                   "type": "string"
                 },
-                "requestDesc": {
-                  "type": "string"
+                "amount": {
+                  "type": "integer"
                 },
-                "type": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "subject": {
-                  "type": "string"
+                "payment_reference": {
+                  "type": "integer"
                 },
                 "user": {
-                  "type": "string"
-                },
-                "status": {
                   "type": "string"
                 },
                 "published_at": {
@@ -1288,102 +1310,6 @@
                 "updated_by": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "fullname": {
-            "type": "string"
-          },
-          "khcoin": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "amount": {
-                "type": "integer"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "class": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "details": {
-                "type": "string"
-              },
-              "date": {
-                "type": "datetime"
-              },
-              "tutor": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "teachingClass": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "students": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "details": {
-                "type": "string"
-              },
-              "date": {
-                "type": "datetime"
-              },
-              "tutor": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           }
@@ -1427,23 +1353,17 @@
           "role": {
             "type": "string"
           },
-          "requests": {
+          "fullname": {
+            "type": "string"
+          },
+          "wallet": {
+            "type": "string"
+          },
+          "wallet_topups": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "fullname": {
-            "type": "string"
-          },
-          "khcoin": {
-            "type": "string"
-          },
-          "class": {
-            "type": "string"
-          },
-          "teachingClass": {
-            "type": "string"
           },
           "created_by": {
             "type": "string"

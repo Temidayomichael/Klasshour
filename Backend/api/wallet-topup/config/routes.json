@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/khcoins",
-      "handler": "khcoins.find",
+      "path": "/wallet-topups",
+      "handler": "wallet-topup.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/khcoins/count",
-      "handler": "khcoins.count",
+      "path": "/wallet-topups/count",
+      "handler": "wallet-topup.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/khcoins/:id",
-      "handler": "khcoins.findOne",
+      "path": "/wallet-topups/:id",
+      "handler": "wallet-topup.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/khcoins",
-      "handler": "khcoins.create",
+      "path": "/wallet-topups",
+      "handler": "wallet-topup.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/khcoins/:id",
-      "handler": "khcoins.update",
+      "path": "/wallet-topups/:id",
+      "handler": "wallet-topup.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/khcoins/:id",
-      "handler": "khcoins.delete",
+      "path": "/wallet-topups/:id",
+      "handler": "wallet-topup.delete",
       "config": {
         "policies": []
       }

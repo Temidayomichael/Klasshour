@@ -559,23 +559,17 @@
               "role": {
                 "type": "string"
               },
-              "requests": {
+              "fullname": {
+                "type": "string"
+              },
+              "wallet": {
+                "type": "string"
+              },
+              "wallet_topups": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
-                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -652,6 +646,46 @@
               }
             }
           },
+          "requests": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "requestDesc": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "student": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -661,6 +695,12 @@
         "properties": {
           "user": {
             "type": "string"
+          },
+          "requests": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "datetime"
