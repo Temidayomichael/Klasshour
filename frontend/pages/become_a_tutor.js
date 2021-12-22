@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import { Box, Container, Flex, Heading, Text, Stack, Button } from "@chakra-ui/react"
+import { Box, Container, Flex, Heading, Text, Stack, Button, Center } from "@chakra-ui/react"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Carousel from 'nuka-carousel';
-
+import Image from 'next/image'
 export default function Become_a_tutor() {
 
     return (
@@ -12,22 +12,19 @@ export default function Become_a_tutor() {
                 <title>Become A Tutor | Klasshour</title>
                 <link rel="icon" href="../img/home_logo.png" />
             </Head>
+            <Box bg='#1a202c' h='300'  color='white'>
+
+                <Container maxW='5xl'>
+                    <Box>
 
 
-            <Flex>
-                <Box mb="10" bg='#161b45' h='500' w='55%' color='white'>
-                    <Box pt='40' pr='20'>
-                        <Container>
-
-                        <Heading  size="2xl" isTruncated textAlign='left'>
-                            Become A Tutor.
-                        </Heading>
-                        <Text fontSize="3xl" w='2xl'  fontWeight='bold'  >Offer your students the best you can.</Text>
-                        </Container>
-                        
-                    </Box>
-                    <Box p='20' >
-                        <Button bg="#161B45"
+                        <Flex pt='20' justifyContent='space-between' alignItems='center'>
+                            <Heading isTruncated>
+                                Become A Tutor.
+                            </Heading>
+                            <Text fontSize="sm" fontWeight='light' >Offer your students the best you can.</Text>
+                        </Flex>
+                        <Button mt='5' bg="#161B45"
                             variant='outline'
                             rightIcon={<AiOutlineArrowRight />}
                             color="white" _hover={{ opacity: "0.9" }}
@@ -35,15 +32,13 @@ export default function Become_a_tutor() {
                                 bg: " #211221",
 
                             }}
-                            size="sm">Apply now</Button>
-                    </Box>
+                            size="sm">Sign me up</Button>
 
-                </Box>
-                <Box h='500' w='45%'>
-                    <img src='/img/illustrations/tutor.png' alt='Tutor' />
-                </Box>
-            </Flex>
-            <Box className="mycontainer" m="auto" className="content" >
+                    </Box>
+                </Container>
+
+            </Box>
+            <Box pt='20' className="mycontainer" m="auto" className="content" >
                 <Stack pr='20'>
                     <>
 
@@ -63,14 +58,14 @@ export default function Become_a_tutor() {
                             </Flex>
                         </Box> */}
                         <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' m='10' width='100%' h='150px'>
+                            <Flex justifyContent='space-around' alignItems='center' m='10' width='100%' h='150px'>
                                 <Box maxW='250px' textAlign='left'>
                                     <Text fontWeight='medium' fontSize='xl'>Get started for free</Text>
                                     <Text fontSize='md'>Signing up to being a tutor in Klasshour is free</Text>
                                 </Box>
                                 <Box>
-                                    <img href="../img/Education.png"></img>
-                                    Image
+                                    <img href="../img/logo.svg" alt='Get started'></img>
+                                   
                                 </Box>
 
 
@@ -80,8 +75,8 @@ export default function Become_a_tutor() {
                         <Box>
                             <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' m='10' width='100%' h='150px'  >
                                 <Box>
-                                    <img href="../img/Education.png"></img>
-                                    Image
+                                {/* <Image src="../img/illustration/Get_paid.svg" alt='management system' height='300' width='700px' /> */}
+                                 
                                 </Box>
                                 <Box maxW='250px' textAlign='left'>
                                     <Text fontWeight='medium' fontSize='xl'>Teach Anywhere Anytime</Text>
@@ -135,7 +130,7 @@ export default function Become_a_tutor() {
 
             </Box>
 
-           
+
             <Box bg='gray.100'>
                 <Text textAlign='center' fontWeight='bold' fontSize='4xl'>What tutors say</Text>
                 <Carousel getControlsContainerStyles={(key) => {
