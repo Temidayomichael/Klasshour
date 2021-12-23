@@ -27,9 +27,8 @@
     "subject": {
       "type": "string"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user",
+    "student": {
+      "model": "student",
       "via": "requests"
     },
     "status": {
@@ -38,10 +37,6 @@
         "closed",
         "open"
       ]
-    },
-    "class_applications": {
-      "via": "request",
-      "collection": "class-application"
     }
   }
 }

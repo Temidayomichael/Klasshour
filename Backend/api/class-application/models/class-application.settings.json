@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "class_applications",
   "info": {
-    "name": "Class_application",
+    "name": "classApplication",
     "description": ""
   },
   "options": {
@@ -11,25 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "price": {
-      "type": "float"
+    "tutor": {
+      "via": "class_applications",
+      "model": "tutor"
+    },
+    "request": {
+      "model": "request"
     },
     "note": {
       "type": "text"
     },
-    "status": {
-      "type": "string",
-      "default": "pending"
-    },
-    "tutor": {
-      "unique": true,
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "class_applications"
-    },
-    "request": {
-      "model": "request",
-      "via": "class_applications"
+    "recommended_time": {
+      "type": "integer"
     }
   }
 }

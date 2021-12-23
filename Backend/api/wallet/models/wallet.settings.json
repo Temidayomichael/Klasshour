@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallets",
+  "info": {
+    "name": "wallet"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Balance": {
+      "type": "biginteger"
+    },
+    "Overall_balance": {
+      "type": "biginteger"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "wallet"
+    }
+  }
+}

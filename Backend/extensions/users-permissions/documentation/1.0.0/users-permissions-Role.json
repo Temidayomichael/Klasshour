@@ -561,28 +561,13 @@
                 "role": {
                   "type": "string"
                 },
-                "userImage": {
-                  "type": "string"
-                },
-                "requests": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "fullname": {
                   "type": "string"
                 },
-                "khcoin": {
+                "wallet": {
                   "type": "string"
                 },
-                "class": {
-                  "type": "string"
-                },
-                "teachingClass": {
-                  "type": "string"
-                },
-                "class_applications": {
+                "wallet_topups": {
                   "type": "array",
                   "items": {
                     "type": "string"

@@ -1,0 +1,1224 @@
+{
+  "time_zone_list": {
+    "time_zone": [
+      {
+        "__cdata": " Africa/Abidjan "
+      },
+      {
+        "__cdata": " Africa/Accra "
+      },
+      {
+        "__cdata": " Africa/Addis_Ababa "
+      },
+      {
+        "__cdata": " Africa/Algiers "
+      },
+      {
+        "__cdata": " Africa/Asmara "
+      },
+      {
+        "__cdata": " Africa/Bamako "
+      },
+      {
+        "__cdata": " Africa/Bangui "
+      },
+      {
+        "__cdata": " Africa/Banjul "
+      },
+      {
+        "__cdata": " Africa/Bissau "
+      },
+      {
+        "__cdata": " Africa/Blantyre "
+      },
+      {
+        "__cdata": " Africa/Brazzaville "
+      },
+      {
+        "__cdata": " Africa/Bujumbura "
+      },
+      {
+        "__cdata": " Africa/Cairo "
+      },
+      {
+        "__cdata": " Africa/Casablanca "
+      },
+      {
+        "__cdata": " Africa/Ceuta "
+      },
+      {
+        "__cdata": " Africa/Conakry "
+      },
+      {
+        "__cdata": " Africa/Dakar "
+      },
+      {
+        "__cdata": " Africa/Dar_es_Salaam "
+      },
+      {
+        "__cdata": " Africa/Djibouti "
+      },
+      {
+        "__cdata": " Africa/Douala "
+      },
+      {
+        "__cdata": " Africa/El_Aaiun "
+      },
+      {
+        "__cdata": " Africa/Freetown "
+      },
+      {
+        "__cdata": " Africa/Gaborone "
+      },
+      {
+        "__cdata": " Africa/Harare "
+      },
+      {
+        "__cdata": " Africa/Johannesburg "
+      },
+      {
+        "__cdata": " Africa/Kampala "
+      },
+      {
+        "__cdata": " Africa/Khartoum "
+      },
+      {
+        "__cdata": " Africa/Kigali "
+      },
+      {
+        "__cdata": " Africa/Kinshasa "
+      },
+      {
+        "__cdata": " Africa/Lagos "
+      },
+      {
+        "__cdata": " Africa/Libreville "
+      },
+      {
+        "__cdata": " Africa/Lome "
+      },
+      {
+        "__cdata": " Africa/Luanda "
+      },
+      {
+        "__cdata": " Africa/Lubumbashi "
+      },
+      {
+        "__cdata": " Africa/Lusaka "
+      },
+      {
+        "__cdata": " Africa/Malabo "
+      },
+      {
+        "__cdata": " Africa/Maputo "
+      },
+      {
+        "__cdata": " Africa/Maseru "
+      },
+      {
+        "__cdata": " Africa/Mbabane "
+      },
+      {
+        "__cdata": " Africa/Mogadishu "
+      },
+      {
+        "__cdata": " Africa/Monrovia "
+      },
+      {
+        "__cdata": " Africa/Nairobi "
+      },
+      {
+        "__cdata": " Africa/Ndjamena "
+      },
+      {
+        "__cdata": " Africa/Niamey "
+      },
+      {
+        "__cdata": " Africa/Nouakchott "
+      },
+      {
+        "__cdata": " Africa/Ouagadougou "
+      },
+      {
+        "__cdata": " Africa/Porto-Novo "
+      },
+      {
+        "__cdata": " Africa/Sao_Tome "
+      },
+      {
+        "__cdata": " Africa/Tripoli "
+      },
+      {
+        "__cdata": " Africa/Tunis "
+      },
+      {
+        "__cdata": " Africa/Windhoek "
+      },
+      {
+        "__cdata": " America/Adak "
+      },
+      {
+        "__cdata": " America/Anchorage "
+      },
+      {
+        "__cdata": " America/Anguilla "
+      },
+      {
+        "__cdata": " America/Antigua "
+      },
+      {
+        "__cdata": " America/Araguaina "
+      },
+      {
+        "__cdata": " America/Argentina/Buenos_Aires "
+      },
+      {
+        "__cdata": " America/Argentina/Catamarca "
+      },
+      {
+        "__cdata": " America/Argentina/Cordoba "
+      },
+      {
+        "__cdata": " America/Argentina/Jujuy "
+      },
+      {
+        "__cdata": " America/Argentina/La_Rioja "
+      },
+      {
+        "__cdata": " America/Argentina/Mendoza "
+      },
+      {
+        "__cdata": " America/Argentina/Rio_Gallegos "
+      },
+      {
+        "__cdata": " America/Argentina/Salta "
+      },
+      {
+        "__cdata": " America/Argentina/San_Juan "
+      },
+      {
+        "__cdata": " America/Argentina/San_Luis "
+      },
+      {
+        "__cdata": " America/Argentina/Tucuman "
+      },
+      {
+        "__cdata": " America/Argentina/Ushuaia "
+      },
+      {
+        "__cdata": " America/Aruba "
+      },
+      {
+        "__cdata": " America/Asuncion "
+      },
+      {
+        "__cdata": " America/Atikokan "
+      },
+      {
+        "__cdata": " America/Bahia "
+      },
+      {
+        "__cdata": " America/Barbados "
+      },
+      {
+        "__cdata": " America/Belem "
+      },
+      {
+        "__cdata": " America/Belize "
+      },
+      {
+        "__cdata": " America/Blanc-Sablon "
+      },
+      {
+        "__cdata": " America/Boa_Vista "
+      },
+      {
+        "__cdata": " America/Bogota "
+      },
+      {
+        "__cdata": " America/Boise "
+      },
+      {
+        "__cdata": " America/Cambridge_Bay "
+      },
+      {
+        "__cdata": " America/Campo_Grande "
+      },
+      {
+        "__cdata": " America/Cancun "
+      },
+      {
+        "__cdata": " America/Caracas "
+      },
+      {
+        "__cdata": " America/Cayenne "
+      },
+      {
+        "__cdata": " America/Cayman "
+      },
+      {
+        "__cdata": " America/Chicago "
+      },
+      {
+        "__cdata": " America/Chihuahua "
+      },
+      {
+        "__cdata": " America/Costa_Rica "
+      },
+      {
+        "__cdata": " America/Cuiaba "
+      },
+      {
+        "__cdata": " America/Curacao "
+      },
+      {
+        "__cdata": " America/Danmarkshavn "
+      },
+      {
+        "__cdata": " America/Dawson "
+      },
+      {
+        "__cdata": " America/Dawson_Creek "
+      },
+      {
+        "__cdata": " America/Denver "
+      },
+      {
+        "__cdata": " America/Detroit "
+      },
+      {
+        "__cdata": " America/Dominica "
+      },
+      {
+        "__cdata": " America/Edmonton "
+      },
+      {
+        "__cdata": " America/Eirunepe "
+      },
+      {
+        "__cdata": " America/El_Salvador "
+      },
+      {
+        "__cdata": " America/Fortaleza "
+      },
+      {
+        "__cdata": " America/Glace_Bay "
+      },
+      {
+        "__cdata": " America/Godthab "
+      },
+      {
+        "__cdata": " America/Goose_Bay "
+      },
+      {
+        "__cdata": " America/Grand_Turk "
+      },
+      {
+        "__cdata": " America/Grenada "
+      },
+      {
+        "__cdata": " America/Guadeloupe "
+      },
+      {
+        "__cdata": " America/Guatemala "
+      },
+      {
+        "__cdata": " America/Guayaquil "
+      },
+      {
+        "__cdata": " America/Guyana "
+      },
+      {
+        "__cdata": " America/Halifax "
+      },
+      {
+        "__cdata": " America/Havana "
+      },
+      {
+        "__cdata": " America/Hermosillo "
+      },
+      {
+        "__cdata": " America/Indiana/Indianapolis "
+      },
+      {
+        "__cdata": " America/Indiana/Knox "
+      },
+      {
+        "__cdata": " America/Indiana/Marengo "
+      },
+      {
+        "__cdata": " America/Indiana/Petersburg "
+      },
+      {
+        "__cdata": " America/Indiana/Tell_City "
+      },
+      {
+        "__cdata": " America/Indiana/Vevay "
+      },
+      {
+        "__cdata": " America/Indiana/Vincennes "
+      },
+      {
+        "__cdata": " America/Indiana/Winamac "
+      },
+      {
+        "__cdata": " America/Inuvik "
+      },
+      {
+        "__cdata": " America/Iqaluit "
+      },
+      {
+        "__cdata": " America/Jamaica "
+      },
+      {
+        "__cdata": " America/Juneau "
+      },
+      {
+        "__cdata": " America/Kentucky/Louisville "
+      },
+      {
+        "__cdata": " America/Kentucky/Monticello "
+      },
+      {
+        "__cdata": " America/La_Paz "
+      },
+      {
+        "__cdata": " America/Lima "
+      },
+      {
+        "__cdata": " America/Los_Angeles "
+      },
+      {
+        "__cdata": " America/Maceio "
+      },
+      {
+        "__cdata": " America/Managua "
+      },
+      {
+        "__cdata": " America/Manaus "
+      },
+      {
+        "__cdata": " America/Marigot "
+      },
+      {
+        "__cdata": " America/Martinique "
+      },
+      {
+        "__cdata": " America/Matamoros "
+      },
+      {
+        "__cdata": " America/Mazatlan "
+      },
+      {
+        "__cdata": " America/Menominee "
+      },
+      {
+        "__cdata": " America/Merida "
+      },
+      {
+        "__cdata": " America/Mexico_City "
+      },
+      {
+        "__cdata": " America/Miquelon "
+      },
+      {
+        "__cdata": " America/Moncton "
+      },
+      {
+        "__cdata": " America/Monterrey "
+      },
+      {
+        "__cdata": " America/Montevideo "
+      },
+      {
+        "__cdata": " America/Montreal "
+      },
+      {
+        "__cdata": " America/Montserrat "
+      },
+      {
+        "__cdata": " America/Nassau "
+      },
+      {
+        "__cdata": " America/New_York "
+      },
+      {
+        "__cdata": " America/Nipigon "
+      },
+      {
+        "__cdata": " America/Nome "
+      },
+      {
+        "__cdata": " America/Noronha "
+      },
+      {
+        "__cdata": " America/North_Dakota/Center "
+      },
+      {
+        "__cdata": " America/North_Dakota/New_Salem "
+      },
+      {
+        "__cdata": " America/Ojinaga "
+      },
+      {
+        "__cdata": " America/Panama "
+      },
+      {
+        "__cdata": " America/Pangnirtung "
+      },
+      {
+        "__cdata": " America/Paramaribo "
+      },
+      {
+        "__cdata": " America/Phoenix "
+      },
+      {
+        "__cdata": " America/Port_of_Spain "
+      },
+      {
+        "__cdata": " America/Port-au-Prince "
+      },
+      {
+        "__cdata": " America/Porto_Velho "
+      },
+      {
+        "__cdata": " America/Puerto_Rico "
+      },
+      {
+        "__cdata": " America/Rainy_River "
+      },
+      {
+        "__cdata": " America/Rankin_Inlet "
+      },
+      {
+        "__cdata": " America/Recife "
+      },
+      {
+        "__cdata": " America/Regina "
+      },
+      {
+        "__cdata": " America/Resolute "
+      },
+      {
+        "__cdata": " America/Rio_Branco "
+      },
+      {
+        "__cdata": " America/Santa_Isabel "
+      },
+      {
+        "__cdata": " America/Santarem "
+      },
+      {
+        "__cdata": " America/Santiago "
+      },
+      {
+        "__cdata": " America/Santo_Domingo "
+      },
+      {
+        "__cdata": " America/Sao_Paulo "
+      },
+      {
+        "__cdata": " America/Scoresbysund "
+      },
+      {
+        "__cdata": " America/Shiprock "
+      },
+      {
+        "__cdata": " America/St_Barthelemy "
+      },
+      {
+        "__cdata": " America/St_Johns "
+      },
+      {
+        "__cdata": " America/St_Kitts "
+      },
+      {
+        "__cdata": " America/St_Lucia "
+      },
+      {
+        "__cdata": " America/St_Thomas "
+      },
+      {
+        "__cdata": " America/St_Vincent "
+      },
+      {
+        "__cdata": " America/Swift_Current "
+      },
+      {
+        "__cdata": " America/Tegucigalpa "
+      },
+      {
+        "__cdata": " America/Thule "
+      },
+      {
+        "__cdata": " America/Thunder_Bay "
+      },
+      {
+        "__cdata": " America/Tijuana "
+      },
+      {
+        "__cdata": " America/Toronto "
+      },
+      {
+        "__cdata": " America/Tortola "
+      },
+      {
+        "__cdata": " America/Vancouver "
+      },
+      {
+        "__cdata": " America/Whitehorse "
+      },
+      {
+        "__cdata": " America/Winnipeg "
+      },
+      {
+        "__cdata": " America/Yakutat "
+      },
+      {
+        "__cdata": " America/Yellowknife "
+      },
+      {
+        "__cdata": " Antarctica/Casey "
+      },
+      {
+        "__cdata": " Antarctica/Davis "
+      },
+      {
+        "__cdata": " Antarctica/DumontDUrville "
+      },
+      {
+        "__cdata": " Antarctica/Mawson "
+      },
+      {
+        "__cdata": " Antarctica/McMurdo "
+      },
+      {
+        "__cdata": " Antarctica/Palmer "
+      },
+      {
+        "__cdata": " Antarctica/Rothera "
+      },
+      {
+        "__cdata": " Antarctica/South_Pole "
+      },
+      {
+        "__cdata": " Antarctica/Syowa "
+      },
+      {
+        "__cdata": " Antarctica/Vostok "
+      },
+      {
+        "__cdata": " Arctic/Longyearbyen "
+      },
+      {
+        "__cdata": " Asia/Aden "
+      },
+      {
+        "__cdata": " Asia/Almaty "
+      },
+      {
+        "__cdata": " Asia/Amman "
+      },
+      {
+        "__cdata": " Asia/Anadyr "
+      },
+      {
+        "__cdata": " Asia/Aqtau "
+      },
+      {
+        "__cdata": " Asia/Aqtobe "
+      },
+      {
+        "__cdata": " Asia/Ashgabat "
+      },
+      {
+        "__cdata": " Asia/Baghdad "
+      },
+      {
+        "__cdata": " Asia/Bahrain "
+      },
+      {
+        "__cdata": " Asia/Baku "
+      },
+      {
+        "__cdata": " Asia/Bangkok "
+      },
+      {
+        "__cdata": " Asia/Beirut "
+      },
+      {
+        "__cdata": " Asia/Bishkek "
+      },
+      {
+        "__cdata": " Asia/Brunei "
+      },
+      {
+        "__cdata": " Asia/Choibalsan "
+      },
+      {
+        "__cdata": " Asia/Chongqing "
+      },
+      {
+        "__cdata": " Asia/Colombo "
+      },
+      {
+        "__cdata": " Asia/Damascus "
+      },
+      {
+        "__cdata": " Asia/Dhaka "
+      },
+      {
+        "__cdata": " Asia/Dili "
+      },
+      {
+        "__cdata": " Asia/Dubai "
+      },
+      {
+        "__cdata": " Asia/Dushanbe "
+      },
+      {
+        "__cdata": " Asia/Gaza "
+      },
+      {
+        "__cdata": " Asia/Harbin "
+      },
+      {
+        "__cdata": " Asia/Ho_Chi_Minh "
+      },
+      {
+        "__cdata": " Asia/Hong_Kong "
+      },
+      {
+        "__cdata": " Asia/Hovd "
+      },
+      {
+        "__cdata": " Asia/Irkutsk "
+      },
+      {
+        "__cdata": " Asia/Jakarta "
+      },
+      {
+        "__cdata": " Asia/Jayapura "
+      },
+      {
+        "__cdata": " Asia/Jerusalem "
+      },
+      {
+        "__cdata": " Asia/Kabul "
+      },
+      {
+        "__cdata": " Asia/Kamchatka "
+      },
+      {
+        "__cdata": " Asia/Karachi "
+      },
+      {
+        "__cdata": " Asia/Kashgar "
+      },
+      {
+        "__cdata": " Asia/Kathmandu "
+      },
+      {
+        "__cdata": " Asia/Kolkata "
+      },
+      {
+        "__cdata": " Asia/Krasnoyarsk "
+      },
+      {
+        "__cdata": " Asia/Kuala_Lumpur "
+      },
+      {
+        "__cdata": " Asia/Kuching "
+      },
+      {
+        "__cdata": " Asia/Kuwait "
+      },
+      {
+        "__cdata": " Asia/Macau "
+      },
+      {
+        "__cdata": " Asia/Magadan "
+      },
+      {
+        "__cdata": " Asia/Makassar "
+      },
+      {
+        "__cdata": " Asia/Manila "
+      },
+      {
+        "__cdata": " Asia/Muscat "
+      },
+      {
+        "__cdata": " Asia/Nicosia "
+      },
+      {
+        "__cdata": " Asia/Novokuznetsk "
+      },
+      {
+        "__cdata": " Asia/Novosibirsk "
+      },
+      {
+        "__cdata": " Asia/Omsk "
+      },
+      {
+        "__cdata": " Asia/Oral "
+      },
+      {
+        "__cdata": " Asia/Phnom_Penh "
+      },
+      {
+        "__cdata": " Asia/Pontianak "
+      },
+      {
+        "__cdata": " Asia/Pyongyang "
+      },
+      {
+        "__cdata": " Asia/Qatar "
+      },
+      {
+        "__cdata": " Asia/Qyzylorda "
+      },
+      {
+        "__cdata": " Asia/Rangoon "
+      },
+      {
+        "__cdata": " Asia/Riyadh "
+      },
+      {
+        "__cdata": " Asia/Sakhalin "
+      },
+      {
+        "__cdata": " Asia/Samarkand "
+      },
+      {
+        "__cdata": " Asia/Seoul "
+      },
+      {
+        "__cdata": " Asia/Shanghai "
+      },
+      {
+        "__cdata": " Asia/Singapore "
+      },
+      {
+        "__cdata": " Asia/Taipei "
+      },
+      {
+        "__cdata": " Asia/Tashkent "
+      },
+      {
+        "__cdata": " Asia/Tbilisi "
+      },
+      {
+        "__cdata": " Asia/Tehran "
+      },
+      {
+        "__cdata": " Asia/Thimphu "
+      },
+      {
+        "__cdata": " Asia/Tokyo "
+      },
+      {
+        "__cdata": " Asia/Ulaanbaatar "
+      },
+      {
+        "__cdata": " Asia/Urumqi "
+      },
+      {
+        "__cdata": " Asia/Vientiane "
+      },
+      {
+        "__cdata": " Asia/Vladivostok "
+      },
+      {
+        "__cdata": " Asia/Yakutsk "
+      },
+      {
+        "__cdata": " Asia/Yekaterinburg "
+      },
+      {
+        "__cdata": " Asia/Yerevan "
+      },
+      {
+        "__cdata": " Atlantic/Azores "
+      },
+      {
+        "__cdata": " Atlantic/Bermuda "
+      },
+      {
+        "__cdata": " Atlantic/Canary "
+      },
+      {
+        "__cdata": " Atlantic/Cape_Verde "
+      },
+      {
+        "__cdata": " Atlantic/Faroe "
+      },
+      {
+        "__cdata": " Atlantic/Madeira "
+      },
+      {
+        "__cdata": " Atlantic/Reykjavik "
+      },
+      {
+        "__cdata": " Atlantic/South_Georgia "
+      },
+      {
+        "__cdata": " Atlantic/St_Helena "
+      },
+      {
+        "__cdata": " Atlantic/Stanley "
+      },
+      {
+        "__cdata": " Australia/Adelaide "
+      },
+      {
+        "__cdata": " Australia/Brisbane "
+      },
+      {
+        "__cdata": " Australia/Broken_Hill "
+      },
+      {
+        "__cdata": " Australia/Currie "
+      },
+      {
+        "__cdata": " Australia/Darwin "
+      },
+      {
+        "__cdata": " Australia/Eucla "
+      },
+      {
+        "__cdata": " Australia/Hobart "
+      },
+      {
+        "__cdata": " Australia/Lindeman "
+      },
+      {
+        "__cdata": " Australia/Lord_Howe "
+      },
+      {
+        "__cdata": " Australia/Melbourne "
+      },
+      {
+        "__cdata": " Australia/Perth "
+      },
+      {
+        "__cdata": " Australia/Sydney "
+      },
+      {
+        "__cdata": " Europe/Amsterdam "
+      },
+      {
+        "__cdata": " Europe/Andorra "
+      },
+      {
+        "__cdata": " Europe/Athens "
+      },
+      {
+        "__cdata": " Europe/Belgrade "
+      },
+      {
+        "__cdata": " Europe/Berlin "
+      },
+      {
+        "__cdata": " Europe/Bratislava "
+      },
+      {
+        "__cdata": " Europe/Brussels "
+      },
+      {
+        "__cdata": " Europe/Bucharest "
+      },
+      {
+        "__cdata": " Europe/Budapest "
+      },
+      {
+        "__cdata": " Europe/Chisinau "
+      },
+      {
+        "__cdata": " Europe/Copenhagen "
+      },
+      {
+        "__cdata": " Europe/Dublin "
+      },
+      {
+        "__cdata": " Europe/Gibraltar "
+      },
+      {
+        "__cdata": " Europe/Guernsey "
+      },
+      {
+        "__cdata": " Europe/Helsinki "
+      },
+      {
+        "__cdata": " Europe/Isle_of_Man "
+      },
+      {
+        "__cdata": " Europe/Istanbul "
+      },
+      {
+        "__cdata": " Europe/Jersey "
+      },
+      {
+        "__cdata": " Europe/Kaliningrad "
+      },
+      {
+        "__cdata": " Europe/Kiev "
+      },
+      {
+        "__cdata": " Europe/Lisbon "
+      },
+      {
+        "__cdata": " Europe/Ljubljana "
+      },
+      {
+        "__cdata": " Europe/London "
+      },
+      {
+        "__cdata": " Europe/Luxembourg "
+      },
+      {
+        "__cdata": " Europe/Madrid "
+      },
+      {
+        "__cdata": " Europe/Malta "
+      },
+      {
+        "__cdata": " Europe/Mariehamn "
+      },
+      {
+        "__cdata": " Europe/Minsk "
+      },
+      {
+        "__cdata": " Europe/Monaco "
+      },
+      {
+        "__cdata": " Europe/Moscow "
+      },
+      {
+        "__cdata": " Europe/Oslo "
+      },
+      {
+        "__cdata": " Europe/Paris "
+      },
+      {
+        "__cdata": " Europe/Podgorica "
+      },
+      {
+        "__cdata": " Europe/Prague "
+      },
+      {
+        "__cdata": " Europe/Riga "
+      },
+      {
+        "__cdata": " Europe/Rome "
+      },
+      {
+        "__cdata": " Europe/Samara "
+      },
+      {
+        "__cdata": " Europe/San_Marino "
+      },
+      {
+        "__cdata": " Europe/Sarajevo "
+      },
+      {
+        "__cdata": " Europe/Simferopol "
+      },
+      {
+        "__cdata": " Europe/Skopje "
+      },
+      {
+        "__cdata": " Europe/Sofia "
+      },
+      {
+        "__cdata": " Europe/Stockholm "
+      },
+      {
+        "__cdata": " Europe/Tallinn "
+      },
+      {
+        "__cdata": " Europe/Tirane "
+      },
+      {
+        "__cdata": " Europe/Uzhgorod "
+      },
+      {
+        "__cdata": " Europe/Vaduz "
+      },
+      {
+        "__cdata": " Europe/Vatican "
+      },
+      {
+        "__cdata": " Europe/Vienna "
+      },
+      {
+        "__cdata": " Europe/Vilnius "
+      },
+      {
+        "__cdata": " Europe/Volgograd "
+      },
+      {
+        "__cdata": " Europe/Warsaw "
+      },
+      {
+        "__cdata": " Europe/Zagreb "
+      },
+      {
+        "__cdata": " Europe/Zaporozhye "
+      },
+      {
+        "__cdata": " Europe/Zurich "
+      },
+      {
+        "__cdata": " GMT+02:00 "
+      },
+      {
+        "__cdata": " Indian/Antananarivo "
+      },
+      {
+        "__cdata": " Indian/Chagos "
+      },
+      {
+        "__cdata": " Indian/Christmas "
+      },
+      {
+        "__cdata": " Indian/Cocos "
+      },
+      {
+        "__cdata": " Indian/Comoro "
+      },
+      {
+        "__cdata": " Indian/Kerguelen "
+      },
+      {
+        "__cdata": " Indian/Mahe "
+      },
+      {
+        "__cdata": " Indian/Maldives "
+      },
+      {
+        "__cdata": " Indian/Mauritius "
+      },
+      {
+        "__cdata": " Indian/Mayotte "
+      },
+      {
+        "__cdata": " Indian/Reunion "
+      },
+      {
+        "__cdata": " Pacific/Apia "
+      },
+      {
+        "__cdata": " Pacific/Auckland "
+      },
+      {
+        "__cdata": " Pacific/Chatham "
+      },
+      {
+        "__cdata": " Pacific/Easter "
+      },
+      {
+        "__cdata": " Pacific/Efate "
+      },
+      {
+        "__cdata": " Pacific/Enderbury "
+      },
+      {
+        "__cdata": " Pacific/Fakaofo "
+      },
+      {
+        "__cdata": " Pacific/Fiji "
+      },
+      {
+        "__cdata": " Pacific/Funafuti "
+      },
+      {
+        "__cdata": " Pacific/Galapagos "
+      },
+      {
+        "__cdata": " Pacific/Gambier "
+      },
+      {
+        "__cdata": " Pacific/Guadalcanal "
+      },
+      {
+        "__cdata": " Pacific/Guam "
+      },
+      {
+        "__cdata": " Pacific/Honolulu "
+      },
+      {
+        "__cdata": " Pacific/Johnston "
+      },
+      {
+        "__cdata": " Pacific/Kiritimati "
+      },
+      {
+        "__cdata": " Pacific/Kosrae "
+      },
+      {
+        "__cdata": " Pacific/Kwajalein "
+      },
+      {
+        "__cdata": " Pacific/Majuro "
+      },
+      {
+        "__cdata": " Pacific/Marquesas "
+      },
+      {
+        "__cdata": " Pacific/Midway "
+      },
+      {
+        "__cdata": " Pacific/Nauru "
+      },
+      {
+        "__cdata": " Pacific/Niue "
+      },
+      {
+        "__cdata": " Pacific/Norfolk "
+      },
+      {
+        "__cdata": " Pacific/Noumea "
+      },
+      {
+        "__cdata": " Pacific/Pago_Pago "
+      },
+      {
+        "__cdata": " Pacific/Palau "
+      },
+      {
+        "__cdata": " Pacific/Pitcairn "
+      },
+      {
+        "__cdata": " Pacific/Ponape "
+      },
+      {
+        "__cdata": " Pacific/Port_Moresby "
+      },
+      {
+        "__cdata": " Pacific/Rarotonga "
+      },
+      {
+        "__cdata": " Pacific/Saipan "
+      },
+      {
+        "__cdata": " Pacific/Tahiti "
+      },
+      {
+        "__cdata": " Pacific/Tarawa "
+      },
+      {
+        "__cdata": " Pacific/Tongatapu "
+      },
+      {
+        "__cdata": " Pacific/Truk "
+      },
+      {
+        "__cdata": " Pacific/Wake "
+      },
+      {
+        "__cdata": " Pacific/Wallis "
+      }
+    ]
+  }
+}

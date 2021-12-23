@@ -59,38 +59,16 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "userImage": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
-    "requests": {
-      "via": "user",
-      "collection": "request"
-    },
     "fullname": {
       "type": "string"
     },
-    "khcoin": {
-      "model": "khcoins",
-      "via": "users_permissions_user"
+    "wallet": {
+      "via": "user",
+      "model": "wallet"
     },
-    "class": {
-      "via": "students",
-      "model": "class"
-    },
-    "teachingClass": {
-      "via": "tutor",
-      "model": "class"
-    },
-    "class_applications": {
-      "via": "tutor",
-      "collection": "class-application"
+    "wallet_topups": {
+      "via": "user",
+      "collection": "wallet-topup"
     }
   }
 }

@@ -535,72 +535,24 @@
           "id": {
             "type": "string"
           },
-          "price": {
-            "type": "number"
-          },
-          "note": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "default": "pending"
-          },
           "tutor": {
             "required": [
-              "id",
-              "username",
-              "email"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "user": {
                 "type": "string"
               },
-              "email": {
+              "price": {
+                "type": "integer"
+              },
+              "profileImage": {
                 "type": "string"
               },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "userImage": {
-                "type": "string"
-              },
-              "requests": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "fullname": {
-                "type": "string"
-              },
-              "khcoin": {
-                "type": "string"
-              },
-              "class": {
-                "type": "string"
-              },
-              "teachingClass": {
+              "IntoVideo": {
                 "type": "string"
               },
               "class_applications": {
@@ -608,6 +560,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -641,7 +596,7 @@
               "subject": {
                 "type": "string"
               },
-              "user": {
+              "student": {
                 "type": "string"
               },
               "status": {
@@ -650,12 +605,6 @@
                   "closed",
                   "open"
                 ]
-              },
-              "class_applications": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "published_at": {
                 "type": "string"
@@ -668,6 +617,12 @@
               }
             }
           },
+          "note": {
+            "type": "string"
+          },
+          "recommended_time": {
+            "type": "integer"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -676,21 +631,17 @@
       },
       "NewClass-application": {
         "properties": {
-          "price": {
-            "type": "number"
-          },
-          "note": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "default": "pending"
-          },
           "tutor": {
             "type": "string"
           },
           "request": {
             "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "recommended_time": {
+            "type": "integer"
           },
           "published_at": {
             "type": "string",

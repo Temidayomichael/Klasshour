@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutors",
+  "info": {
+    "name": "Tutor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "profileImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "IntoVideo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "class_applications": {
+      "via": "tutor",
+      "collection": "class-application"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "classes",
   "info": {
-    "name": "Class",
+    "name": "class",
     "description": ""
   },
   "options": {
@@ -12,20 +12,34 @@
   },
   "attributes": {
     "students": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "class"
+      "collection": "student"
     },
-    "details": {
-      "model": "request"
-    },
-    "date": {
+    "scheduled_date": {
       "type": "datetime"
     },
+    "recording_url": {
+      "type": "string"
+    },
+    "presenter_url": {
+      "type": "string"
+    },
+    "attendee_url": {
+      "type": "string"
+    },
+    "class_id": {
+      "type": "uid"
+    },
     "tutor": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "teachingClass"
+      "model": "tutor"
+    },
+    "request": {
+      "model": "request"
+    },
+    "class_master_id": {
+      "type": "uid"
+    },
+    "duration": {
+      "type": "integer"
     }
   }
 }
