@@ -1,28 +1,20 @@
 import React from 'react'
-import { Box, Container, Flex, Heading, Text, Stack, Button, Center, VStack, Input, HStack, FormLabel, Textarea } from "@chakra-ui/react"
+import { Box, Container, Flex, Heading, Text, Stack, Button, Center, VStack, Input, HStack, FormLabel, Divider, Textarea } from "@chakra-ui/react"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 export default function support() {
     return (
         <Box>
-            <Box bg='#1a202c' h='300' color='white'>
+          	<Container maxW='6xl'>
+				<Box pt='20'>
+					<Heading size='3xl'>Contact us</Heading>
 
-                <Container maxW='5xl'>
-                    <Box>
-
-
-                        <Flex pt='20' justifyContent='space-between' alignItems='center'>
-                            <Flex flexDirection='column' justifyContent='left'>
-                                <Heading isTruncated >
-                                    Contact us
-                                </Heading>
-                                <Text p='2' fontSize="sm" fontWeight='light' >We always here to responed to you</Text>
-                            </Flex>
-                            <Text fontSize="sm" fontWeight='light' ></Text>
-                        </Flex>
-                    </Box>
-                </Container>
-            </Box>
-            <Flex justifyContent='space-around' pb='20' h='auto' bg='white'>
+					<Text mt='2' fontSize='sm' fontWeight='sm'>
+                    We always here to responed to you
+					</Text>
+				</Box>
+				</Container>
+				<Divider mt='10' />
+            <Flex justifyContent='space-around' pb='20' h='auto' >
                 <VStack spacing='10' justifyContent='center' mt='20'>
                     <Box>
                         <Text fontWeight='bold' fontSize='2xl'>Get in touch</Text>
