@@ -32,7 +32,6 @@ export default function MyApp({ Component, pageProps, userData }) {
 		const httpLink = createHttpLink({
 			uri: publicRuntimeConfig.GRAPHQL_ENDPOINT,
 		})
-
 		const authLink = setContext((_, { headers }) => {
 			// return the headers to the context so httpLink can read them
 			return {
