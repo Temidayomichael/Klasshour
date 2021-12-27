@@ -109,7 +109,9 @@ export default function Student({ requests }) {
 				<AlertIcon />
 				<AlertTitle mr={2}>{searchSubject} has no results.</AlertTitle>
 				<AlertDescription>
-					Please click on Add Request button to add a request on this subject.
+					{isLoggedin
+						? ' Please click on Add Request button to add a request on this subject. '
+						: 'Please login to add a request to this subject '}
 				</AlertDescription>
 				<CloseButton position='absolute' right='8px' top='8px' />
 			</Alert>
@@ -147,7 +149,9 @@ export default function Student({ requests }) {
 					<Tabs size='md' variant='enclosed'>
 						<TabList>
 							<Tab>All Requests</Tab>
-							<Tab d={ !isLoggedin ? 'none':'block'} >Join Upcoming Session(s)</Tab>
+							<Tab d={!isLoggedin ? 'none' : 'block'}>
+								Join Upcoming Session(s)
+							</Tab>
 						</TabList>
 						<TabPanels>
 							<TabPanel>
@@ -250,13 +254,12 @@ export default function Student({ requests }) {
 																		''
 																		// <JoinClass data={data} />
 																	)
-																) : (
-																	null
-																	// <Badge colorScheme='yellow'  mt='4'>
-																	// 	Only logged In tutors can apply to this <br/>
-																	// 	request
-																	// </Badge>
-																)}
+																) : null
+																// <Badge colorScheme='yellow'  mt='4'>
+																// 	Only logged In tutors can apply to this <br/>
+																// 	request
+																// </Badge>
+																}
 															</Box>
 														</Box>
 													</>
