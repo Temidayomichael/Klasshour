@@ -295,7 +295,7 @@ export default function Navbar(ctx) {
 				justify='space-between'
 				w='100%'
 				as={Container}
-				maxW='7xl'
+				maxW='6xl'
 				mx='auto'
 				py={5}>
 				<Link href='/'>

@@ -739,7 +739,7 @@
                   "type": "integer"
                 },
                 "published_at": {
-                  "type": "string"
+                  "type": "datetime"
                 },
                 "created_by": {
                   "type": "string"
@@ -751,8 +751,7 @@
             }
           },
           "published_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           }
         }
       },
@@ -771,8 +770,7 @@
             }
           },
           "published_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"

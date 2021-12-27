@@ -1272,7 +1272,7 @@
                 "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -1302,7 +1302,7 @@
                   "type": "string"
                 },
                 "published_at": {
-                  "type": "string"
+                  "type": "datetime"
                 },
                 "created_by": {
                   "type": "string"
@@ -1334,7 +1334,6 @@
           },
           "password": {
             "type": "string",
-            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {

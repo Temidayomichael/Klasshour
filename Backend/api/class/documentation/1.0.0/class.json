@@ -523,42 +523,38 @@
             "type": "string"
           },
           "students": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "profileImage": {
-                  "type": "string"
-                },
-                "requests": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "profileImage": {
+                "type": "string"
+              },
+              "requests": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
           "scheduled_date": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           },
           "recording_url": {
             "type": "string"
@@ -599,7 +595,7 @@
                 }
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -621,11 +617,7 @@
                 "type": "string"
               },
               "type": {
-                "type": "string",
-                "enum": [
-                  "hometutoring",
-                  "onlinetutoring"
-                ]
+                "type": "string"
               },
               "location": {
                 "type": "string"
@@ -637,14 +629,10 @@
                 "type": "string"
               },
               "status": {
-                "type": "string",
-                "enum": [
-                  "closed",
-                  "open"
-                ]
+                "type": "string"
               },
               "published_at": {
-                "type": "string"
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -661,22 +649,17 @@
             "type": "integer"
           },
           "published_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           }
         }
       },
       "NewClass": {
         "properties": {
           "students": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "string"
           },
           "scheduled_date": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           },
           "recording_url": {
             "type": "string"
@@ -703,8 +686,7 @@
             "type": "integer"
           },
           "published_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"
