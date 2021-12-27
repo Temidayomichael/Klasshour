@@ -12,7 +12,7 @@ export default function Become_a_tutor() {
                 <title>Become A Tutor | Klasshour</title>
                 <link rel="icon" href="../img/home_logo.png" />
             </Head>
-            <Box bg='#1a202c' h='300'  color='white'>
+            <Box bg='#1a202c' h='300' color='white'>
 
                 <Container maxW='5xl'>
                     <Box>
@@ -38,99 +38,75 @@ export default function Become_a_tutor() {
                 </Container>
 
             </Box>
-            <Box pt='20' className="mycontainer" m="auto" className="content" >
-                <Stack pr='20'>
-                    <>
 
+            <Stack w='auto' pb='12'>
 
-                        {/* <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' m='10' width='100%' h='150px'>
-
-                                <Box>
-                                <img src='' alt='Image' width='200px'/>
-                                   
-                                </Box>
-                                <Box maxW='250px' textAlign='left'>
-                                    <Text fontWeight='medium' fontSize='xl'>Teach online</Text>
-                                    <Text>Get through to your students anytime anywhere </Text>
-                                </Box>
-
-                            </Flex>
-                        </Box> */}
-                        <Box>
-                            <Flex justifyContent='space-around' alignItems='center' m='10' width='100%' h='150px'>
-                                <Box maxW='250px' textAlign='left'>
-                                    <Text fontWeight='medium' fontSize='xl'>Get started for free</Text>
-                                    <Text fontSize='md'>Signing up to being a tutor in Klasshour is free</Text>
-                                </Box>
-                                <Box>
-                                    <img href="../img/logo.svg" alt='Get started'></img>
-                                   
-                                </Box>
-
-
-                            </Flex>
-                        </Box>
-
-                        <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' m='10' width='100%' h='150px'  >
-                                <Box>
-                                {/* <Image src="../img/illustration/Get_paid.svg" alt='management system' height='300' width='700px' /> */}
-                                 
-                                </Box>
-                                <Box maxW='250px' textAlign='left'>
-                                    <Text fontWeight='medium' fontSize='xl'>Teach Anywhere Anytime</Text>
-                                    <Text>Get through to your students online. </Text>
-                                </Box>
-                            </Flex>
+                <Box>
+                    <Flex justifyContent='space-around' pt='28' alignItems='center' m='10' h='150px'>
+                        <Box maxW='250px' textAlign='left'>
+                            <Text fontWeight='medium' fontSize='xl'>Get started for free</Text>
+                            <Text fontSize='md'>Signing up to being a tutor in Klasshour is free</Text>
                         </Box>
                         <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' width='100%' m='10' h='150px' >
-                                <Box maxW='250px'>
-                                    <Text fontWeight='medium' fontSize='xl'>State your price</Text>
-                                    <Text>Get through to your students online. </Text>
-                                </Box>
-                                <Box>
-                                    <img href="../img/Education.png"></img>
-                                    Image
-                                </Box>
+                            <img src="../img/illustrations/get_started.svg" alt='Get started' height={50} width={250}></img>
 
-                            </Flex>
+                        </Box>
+
+
+                    </Flex>
+                </Box>
+
+                <Box>
+                    <Flex justifyContent='space-around' borderTop='1px solid lightgrey' pt='28' alignItems='center' m='10' h='150px'  >
+                        <Box >
+                        <img src="../img/illustrations/Teach_anywhere.svg" alt='Teach_anywhere' height={50} width={250}></img>
+                        </Box>
+                        <Box maxW='250px' textAlign='left'>
+                            <Text fontWeight='medium' fontSize='xl'>Teach Anywhere Anytime</Text>
+                            <Text>Get through to your students online. </Text>
+                        </Box>
+                    </Flex>
+                </Box>
+                <Box>
+                    <Flex justifyContent='space-around' borderTop='1px solid lightgrey' pt='28' alignItems='center' m='10' h='150px' >
+                        <Box maxW='250px'>
+                            <Text fontWeight='medium' fontSize='xl'>State your price</Text>
+                            <Text>Get through to your students online. </Text>
                         </Box>
                         <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' width='100%' m='10' h='150px'  >
+                        <img src="../img/illustrations/Get_paid.svg" alt='Get_paid' height={50} width={200}></img>
+                        </Box>
 
-                                <Box>
-                                    <img href="../img/Education.png"></img>
-                                    Image
-                                </Box>
-                                <Box maxW='250px' textAlign='left'>
-                                    <Text fontWeight='medium' fontSize='xl'>Get pain with ease</Text>
-                                    <Text>Get through to your students online. </Text>
-                                </Box>
-                            </Flex>
+                    </Flex>
+                </Box>
+                <Box>
+                    <Flex justifyContent='space-around' pt='28' borderTop='1px solid lightgrey' alignItems='center' m='10' h='150px'  >
+
+                        <Box>
+                        <img src="../img/illustrations/payment.svg" alt='payment' height={50} width={250}></img>
+                        </Box>
+                        <Box maxW='250px' textAlign='left'>
+                            <Text fontWeight='medium' fontSize='xl'>Get pain with ease</Text>
+                            <Text>Get through to your students online. </Text>
+                        </Box>
+                    </Flex>
+                </Box>
+                <Box>
+                    <Flex justifyContent='space-around' pt='28' borderTop='1px solid lightgrey' alignItems='center' m='10' h='150px' >
+                        <Box maxW='250px'>
+                            <Text fontWeight='medium' fontSize='xl'>Get reviews</Text>
+                            <Text>Get through to your students online. </Text>
                         </Box>
                         <Box>
-                            <Flex justifyContent='space-around' borderTop='1px solid lightgrey' alignItems='center' width='100%' m='10' h='150px' >
-                                <Box maxW='250px'>
-                                    <Text fontWeight='medium' fontSize='xl'>Get reviews</Text>
-                                    <Text>Get through to your students online. </Text>
-                                </Box>
-                                <Box>
-                                    <img href="../img/Education.png"></img>
-                                    Image
-                                </Box>
-
-                            </Flex>
+                        <img src="../img/illustrations/review.svg" alt='review' height={50} width={250}></img>
+                        
                         </Box>
 
-                    </>
-                </Stack>
+                    </Flex>
+                </Box>
 
 
-            </Box>
-
-
+            </Stack>
             <Box bg='gray.100'>
                 <Text textAlign='center' fontWeight='bold' fontSize='4xl'>What tutors say</Text>
                 <Carousel getControlsContainerStyles={(key) => {
