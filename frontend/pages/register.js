@@ -110,7 +110,7 @@ export default function Register({ history }) {
 	})
 
 	return (
-		<Center>
+		<Center className='regiter-page'>
 			<Head>
 				<title>Register | Klasshour</title>
 				<link rel='icon' href='../img/home_logo.png' />

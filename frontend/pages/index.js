@@ -167,15 +167,15 @@ export default function Home() {
 		)
 	}
 
-	const handleClick = () => {}
+	const handleClick = () => { }
 
 	// console.log(process.env.API_URL)
 
 	function Feature({ title, icon, desc, ...rest }) {
 		return (
 			<Flex
-				
-				px={['3','20' ]}
+
+				px={['3', '10']}
 				py='30'
 				flexDirection={['column']}
 				shadow='md'
@@ -183,18 +183,19 @@ export default function Home() {
 				flex='1'
 				rounded='md'
 				alignItems='center'
+
 				{...rest}>
 				<Box>
-					<Icon m='5' boxSize='8' color='#161B45' as={icon} textAlign='center' />
-					{}
+					<Icon boxSize={['36', '10', '20', '16', '8']} m={['28', '1']} color='#161B45' as={icon} textAlign='center' />
+					{ }
 					{/* <Icon name={} /> */}
 				</Box>
 				<Box>
-					<Heading fontSize='xl' color='#161B45'>
+					<Heading fontSize={['8xl', '6xl', '5xl', '5xl', '3xl', 'xl']} w={['', '', '', '', '64']} m={['28', '3']} textAlign='center' color='#161B45'>
 						{title}
 					</Heading>
 
-					<Text textAlign='center' mt={4}>
+					<Text fontSize={['7xl', '5xl', '5xl', '4xl', 'xl', '']} p={['', '2']} m={['28', '3']} textAlign='center'>
 						{desc}
 					</Text>
 				</Box>
@@ -204,54 +205,55 @@ export default function Home() {
 
 	function WhatWeDo({ title, step, desc }) {
 		return (
-			<Flex flexDirection={['column', 'row']} p={3} flex='1' rounded='md'>
+			<Flex flexDirection={['column', 'row']} flex='1' p={3} rounded='md' >
 				<Box>
 					<Text
-						m='5'
 						fontSize='xl'
 						fontWeight='bold'
 						color='white'
 						textAlign='center'>
 						{step}
 					</Text>
-					{}
+					{ }
 					{/* <Icon name={} /> */}
 				</Box>
 				<Box>
-					<Heading fontSize='xl' color='#161B45'>
+					<Heading fontSize={['8xl', '7xl', '6xl', '5xl', '3xl', 'xl']} color='#161B45'>
 						{title}
 					</Heading>
 
-					<Text mt={4}>{desc}</Text>
+					<Text fontSize={['7xl', '5xl', '5xl', '4xl', 'xl', '']} mt={['4', '4', '5']}>{desc}</Text>
 				</Box>
 			</Flex>
 		)
 	}
 
 	return (
-		<>
-			<Head>
-				<title>Find tutors | Klasshour</title>
+		<Box w={['8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
+
+			<Head fontSize={['8xl', '0', '8xl', '3xl', 'sm']} >
+				<title >Find tutors | Klasshour</title>
 				<link rel='icon' href='../img/home_logo.png' />
-				
+
 			</Head>
 
 			<Center
-				h='40em'
+				h={['auto', '', '80rem', '', '40em']}
 				textAlign='center'
 				alignItems='center'
 				justifyContent='space-evenly'>
-				<Container d='flex' flexDirection={['column', 'row']} maxW='7xl'>
+				<Container d='flex' alignItems={['center', '']} flexDirection={['column', 'column', 'column', 'column', 'row', 'row']} maxW={['6xl', '8xl', '6xl', '6xl', '7xl', '7xl']}>
 					<Center flexDirection='column' mr={{ lg: '20' }}>
 						<Heading
-							fontSize={['xl', '2xl', '3xl', '4xl']}
+							pt={['40', '', '0', '', '0']}
+							fontSize={['9xl', '8xl', '7xl', '6xl', '4xl']}
 							mb={4}
 							color='#161B45'
 							my={3}>
 							{' '}
 							GET INSTANT HELP
 						</Heading>
-						<Text fontSize={['sm', '2xl', '3xl', '4xl']}>
+						<Text pt={['20', '0']} fontSize={['7xl', '5xl', '5xl', '4xl', '4xl', '4xl']}>
 							Online & Home Tutoring. Homework Help. Test Prep.
 						</Text>
 						<InputGroup mt='24px' display={{ xl: 'flex' }}>
@@ -264,8 +266,8 @@ export default function Home() {
 								placeholder="Subject: Math,English"
 								size="lg"
 							/> */}
-							<Flex w='100%' justifyContent='center'>
-								<Box w={['100%', '400px']}>
+							<Flex pt={['16', '']} w='100%' justifyContent='center'>
+								<Box w={['100%', '', '', '100%', '400px']} fontSize={['7xl', '4xl', '4xl', '2xl', '']}>
 									<CreatableSelect
 										ModalOverlay={false}
 										isClearable
@@ -277,6 +279,7 @@ export default function Home() {
 									/>
 								</Box>
 								<Button
+									size={['3xl', '2xl', '4xl', 'md']}
 									bg='#161B45'
 									_hover={{ opacity: '0.9' }}
 									_active={{
@@ -285,7 +288,7 @@ export default function Home() {
 									}}
 									color='white'
 									w='20'
-									size='md'
+									fontSize={['5xl', '2xl', '4xl', 'md']}
 									isDisabled={subject ? false : true}
 									onClick={onOpen}>
 									Go
@@ -420,7 +423,7 @@ export default function Home() {
 						</InputGroup>
 					</Center>
 
-					<Box w={['18em', '40em']}>
+					<Box w={['70em', '', '50em', '', '40em']}>
 						<Lottie loop animationData={elearning} play />
 					</Box>
 				</Container>
@@ -455,68 +458,79 @@ export default function Home() {
                     
                     </Stack> */}
 			<Divider borderColor='gray.400' />
+			<Container maxW={['6xl', '8xl', '', '6xl', '7xl', '7xl']}>
+				<Center py={['20', '', '40', '', '20']} minH='100vh' >
+					<SimpleGrid
 
-			<Center py='20' minH='100vh'>
-				<SimpleGrid
-					columns={[
-						'1', // base
-						'2', // 480px upwards
-						'2', // 768px upwards
-						'3', // 992px upwards
-					]}
-					as={Container}
-					maxW='7xl'
-					gap={12}>
-					<Feature
-						title='Online Tutoring'
-						desc='Find a tutor to take you through specific topics or explaincertain points'
-						icon={SiGoogleclassroom}
-					/>
+						columns={[
+							'1', // base
+							'2', // 480px upwards
+							'2', // 768px upwards
+							'3', // 992px upwards
+						]}
+						as={Container}
+						maxW={['6xl', '7xl', '', '6xl', '7xl', '7xl']}
+						gap={12}>
+						<Feature
+							className='Feature'
+							title='Online Tutoring'
+							desc='Find a tutor to take you through specific topics or explaincertain points'
+							icon={SiGoogleclassroom}
+						/>
 
-					<Feature
-						title='Home Work Help'
-						desc='Take short sessions to help you solve particular questions'
-						icon={AiOutlineHome}
-					/>
-					<Feature
-						title='Test / Exam Prep'
-						desc='Get a tutor to prepare you for your, upcoming tests and exams'
-						icon={SiMinetest}
-					/>
-					<Feature
-						title='Skills'
-						desc='Learn a new skill online like baking, graphics design e.t.c'
-						icon={GiGuitar}
-					/>
-					<Feature
-						title='Coding'
-						desc='Get a programmer to solve your coding problems and help you learn how to code'
-						icon={AiOutlineLaptop}
-					/>
-					<Feature
-						title='Project Help'
-						desc='Find a scholar to help you prepare, and analyse your thesis'
-						icon={AiOutlineProject}
-					/>
-				</SimpleGrid>
-			</Center>
+						<Feature
+							className='Feature'
+							title='Home Work Help'
+							desc='Take short sessions to help you solve particular questions'
+							icon={AiOutlineHome}
+						/>
+						<Feature
+							className='Feature'
+							title='Test / Exam Prep'
+							desc='Get a tutor to prepare you for your, upcoming tests and exams'
+							icon={SiMinetest}
+						/>
+						<Feature
+							className='Feature'
+							title='Skills'
+							desc='Learn a new skill online like baking, graphics design e.t.c'
+							icon={GiGuitar}
+						/>
+						<Feature
+							className='Feature'
+							title='Coding'
+							desc='Get a programmer to solve your coding problems and help you learn how to code'
+							icon={AiOutlineLaptop}
+						/>
+						<Feature
+							className='Feature'
+							title='Project Help'
+							desc='Find a scholar to help you prepare, and analyse your thesis'
+							icon={AiOutlineProject}
+						/>
+					</SimpleGrid>
+				</Center>
+			</Container>
+
 			<Box py='20' bg='blue.50'>
-				<Stack as={Container} maxW='7xl' m='auto' spacing={20}>
+				<Stack as={Container} maxW={['6xl', '7xl', '6xl', '6xl', '6xl', '6xl']} m='auto' spacing={['96', '20']} >
 					<Flex
 						flexDirection={['column-reverse', 'row']}
 						justifyContent='space-between'
-						align='center'>
-						<Box w={{ lg: '22rem' }}>
-							<Text fontSize='3xl' color='#161B45' fontWeight='bold'>
+						align='center'
+
+					>
+						<Box w={{ lg: '22rem' }} mt={['96', '0']}>
+							<Text fontSize={['8xl', '7xl', '6xl', '5xl', '3xl', '3xl']} color='#161B45' fontWeight='bold'>
 								Get Complicated Questions Answered
 							</Text>
-							<Text fontSize='lg'>
+							<Text fontSize={['7xl', '5xl', '5xl', '4xl', 'lg', 'lg']} >
 								You will only pay after you have concluded your session/minutes
 								with your tutor{' '}
 							</Text>
 						</Box>
-						<Box align='center'>
-							<Image src='./img/questions.svg' boxSize='lg' />
+						<Box align='center' mt={['96', '0']}>
+							<Image boxSize={['6xl', '9xl', '6xl', 'xl', 'lg', 'lg']} src='./img/questions.svg' />
 
 							{/* <Lottie loop animationData={question} play /> */}
 						</Box>
@@ -526,14 +540,14 @@ export default function Home() {
 						flexDirection={['column', 'row']}
 						justifyContent='space-between'
 						align='center'>
-						<Box align='center'>
-							<Image src='./img/money.svg' boxSize='lg' />
+						<Box align='center' >
+							<Image boxSize={['6xl', '9xl', '6xl', 'xl', 'lg', 'lg']} src='./img/money.svg' />
 						</Box>
-						<Box w={{ lg: '22rem' }}>
-							<Text fontSize='3xl' color='#161B45' fontWeight='bold'>
+						<Box w={{ lg: '22rem' }} mt={['96', '0']}>
+							<Text fontSize={['8xl', '7xl', '6xl', '5xl', '3xl', '3xl']} color='#161B45' fontWeight='bold'>
 								Charge Per Minute
 							</Text>
-							<Text fontSize='lg'>
+							<Text fontSize={['7xl', '5xl', '5xl', '4xl', 'lg', 'lg']}>
 								No minimum or limits to class you can take, you will only be
 								charged for the minute of tutoring
 							</Text>
@@ -544,24 +558,25 @@ export default function Home() {
 						flexDirection={['column-reverse', 'row']}
 						justifyContent='space-between'
 						align='center'>
-						<Box w={{ lg: '22rem' }}>
-							<Text fontSize='3xl' color='#161B45' fontWeight='bold'>
+						<Box w={{ lg: '22rem' }} mb={['96', '0']} mt={['96', '0']}>
+							<Text fontSize={['8xl', '7xl', '6xl', '5xl', '3xl', '3xl']} color='#161B45' fontWeight='bold'>
 								Pay After a session
 							</Text>
-							<Text fontSize='lg'>
+							<Text fontSize={['7xl', '5xl', '5xl', '4xl', 'lg', 'lg']}>
 								You will only pay after you have concluded your session/minutes
 								with your tutor
 							</Text>
 						</Box>
 						<Box align='center'>
-							<Image src='./img/time.svg' boxSize='lg' />
+							<Image boxSize={['6xl', '9xl', '6xl', 'xl', 'lg', 'lg']} src='./img/time.svg' />
 						</Box>
 					</Flex>
 				</Stack>
 			</Box>
-			<Center minH='80vh' py='20'>
-				<SimpleGrid columns={[1, 2, 3]} spacing={10} maxW='70rem' m='auto'>
+			<Center minH='80vh' py={['40', '20']}>
+				<SimpleGrid columns={[1, 2, 3]} spacing={['96', '10']} maxW={['6xl', '7xl', '6xl', '6xl', '70ren', '70rem']} m='auto'>
 					<WhatWeDo
+
 						title='Post a Request'
 						step='step1'
 						desc='Post a specific topic, or a specific question. Tutors will apply to your request and offer their help.'
@@ -578,31 +593,38 @@ export default function Home() {
 					/>
 				</SimpleGrid>
 			</Center>
-			<Box bg='blue.50'>
+			<Box bg='blue.50' h='auto'>
 				<Center
-					py='20'
-					maxW='70rem'
+					py={['96', '20']}
+					maxW={['6xl', '', '6xl', '6xl', '70rem', '70rem']}
 					m='auto'
 					justifyContent='center'
 					align='center'
-					h='100vh'>
-					<Box>
-						<Heading fontSize='6xl' color='#151a46' w='70' fontWeight='bold'>
+				>
+					<Stack spacing={['40', '16', '10', '5', '4', '4']}
+						flexDirection='column'
+						justifyContent={['space-between', 'center']}
+						align='center'
+					>
+						<Heading fontSize={['9xl', '7xl', '8xl', '5xl', '6xl', '6xl']} color='#151a46' w='70' fontWeight='bold'>
 							{' '}
 							Become a tutor with <br /> Klasshour
 						</Heading>
-						<Text color='gray.500' my={5} fontSize='lg'>
+						<Text pt='10' fontSize={['7xl', '5xl', '5xl', '4xl', 'lg', 'lg']} color='gray.500' my={5}>
 							Find students all over the world, Use Modaris modern
 							VirtualClassroom,
 							<br />
 							Teach on your own time and Get paid securely.
 						</Text>
 
-						<Button
+						<Button 
 							colorScheme='gray'
 							variant='outline'
+							p={['12', '10', '10', '8', '', '']}
+							Size={['lg', '8xl', '8xl', '5xl', 'lg']}
+							fontSize={["7xl", '5xl', '5xl', '4xl', '2xl', ""]}
 							rightIcon={<AiOutlineArrowRight />}
-							size='lg'
+							// fontSize={['6xl', '0', '8xl', '3xl', 'lg']}
 							_hover={{
 								bg: '#151a46',
 								color: 'white',
@@ -621,7 +643,7 @@ export default function Home() {
                             h="400px"
                             objectFit="cover"
                             src="../img/class.jpg" /> */}
-					</Box>
+					</Stack>
 				</Center>
 			</Box>
 			{/* <Center py="20" maxW="70rem" m="auto" justifyContent="space-between"  >
@@ -638,6 +660,6 @@ export default function Home() {
                         size="lg"
                     >Get Started</Button>
                 </Center> */}
-		</>
+		</Box>
 	)
 }

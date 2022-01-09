@@ -35,7 +35,7 @@ console.log('allUsers:', users)
 	const router = useRouter()
 
 	return (
-		<Box bg='gray.50'>
+		<Box >
 			{router.pathname=='/class/[classroom]' ?'': <Navbar />}
 
 			{children}

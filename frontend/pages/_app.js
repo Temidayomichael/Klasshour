@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '../styles/board.css'
+import '../styles/Home.module.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/Layout'
 import getConfig from 'next/config'

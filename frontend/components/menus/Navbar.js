@@ -13,7 +13,7 @@ import {
 	MenuGroup,
 	MenuOptionGroup,
 	MenuItemOption,
-	MenuCommand,
+	HStack,
 	MenuDivider,
 	Avatar,
 	Text,
@@ -69,39 +69,86 @@ export default function Navbar(ctx) {
 		router.push('/login')
 	}
 	const mobileMenu = (
-		<Menu>
+		<Menu >
 			<MenuButton
 				as={IconButton}
+
 				aria-label='Options'
 				_focus={{
 					textDecoration: 'none',
 				}}
-				icon={<HamburgerIcon />}
+				icon={<HamburgerIcon boxSize={['28', '24']} />}
 				variant='outline'
+				d='flex'
+				
 			/>
 			<MenuList>
-				<MenuItem
-					_focus={{ bg: 'blue.50' }}
+
+				<MenuItem  _focus={{ bg: 'blue.50' }}
 					_hover={{ bg: 'blue.50' }}
-					_active={{ bg: 'blue.50' }}>
-					Download
+					_active={{ bg: 'blue.50' }}
+
+				>
+					<Box fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/' >
+							<a className={isActive('/')}>HOME</a>
+						</Link>{' '}
+					</Box>
 				</MenuItem>
-				<MenuItem>Create a Copy</MenuItem>
-				<MenuItem>Mark as Draft</MenuItem>
-				<MenuItem>Delete</MenuItem>
-				<MenuItem>Attend a Workshop</MenuItem>
+				<MenuItem>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/requests' >
+							<a className={isActive('/requests')}>REQUESTS</a>
+						</Link>
+					</Box>
+				</MenuItem>
+				<MenuItem >
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/become_a_tutor' >
+							<a _hover={{ color: 'red' }} className={isActive('/become_a_tutor')}>BECOME A TUTUOR</a>
+						</Link>
+					</Box>
+				</MenuItem>
+				<MenuItem>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/faq'>
+							<a className={isActive('/faq')}>FAQ</a>
+						</Link>{' '}
+					</Box>
+				</MenuItem>
+				<MenuItem>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/about-us' >
+							<a className={isActive('/about-us')}>ABOUT US</a>
+						</Link>{' '}
+					</Box>
+				</MenuItem>
+				<MenuItem>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', '2xl', 'sm']}>
+						{' '}
+						<Link href='/support'>
+							<a className={isActive('/support')}>SUPPORT</a>
+						</Link>
+					</Box>
+				</MenuItem>
+
 			</MenuList>
 		</Menu>
 	)
 	const mainMenu = jwt ? (
-		<Flex>
-			<Center>
+		<Flex >
+			<Center >
 				<Badge ml='5' colorScheme='green'>
 					{userData.role}
 				</Badge>
 			</Center>
-			<Box mx='5'>
-				<Menu>
+			<Box mx='5' >
+				<Menu >
 					<MenuButton
 						as={IconButton}
 						_active={{
@@ -125,8 +172,8 @@ export default function Navbar(ctx) {
 											? 'green.400'
 											: 'red.500'
 										: userData.tutors[0].user.wallet.Balance > 1000
-										? 'green.400'
-										: 'red.500'
+											? 'green.400'
+											: 'red.500'
 								}>
 								{JSON.stringify(
 									new Intl.NumberFormat('ja-JP', {
@@ -140,7 +187,7 @@ export default function Navbar(ctx) {
 								).replace(/"/g, '')}
 							</Text>
 						</Text>
-						<Box w='100%' align='right'>
+						<Box w='100%' align='right' >
 							<MenuDivider my='5' />
 							{isStudent ? (
 								<Button
@@ -183,11 +230,10 @@ export default function Navbar(ctx) {
 
                                         </MenuOptionGroup> */}
 					<MenuGroup
-						title={`Signed in as ${
-							userData.role == 'Student'
-								? userData.students[0].user.username
-								: userData.tutors[0].user.username
-						}`}>
+						title={`Signed in as ${userData.role == 'Student'
+							? userData.students[0].user.username
+							: userData.tutors[0].user.username
+							}`}>
 						{/* <Text pl='3'>
 							 <Text fontWeight='bold'></Text>
 						</Text> */}
@@ -209,10 +255,9 @@ export default function Navbar(ctx) {
 							onClick={() => {
 								router.push(
 									'/profile',
-									`${
-										userData.role == 'Student'
-											? userData.students[0].user.username
-											: userData.tutors[0].user.username
+									`${userData.role == 'Student'
+										? userData.students[0].user.username
+										: userData.tutors[0].user.username
 									}`,
 								)
 							}}
@@ -258,6 +303,7 @@ export default function Navbar(ctx) {
 	) : (
 		<Center>
 			<Button
+
 				borderColor='#161B45'
 				rightIcon={<AiOutlineArrowRight />}
 				color='#161B45'
@@ -289,15 +335,14 @@ export default function Navbar(ctx) {
 	const menu = useBreakpointValue({ base: mobileMenu, lg: mainMenu })
 
 	return (
-		<Box>
-			<Stack
-				isInline
+		<Box w={['8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
+			<HStack
+				py={['16', '', '16', '6', '5']}
 				justify='space-between'
-				w='100%'
 				as={Container}
-				maxW='6xl'
+				maxW={['6xl', '6xl', '6xl', '6xl', '6xl', '6xl']}
 				mx='auto'
-				py={5}>
+			>
 				<Link href='/'>
 					<Image
 						cursor='pointer'
@@ -305,13 +350,13 @@ export default function Navbar(ctx) {
 						onClick='/'
 						objectFit='contain'
 						src='../img/home_logo.png'
-						w={['30px', '30px', '40px', '40px']}
+						w={['28', '', '24', '16', '40px']}
 					/>
 				</Link>
 
-				<Flex align='center'>{menu}</Flex>
-			</Stack>
-			<Sticky>
+				<Flex>{menu}</Flex>
+			</HStack>
+			<Sticky >
 				<Flex
 					align='center'
 					p={4}
@@ -321,52 +366,53 @@ export default function Navbar(ctx) {
 					fontSize='sm'
 					textTransform='uppercase'
 					color='gray.400'
+
 					display={
 						router.pathname !== '/dashboard' &&
-						router.pathname !== '/learnportal' &&
-						router.pathname !== '/login' &&
-						router.pathname !== '/register' &&
-						router.pathname !== '/profile'
+							router.pathname !== '/learnportal' &&
+							router.pathname !== '/login' &&
+							router.pathname !== '/register' &&
+							router.pathname !== '/profile'
 							? ['none', 'none', 'none', 'flex']
 							: 'none'
 					}>
-					<Box>
+					<Box fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
-						<Link href='/'>
+						<Link href='/' >
 							<a className={isActive('/')}>HOME</a>
 						</Link>{' '}
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/requests'>
 							<a className={isActive('/requests')}>REQUESTS</a>
 						</Link>
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/become_a_tutor'>
 							<a className={isActive('/become_a_tutor')}>BECOME A TUTUOR</a>
 						</Link>
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/faq'>
 							<a className={isActive('/faq')}>FAQ</a>
 						</Link>{' '}
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/about-us'>
 							<a className={isActive('/about-us')}>About us</a>
 						</Link>{' '}
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/support'>
 							<a className={isActive('/support')}>SUPPORT</a>
 						</Link>
 					</Box>
-					<Box ml={5}>
+					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/news'>
 							<a className={isActive('/news')}>NEWS</a>

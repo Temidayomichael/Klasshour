@@ -76,12 +76,13 @@ export default function Login({ history }) {
 
 
     return (
-        <Center>
+        <Center className='Login-page'>
             <Head>
                     <title>Login | Klasshour</title>
                 <link rel="icon" href="../img/home_logo.png" />
             </Head>
-        <Center my="20">
+            <Box >
+        <Center my="20" >
             <form onSubmit={formik.handleSubmit}>
                     <Stack w="30vw" spacing={7}>
                     <Text
@@ -136,6 +137,7 @@ export default function Login({ history }) {
                     </Stack>
                         </form>
             </Center>
+            </Box>
             </Center>
     )
 }

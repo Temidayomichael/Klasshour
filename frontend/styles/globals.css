@@ -10,6 +10,7 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
+	
 }
 
 * {
@@ -17,7 +18,7 @@ a {
 }
 .active {
 	font-weight: bold;
-	color: #fff;
+	color:#464b6f;
 }
 
 * {
@@ -77,5 +78,8 @@ form > div > input {
 	padding: 0.4em;
 	border-radius: 6px;
 	border: 1px solid #333e5a;
+}
+Text{
+	color: red;
 }
 
