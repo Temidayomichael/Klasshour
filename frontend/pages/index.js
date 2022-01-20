@@ -229,7 +229,7 @@ export default function Home() {
 	}
 
 	return (
-		<Box w={['8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
+		<Box w={['8xl', '8xl', '9xl','9xl', '100%']} bg='#f7fafc'>
 
 			<Head fontSize={['8xl', '0', '8xl', '3xl', 'sm']} >
 				<title >Find tutors | Klasshour</title>
@@ -237,7 +237,7 @@ export default function Home() {
 
 			</Head>
 
-			<Center
+			<Center 
 				h={['auto', '', '80rem', '', '40em']}
 				textAlign='center'
 				alignItems='center'
@@ -457,6 +457,7 @@ export default function Home() {
                     </SimpleGrid>
                     
                     </Stack> */}
+										
 			<Divider borderColor='gray.400' />
 			<Container maxW={['6xl', '8xl', '', '6xl', '7xl', '7xl']}>
 				<Center py={['20', '', '40', '', '20']} minH='100vh' >

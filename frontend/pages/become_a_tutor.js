@@ -15,17 +15,17 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import Carousel from 'nuka-carousel'
 export default function Become_a_tutor() {
 	return (
-		<Box w={['8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
+		<Box w={['8xl', '8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
 
 			<Head >
 				<title >Become A Tutor | Klasshour</title>
 				<link rel='icon' href='../img/home_logo.png' />
 			</Head>
-			<Container maxW={['6xl', '7xl', '8xl', '6xl', '6xl']}>
+			<Container  maxW={['6xl', '6xl', '8xl', '6xl', '6xl']}>
 				<Box pt={['80', '40', '40', '20', '20', '20']} textAlign={['center', '', 'center', 'center', 'left']} h={['auto', '25rem', '30rem', '20rem', '', '15rem']}>
 					<Heading size='3xl' color='#161B45' fontSize={['9xl', '8xl', '9xl', '7xl', '5xl', '5xl']}>Become A Tutor.</Heading>
 
-					<Text mt={['20', '3']} fontSize='sm' fontWeight='sm' fontSize={['7xl', '5xl', '6xl', '4xl', 'xl', 'xl']}>
+					<Text mt={['20', '3']} color='black' fontWeight='sm' fontSize={['7xl', '5xl', '6xl', '4xl', 'xl']}>
 						Offer your students the best you can.
 					</Text>
 				</Box>

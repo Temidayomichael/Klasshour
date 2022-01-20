@@ -335,7 +335,7 @@ export default function Navbar(ctx) {
 	const menu = useBreakpointValue({ base: mobileMenu, lg: mainMenu })
 
 	return (
-		<Box w={['8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
+		<Box w={['8xl','8xl', '8xl', '9xl', '100%']} bg='#f7fafc'>
 			<HStack
 				py={['16', '', '16', '6', '5']}
 				justify='space-between'
@@ -403,7 +403,7 @@ export default function Navbar(ctx) {
 					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
 						{' '}
 						<Link href='/about-us'>
-							<a className={isActive('/about-us')}>About us</a>
+							<a className={isActive('/about-us')}>ABOUT</a>
 						</Link>{' '}
 					</Box>
 					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
@@ -412,12 +412,7 @@ export default function Navbar(ctx) {
 							<a className={isActive('/support')}>SUPPORT</a>
 						</Link>
 					</Box>
-					<Box ml={5} fontSize={['7xl', '4xl', '5xl', 'xl', 'sm']}>
-						{' '}
-						<Link href='/news'>
-							<a className={isActive('/news')}>NEWS</a>
-						</Link>
-					</Box>
+				
 				</Flex>
 				<Divider borderColor='#151a46' />
 			</Sticky>

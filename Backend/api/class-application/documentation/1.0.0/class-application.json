@@ -562,7 +562,7 @@
                 }
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -584,7 +584,11 @@
                 "type": "string"
               },
               "type": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "hometutoring",
+                  "onlinetutoring"
+                ]
               },
               "location": {
                 "type": "string"
@@ -596,10 +600,14 @@
                 "type": "string"
               },
               "status": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "closed",
+                  "open"
+                ]
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -616,7 +624,8 @@
             "type": "integer"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -635,7 +644,8 @@
             "type": "integer"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
